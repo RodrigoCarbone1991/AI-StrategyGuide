@@ -1,0 +1,52 @@
+# ===========================================
+# PowerPoint / Archivos de presentación
+# ===========================================
+PPT/
+*.pptx
+*.ppt
+~$*
+
+# ===========================================
+# Claude Code / AI tooling
+# ===========================================
+.claude/
+.playwright-mcp/
+CLAUDE.md
+
+# ===========================================
+# OS generated files
+# ===========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ===========================================
+# Editor / IDE
+# ===========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# ===========================================
+# Node (por si se agrega en el futuro)
+# ===========================================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# ===========================================
+# Logs y temporales
+# ===========================================
+*.log
+tmp/
+temp/
