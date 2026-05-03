@@ -37,9 +37,9 @@ No requiere instalación, build system ni servidor. Simplemente:
 git clone https://github.com/TU-USUARIO/ai-guia-estrategica.git
 
 # Abre en el navegador
-start IA-GuiaEstrategica.html    # Windows
-open IA-GuiaEstrategica.html     # macOS
-xdg-open IA-GuiaEstrategica.html # Linux
+start index.html    # Windows
+open index.html     # macOS
+xdg-open index.html # Linux
 ```
 
 > **Requisito:** Conexión a internet para cargar Tailwind CSS y Chart.js desde CDN.
@@ -50,7 +50,7 @@ xdg-open IA-GuiaEstrategica.html # Linux
 
 ```
 ai-guia-estrategica/
-├── IA-GuiaEstrategica.html  # Presentación principal (archivo único autocontenido)
+├── index.html               # Presentación principal (archivo único autocontenido)
 ├── css/
 │   └── main.css             # Estilos personalizados complementarios
 ├── js/
