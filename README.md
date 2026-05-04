@@ -21,8 +21,8 @@ Presentación web interactiva diseñada como un viaje narrativo de **6 capítulo
 |---|----------|-----------|
 | 1 | **La IA Hoy** | Desmitificación + colapso del coste + los 3 catalizadores |
 | 2 | **Historia y Evolución** | Línea de tiempo interactiva (1726–2026) con patrón hype-invierno-revolución |
-| 3 | **Cómo Funciona la IA** | Taxonomía (muñecas rusas), paradigmas de aprendizaje, anatomía del LLM, tokenización interactiva, Transformer en 3D |
-| 4 | **Implementación Práctica** | Arquitectura empresarial: RAG y Agentes de IA |
+| 3 | **Cómo Funciona la IA** | Taxonomía (muñecas rusas), paradigmas de aprendizaje, anatomía del LLM, tokenización interactiva, Transformer en 3D, recursos IBM (ML + LLMs) |
+| 4 | **Implementación Práctica** | Arquitectura empresarial: RAG y Agentes de IA, recurso IBM (AI Agents) |
 | 5 | **Riesgos y Gobernanza** | Fuga de datos, sesgo algorítmico, alucinaciones, agencia excesiva, checklist |
 | 6 | **Recursos** | Quiz socrático interactivo + biblioteca de recursos recomendados |
 
@@ -34,13 +34,15 @@ No requiere instalación, build system ni servidor. Simplemente:
 
 ```bash
 # Clona el repositorio
-git clone https://github.com/TU-USUARIO/ai-guia-estrategica.git
+git clone https://github.com/RodrigoCarbone1991/AI-StrategyGuide.git
 
 # Abre en el navegador
 start index.html    # Windows
 open index.html     # macOS
 xdg-open index.html # Linux
 ```
+
+> También disponible en línea vía **GitHub Pages**: `https://rodrigocarbone1991.github.io/AI-StrategyGuide/`
 
 > **Requisito:** Conexión a internet para cargar Tailwind CSS y Chart.js desde CDN.
 
@@ -49,7 +51,7 @@ xdg-open index.html # Linux
 ## 📁 Estructura del Proyecto
 
 ```
-ai-guia-estrategica/
+AI-StrategyGuide/
 ├── index.html               # Presentación principal (archivo único autocontenido)
 ├── css/
 │   └── main.css             # Estilos personalizados complementarios
@@ -66,6 +68,7 @@ ai-guia-estrategica/
 │       ├── quiz-data.js     # Escenarios y respuestas del quiz
 │       └── timeline-data.js # Datos históricos de la línea de tiempo
 ├── img/                     # Recursos gráficos (portadas de libros, cursos)
+├── PPT/                     # Versión PowerPoint de la presentación
 ├── .gitignore
 ├── LICENSE
 └── README.md
