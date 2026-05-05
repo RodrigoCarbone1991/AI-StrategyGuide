@@ -108,6 +108,8 @@
         .llm-arrow { color: #64748b; font-size: 1.25rem; align-self: center; flex-shrink: 0; }
         .llm-dot { width: 8px; height: 8px; border-radius: 50%; background: #475569; transition: all 0.2s; display: inline-block; cursor: pointer; }
         .llm-dot-active { background: #e2e8f0; transform: scale(1.5); }
+        .tt { text-decoration: underline dashed currentColor; text-underline-offset: 3px; cursor: help; }
+        #tooltip-box { position: fixed; z-index: 9999; background: #1e293b; color: #e2e8f0; border: 1px solid #334155; border-radius: 0.5rem; padding: 0.5rem 0.75rem; font-size: 0.75rem; max-width: 260px; line-height: 1.5; pointer-events: none; opacity: 0; transition: opacity 0.15s; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
     </style>
 </head>
 
@@ -261,7 +263,7 @@
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🔧</div>
                         <h5 class="font-bold text-slate-900 mb-2">1. La Revolución del Hardware</h5>
-                        <p class="text-sm text-slate-600">Las unidades de procesamiento gráfico (GPU), diseñadas
+                        <p class="text-sm text-slate-600">Las unidades de procesamiento gráfico (<span class="tt" data-tt="gpu">GPU</span>), diseñadas
                             originalmente para videojuegos, resultaron perfectas para la IA. El coste por operación
                             matemática cayó <b>10× cada 5 años</b>. Sin este salto, los modelos actuales serían
                             imposibles de entrenar.</p>
@@ -271,7 +273,7 @@
                         <h5 class="font-bold text-slate-900 mb-2">2. Los Transformers (2017)</h5>
                         <p class="text-sm text-slate-600">Un equipo de investigadores publica <i>"Attention is All You
                                 Need"</i>: el paper que redefine la arquitectura de la IA. Los Transformers permiten
-                            procesar texto en paralelo y escalar a <b>billones de parámetros</b>. Es el motor de todo
+                            procesar texto en paralelo y escalar a <b>billones de <span class="tt" data-tt="parametros">parámetros</span></b>. Es el motor de todo
                             modelo de lenguaje actual.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
@@ -498,7 +500,7 @@
                 <h3 class="text-2xl font-bold mb-2 text-slate-900">El Machine Learning: La base de toda IA</h3>
                 <p class="text-slate-500 text-sm mb-6">Todo lo que hoy llamamos "Inteligencia Artificial" es, en su
                     raíz, <strong>Machine Learning</strong>: sistemas que aprenden patrones a partir de datos en lugar
-                    de seguir reglas programadas a mano. La IA generativa —ChatGPT, Claude, Gemini— no es una tecnología
+                    de seguir reglas programadas a mano. La <span class="tt" data-tt="iagenerativa">IA generativa</span> —ChatGPT, Claude, Gemini— no es una tecnología
                     aparte: es la expresión más visible y accesible de esta misma base. Entender cómo aprenden las
                     máquinas es entender por qué la IA generativa funciona como funciona.</p>
 
@@ -518,7 +520,7 @@
                     </div>
                     <div class="bg-emerald-50 border border-emerald-300 rounded-xl p-4">
                         <div class="font-bold text-emerald-800 mb-1 text-sm">📖 Aprendizaje Auto-Supervisado — <span
-                                class="text-emerald-600">el motor de los LLMs</span></div>
+                                class="text-emerald-600">el motor de los <span class="tt" data-tt="llm">LLMs</span></span></div>
                         <p class="text-xs text-slate-600">El modelo se entrena prediciendo partes ocultas de su propio
                             input ("La capital de Francia es ___"). No necesita etiquetas humanas: el texto completo
                             actúa como su propia corrección. Convirtió internet en un dataset de entrenamiento gratuito
@@ -526,7 +528,7 @@
                     </div>
                     <div class="bg-emerald-50 border border-emerald-300 rounded-xl p-4">
                         <div class="font-bold text-emerald-800 mb-1 text-sm">🎮 Aprendizaje por Refuerzo — <span
-                                class="text-emerald-600">RLHF: cómo se hace útil</span></div>
+                                class="text-emerald-600"><span class="tt" data-tt="rlhf">RLHF</span>: cómo se hace útil</span></div>
                         <p class="text-xs text-slate-600">El modelo mejora recibiendo señales de recompensa. En IA
                             generativa se usa como <strong>RLHF</strong> (Reinforcement Learning from Human Feedback):
                             evaluadores humanos califican respuestas y el modelo aprende a imitar las mejor valoradas.
@@ -536,7 +538,7 @@
 
                 <div class="p-4 bg-slate-800 rounded-xl text-sm text-slate-300">
                     <span class="text-emerald-400 font-bold">En resumen:</span> La IA generativa usa auto-supervisado
-                    para aprender del mundo entero durante el pre-entrenamiento, y refuerzo con feedback humano (RLHF)
+                    para aprender del mundo entero durante el <span class="tt" data-tt="preentrenamiento">pre-entrenamiento</span>, y refuerzo con feedback humano (RLHF)
                     para volverse útil y segura. El supervisado y el no supervisado siguen siendo relevantes en miles de
                     aplicaciones empresariales, pero no son los que potencian los modelos de lenguaje que usamos hoy.
                     <a href="https://www.ibm.com/es-es/think/machine-learning" target="_blank" rel="noopener noreferrer"
@@ -621,7 +623,7 @@
                         <p class="text-sm text-slate-700">Imagina que antes contratabas 10 especialistas distintos —uno
                             por idioma, uno por contabilidad, uno por atención al cliente. Un Modelo Fundacional es como
                             contratar a alguien con formación enciclopédica que, con una semana de contexto sobre tu
-                            empresa (fine-tuning), puede hacer todas esas tareas. Ningún especialista podría anticipar
+                            empresa (<span class="tt" data-tt="finetuning">fine-tuning</span>), puede hacer todas esas tareas. Ningún especialista podría anticipar
                             las tareas que aún no existen. El polímata sí.</p>
                     </div>
                     <div class="bg-slate-800 text-white rounded-xl p-5">
@@ -766,7 +768,7 @@
                             </div>
                         </div>
                         <p class="text-xs text-slate-400 mt-3 italic">* Esta demo usa tokenización simplificada por
-                            palabras. El modelo real usa Byte-Pair Encoding (BPE) que también subdivide palabras largas
+                            palabras. El modelo real usa Byte-Pair Encoding (<span class="tt" data-tt="bpe">BPE</span>) que también subdivide palabras largas
                             o poco comunes.</p>
                     </div>
 
@@ -816,7 +818,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
                         <!-- Paso 1 -->
                         <div class="bg-purple-50 p-5 rounded-xl border border-purple-200">
-                            <div class="text-purple-700 font-black text-xl mb-2">1. Embedding — Geometría del
+                            <div class="text-purple-700 font-black text-xl mb-2">1. <span class="tt" data-tt="embedding">Embedding</span> — Geometría del
                                 Significado</div>
                             <p class="text-sm text-slate-700 mb-3">Antes de procesar nada, cada token se convierte en un
                                 <strong>vector</strong>: una lista de miles de números flotantes que representa su
@@ -830,7 +832,7 @@
                         </div>
                         <!-- Paso 2 -->
                         <div class="bg-purple-50 p-5 rounded-xl border border-purple-200">
-                            <div class="text-purple-700 font-black text-xl mb-2">2. Auto-Atención — La Red que Lee el
+                            <div class="text-purple-700 font-black text-xl mb-2">2. <span class="tt" data-tt="selfattention">Auto-Atención</span> — La Red que Lee el
                                 Contexto</div>
                             <p class="text-sm text-slate-700 mb-3">El núcleo del Transformer. Para cada token, el modelo
                                 genera tres vectores internos: <strong>Consulta (Q)</strong>, <strong>Clave (K)</strong>
@@ -859,12 +861,12 @@
                         </div>
                         <!-- Paso 4 -->
                         <div class="bg-purple-50 p-5 rounded-xl border border-purple-200">
-                            <div class="text-purple-700 font-black text-xl mb-2">4. Softmax — Predicción Token a Token
+                            <div class="text-purple-700 font-black text-xl mb-2">4. <span class="tt" data-tt="softmax">Softmax</span> — Predicción Token a Token
                             </div>
                             <p class="text-sm text-slate-700 mb-3">La capa final proyecta el vector resultante sobre
                                 todo el vocabulario (50,000–100,000 palabras) y asigna a cada una una probabilidad. El
                                 modelo no siempre elige la de mayor probabilidad: un parámetro llamado
-                                <strong>temperatura</strong> controla la "creatividad". Temperatura baja → respuestas
+                                <strong><span class="tt" data-tt="temperatura">temperatura</span></strong> controla la "creatividad". Temperatura baja → respuestas
                                 conservadoras y predecibles. Temperatura alta → mayor variedad, más riesgo de error.
                                 Luego el proceso se repite desde cero: el token generado se añade a la entrada y se
                                 recalcula todo — así, de un token por vez, emerge el texto.
@@ -1025,7 +1027,7 @@
             <!-- ¿Por qué la IA inventa cosas? -->
             <div class="glass-panel p-8 mt-8 border-t-4 border-t-amber-400">
                 <h3 class="text-xl font-bold text-slate-800 mb-2">¿Por qué la IA a veces "inventa" información?</h3>
-                <p class="text-slate-500 text-sm mb-6">Este fenómeno se llama <b>alucinación</b> y tiene una causa
+                <p class="text-slate-500 text-sm mb-6">Este fenómeno se llama <b><span class="tt" data-tt="alucinacion">alucinación</span></b> y tiene una causa
                     matemática directa.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
@@ -1044,7 +1046,7 @@
                     </div>
                     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">💡</div>
-                        <h4 class="font-bold text-amber-900 mb-2 text-sm">La solución: RAG</h4>
+                        <h4 class="font-bold text-amber-900 mb-2 text-sm">La solución: <span class="tt" data-tt="rag">RAG</span></h4>
                         <p class="text-sm text-amber-800">En lugar de que el modelo "recuerde", le entregamos el texto
                             exacto de nuestros documentos y le pedimos que responda <i>solo con eso</i>. Esto es lo que
                             veremos en el siguiente capítulo.</p>
@@ -1088,7 +1090,7 @@
                         <tbody class="divide-y divide-slate-100">
                             <tr class="bg-emerald-50">
                                 <td class="p-3 font-bold text-emerald-800">🟢 Usar</td>
-                                <td class="p-3 text-slate-700">Acceder a un modelo ya entrenado vía API, interfaz web o
+                                <td class="p-3 text-slate-700">Acceder a un modelo ya entrenado vía <span class="tt" data-tt="api">API</span>, interfaz web o
                                     herramienta integrada (ChatGPT, Copilot, Claude…)</td>
                                 <td class="p-3 text-slate-700">Cualquier empresa o persona, sin conocimientos técnicos
                                 </td>
@@ -1314,7 +1316,7 @@
 
                     <!-- El bucle cognitivo -->
                     <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-widest">El bucle cognitivo del
-                        agente (ReAct)</h4>
+                        agente (<span class="tt" data-tt="react">ReAct</span>)</h4>
                     <div class="bg-slate-900 text-white rounded-xl p-6 mb-7">
                         <div
                             class="flex flex-col md:flex-row items-center justify-center gap-2 text-sm text-center flex-wrap">
@@ -1615,7 +1617,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-2">Sesgo Algorítmico</h3>
                     <p class="text-sm text-slate-600 mb-3">Si se entrena un modelo con datos históricos sesgados, la red
-                        aprende ese sesgo como regla de éxito y lo automatiza a escala. El algoritmo no tiene malicia —
+                        aprende ese <span class="tt" data-tt="sesgoalgoritmico">sesgo algorítmico</span> como regla de éxito y lo automatiza a escala. El algoritmo no tiene malicia —
                         es un espejo matemático de los datos que recibió.</p>
                     <div class="bg-amber-50 border border-amber-200 p-3 rounded text-xs text-amber-900 mb-3">
                         <b>Caso real:</b> Un sistema de selección de currículums entrenado con 10 años de contrataciones
@@ -2289,7 +2291,7 @@
             },
             {
                 era: "Inviernos", year: "1974–1993", title: "Los Inviernos de la IA",
-                desc: "El campo sufre dos colapsos de financiación. El primero (1974–1980) llega tras el informe Lighthill, que concluye que la IA no cumpliría sus promesas. El segundo (1987–1993) hunde los costosos 'Sistemas Expertos'. Entre medias, en 1986, Rumelhart, Hinton y Williams popularizan Backpropagation, el algoritmo que sobrevive ambos inviernos y resucita el campo.",
+                desc: "El campo sufre dos colapsos de financiación. El primero (1974–1980) llega tras el informe Lighthill, que concluye que la IA no cumpliría sus promesas. El segundo (1987–1993) hunde los costosos '<span class=\"tt\" data-tt=\"sistemasexpertos\">Sistemas Expertos</span>'. Entre medias, en 1986, Rumelhart, Hinton y Williams popularizan <span class=\"tt\" data-tt=\"backpropagation\">Backpropagation</span>, el algoritmo que sobrevive ambos inviernos y resucita el campo.",
                 figures: "James Lighthill (informe crítico) · Hinton, Rumelhart & Williams (backpropagation, 1986)",
                 details: ["El informe Lighthill (1974) fue encargado por el gobierno británico y resultó en el corte total de fondos públicos para IA en el Reino Unido durante casi una década", "El mercado de Sistemas Expertos llegó a valer 400M$/año en 1988 y colapsó a casi cero en 18 meses: las empresas no podían mantener el coste de actualizar manualmente las bases de reglas", "La lección más valiosa: el progreso científico real (backpropagation, redes convolucionales) continuó en silencio durante los inviernos, financiado por universidades cuando el capital privado se retiró"],
                 insight: "El ciclo hype-desilusión no es nuevo: la IA lo ha recorrido dos veces antes del boom actual. La lección es doble: el progreso científico continúa aunque el mercado se retire, pero las promesas sin ROI real siempre terminan igual."
@@ -2313,14 +2315,14 @@
                 desc: "Una red neuronal profunda entrenada en GPUs aplasta a la competencia en el concurso ImageNet de reconocimiento visual, reduciendo el margen de error a la mitad. La fórmula: algoritmos de los años 80 + millones de imágenes etiquetadas + tarjetas gráficas de videojuegos reconvertidas en aceleradoras de IA.",
                 figures: "Alex Krizhevsky, Ilya Sutskever, Geoffrey Hinton — Universidad de Toronto",
                 details: ["AlexNet redujo el error de reconocimiento visual del 26% al 15% de golpe; el progreso previo en el campo era de décimas de punto porcentual por año — fue un salto sin precedentes", "La red tenía 60 millones de parámetros —hoy GPT-4 tiene estimados 1.8 billones, unas 30,000 veces más", "Después de la publicación, Google, Microsoft y Baidu hicieron ofertas simultáneas para comprar el equipo. Google ganó por ~44M$. Ilya Sutskever se convirtió luego en cofundador de OpenAI"],
-                insight: "El punto de inflexión del deep learning moderno. Ninguno de los tres ingredientes era nuevo por separado; la combinación lo cambió todo. Fue el momento en que la academia se convirtió en industria."
+                insight: "El punto de inflexión del deep learning moderno — <span class=\"tt\" data-tt=\"alexnet\">AlexNet</span> demostró que GPUs + datos + redes profundas lo cambiaban todo. Fue el momento en que la academia se convirtió en industria."
             },
             {
                 era: "Generativa", year: "2016", title: "AlphaGo derrota al mejor jugador de Go",
                 desc: "DeepMind presenta AlphaGo, que derrota a Lee Sedol —uno de los mejores jugadores de Go de la historia— en un torneo de cinco partidas. El Go tiene más combinaciones posibles que átomos en el universo observable; durante décadas se consideró imposible para la IA por requerir 'intuición'.",
                 figures: "Lee Sedol (9-dan) vs. AlphaGo — DeepMind (Demis Hassabis)",
                 details: ["El movimiento 37 de la partida 2 —catalogado por comentaristas humanos como 'error obvio' antes de entender su genialidad— no lo habría considerado ningún jugador profesional entre 10,000: fue razonamiento emergente real", "Lee Sedol lloró durante y después de las partidas. Dijo que sintió 'que jugaba contra algo que no es humano'. Se retiró del Go profesional en 2019, citando a la IA como razón", "AlphaGo Zero (2017) aprendió sin ningún dato de partidas humanas, solo jugando contra sí mismo, y derrotó a la versión que venció a Sedol por 100-0 en dos días"],
-                insight: "A diferencia de Deep Blue, AlphaGo no usó fuerza bruta: aprendió jugando contra sí mismo (Aprendizaje por Refuerzo) e inventó movimientos que ningún maestro humano había considerado. Era la primera señal de razonamiento emergente."
+                insight: "A diferencia de <span class=\"tt\" data-tt=\"deepblue\">Deep Blue</span>, <span class=\"tt\" data-tt=\"alphago\">AlphaGo</span> no usó fuerza bruta: aprendió jugando contra sí mismo (Aprendizaje por Refuerzo) e inventó movimientos que ningún maestro humano había considerado. Era la primera señal de razonamiento emergente."
             },
             {
                 era: "Generativa", year: "2017", title: "La Arquitectura Transformer",
@@ -2547,6 +2549,89 @@
             if (e.key === 'ArrowRight') nextLLMStep();
             if (e.key === 'ArrowLeft') prevLLMStep();
         });
+
+        // === TOOLTIPS DE TERMINOLOGÍA ===
+        const ttDefs = {
+            gpu: 'Chip diseñado para calcular miles de operaciones matemáticas en paralelo (Unidad de Procesamiento Gráfico). Su arquitectura masivamente paralela lo convirtió en el motor del entrenamiento de redes neuronales.',
+            parametros: 'Valores numéricos ajustables dentro de una red neuronal — los "pesos" que el modelo aprende durante el entrenamiento. Más parámetros = mayor capacidad de representar patrones complejos.',
+            rlhf: 'Refuerzo con retroalimentación humana (Reinforcement Learning from Human Feedback): evaluadores califican respuestas del modelo y este aprende a imitar las mejor valoradas, volviéndose más útil y seguro.',
+            finetuning: 'Proceso de adaptar un modelo ya entrenado a un dominio específico, continuando el entrenamiento con un conjunto de datos más pequeño y especializado. Mucho más barato que entrenar desde cero.',
+            preentrenamiento: 'Fase inicial en la que el modelo aprende patrones generales del lenguaje procesando billones de tokens. Es el proceso costoso (meses, millones de dólares) que construye la base universal de conocimiento.',
+            embedding: 'Representación de un token como un vector de alta dimensión. Captura relaciones semánticas: palabras con significados similares quedan cerca en ese espacio matemático.',
+            softmax: 'Función matemática que convierte un vector de números en una distribución de probabilidades que suma exactamente 1. Asigna a cada token del vocabulario su probabilidad de ser el siguiente.',
+            temperatura: 'Parámetro que controla la aleatoriedad en la generación. Valor bajo → respuestas más predecibles y conservadoras. Valor alto → más variedad y creatividad, con mayor riesgo de incoherencia.',
+            bpe: 'Algoritmo de tokenización (Byte-Pair Encoding) que subdivide el texto en subpalabras frecuentes. Permite representar cualquier palabra combinando partes conocidas del vocabulario.',
+            selfattention: 'Mecanismo que permite a cada token "mirar" a todos los demás y decidir cuánto peso darle a cada uno para construir su representación contextual. Es el núcleo de la arquitectura Transformer.',
+            rag: 'Arquitectura (Retrieval-Augmented Generation) que combina un modelo de lenguaje con una base documental. Antes de generar, recupera los fragmentos más relevantes de tus documentos y los inyecta como contexto.',
+            api: 'Interfaz estandarizada (Application Programming Interface) que permite a dos sistemas de software comunicarse. Los modelos de IA se consumen enviando texto a una API y recibiendo texto de vuelta.',
+            react: 'Patrón de diseño para agentes (Reason + Act) que alterna entre razonamiento y acción. Permite planificar, ejecutar herramientas, observar resultados y corregir el rumbo de forma iterativa.',
+            alucinacion: 'Cuando un modelo genera información incorrecta con aparente confianza. Ocurre porque predice el token más probable estadísticamente, no el más verdadero.',
+            sesgoalgoritmico: 'Cuando un modelo aprende y reproduce patrones discriminatorios presentes en sus datos de entrenamiento. No hay malicia: es un espejo matemático de los sesgos históricos en los datos.',
+            gdpr: 'Regulación europea (Reglamento General de Protección de Datos) que establece derechos sobre datos personales y obligaciones para quienes los procesan. Aplica a sistemas de IA que manejen datos de ciudadanos de la UE.',
+            sistemasexpertos: 'Programas de IA de los años 80-90 basados en reglas lógicas codificadas manualmente por expertos humanos. Fueron costosos de mantener y fallaban ante situaciones no previstas en sus reglas.',
+            backpropagation: 'Algoritmo que calcula cómo ajustar cada parámetro de la red para reducir el error de predicción, propagando la señal de error desde la salida hacia las capas anteriores.',
+            deepblue: 'Supercomputadora de IBM que venció a Garry Kasparov en ajedrez (1997). No "entendía" el juego: evaluaba hasta 200 millones de posiciones por segundo usando fuerza bruta y reglas codificadas por grandes maestros.',
+            alexnet: 'Red neuronal profunda (2012) que redujo el error en reconocimiento visual a la mitad en ImageNet, demostrando el poder del deep learning con GPUs. Marcó el inicio de la era moderna de la IA.',
+            alphago: 'Sistema de DeepMind que venció al campeón mundial de Go en 2016. Aprendió jugando contra sí mismo (Aprendizaje por Refuerzo) e inventó movimientos que ningún maestro humano había considerado.',
+            llm: 'Modelo de Lenguaje Grande (Large Language Model): Transformer entrenado con billones de tokens, capaz de generar, resumir, traducir y razonar sobre texto en lenguaje natural.',
+            iagenerativa: 'Rama de la IA que genera contenido nuevo (texto, imágenes, audio, código) a partir de patrones aprendidos durante el entrenamiento.'
+        };
+
+        (function() {
+            let box = null;
+            let hideTimer;
+            let currentEl = null;
+
+            function getBox() {
+                return box || (box = document.getElementById('tooltip-box'));
+            }
+
+            function showTip(el, e) {
+                const key = el.dataset.tt;
+                const text = ttDefs[key];
+                if (!text) return;
+                const b = getBox();
+                if (!b) return;
+                clearTimeout(hideTimer);
+                currentEl = el;
+                b.textContent = text;
+                b.style.opacity = '1';
+                positionTip(e, b);
+            }
+
+            function hideTip() {
+                hideTimer = setTimeout(function() {
+                    const b = getBox();
+                    if (b) b.style.opacity = '0';
+                    currentEl = null;
+                }, 100);
+            }
+
+            function positionTip(e, b) {
+                const margin = 14;
+                const bw = b.offsetWidth || 260;
+                const bh = b.offsetHeight || 60;
+                let x = e.clientX + margin;
+                let y = e.clientY + margin;
+                if (x + bw > window.innerWidth - margin) x = e.clientX - bw - margin;
+                if (y + bh > window.innerHeight - margin) y = e.clientY - bh - margin;
+                b.style.left = x + 'px';
+                b.style.top = y + 'px';
+            }
+
+            document.addEventListener('mouseover', function(e) {
+                const el = e.target.closest('[data-tt]');
+                if (el && el !== currentEl) showTip(el, e);
+            });
+            document.addEventListener('mousemove', function(e) {
+                const b = getBox();
+                if (currentEl && b && b.style.opacity === '1') positionTip(e, b);
+            });
+            document.addEventListener('mouseout', function(e) {
+                const el = e.target.closest('[data-tt]');
+                if (el && el === currentEl) hideTip();
+            });
+        })();
     </script>
 
 <!-- LLM Architecture Modal -->
@@ -2667,5 +2752,6 @@
     </div>
 </div>
 
+<div id="tooltip-box" role="tooltip"></div>
 </body>
 </html>
