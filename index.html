@@ -102,6 +102,12 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.5);
         }
+        .llm-step { cursor: pointer; transition: all 0.2s; }
+        .llm-step:hover { transform: translateY(-3px); filter: brightness(1.2); }
+        .llm-step-active { transform: translateY(-4px) scale(1.06); box-shadow: 0 0 0 2px #fff, 0 0 20px rgba(139,92,246,0.5); }
+        .llm-arrow { color: #64748b; font-size: 1.25rem; align-self: center; flex-shrink: 0; }
+        .llm-dot { width: 8px; height: 8px; border-radius: 50%; background: #475569; transition: all 0.2s; display: inline-block; cursor: pointer; }
+        .llm-dot-active { background: #e2e8f0; transform: scale(1.5); }
     </style>
 </head>
 
@@ -776,12 +782,10 @@
                     <details class="border border-slate-200 rounded-xl overflow-hidden">
                         <summary
                             class="bg-slate-100 px-5 py-3 cursor-pointer text-sm font-semibold text-slate-700 hover:bg-slate-200 transition-colors select-none">
-                            🔬 Explorador avanzado: Tiktokenizer (tokenizador de referencia de la industria)
+                            🔬 La herramienta real: así tokeniza GPT-4 (BPE)
                         </summary>
                         <div class="bg-slate-100 p-2">
-                            <p class="text-xs text-slate-500 px-3 pb-2">Tokenizador de referencia ampliamente usado en
-                                la industria. En el campo de texto (User → Content) escribe una palabra y observa los
-                                tokens coloreados a la derecha.</p>
+                            <p class="text-xs text-slate-500 px-3 pb-2">El demo de arriba simplifica la tokenización para facilitar la intuición. Esta herramienta usa el algoritmo real (BPE — Byte Pair Encoding) de GPT-4: los resultados pueden diferir, especialmente en palabras compuestas, números y caracteres especiales. En el campo <strong>User → Content</strong> escribí una frase y observá cómo la divide en tokens.</p>
                             <iframe src="https://tiktokenizer.vercel.app/" class="w-full h-[500px] rounded-lg bg-white"
                                 title="Herramienta Interactiva de Tokenización" frameborder="0"></iframe>
                         </div>
@@ -874,7 +878,7 @@
                         class="bg-slate-900 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-inner border border-slate-700">
                         <div class="text-white text-center md:text-left">
                             <strong class="block text-lg mb-1 text-purple-400">Explora más a fondo</strong>
-                            <p class="text-sm text-slate-400">Dos recursos visuales para quienes quieren ir más lejos.
+                            <p class="text-sm text-slate-400">Recursos para quienes quieren ir más lejos.
                             </p>
                         </div>
                         <div class="flex flex-col sm:flex-row gap-3">
@@ -994,10 +998,78 @@
                     class="mt-3 inline-flex items-center gap-2 text-xs text-emerald-600 hover:text-emerald-500 font-semibold transition-colors">
                     📘 Profundizar: LLMs en IBM ↗
                 </a>
+                <div class="mt-6 text-center">
+                    <button onclick="openLLMDiagram()"
+                        class="inline-flex items-center gap-3 px-8 py-4 bg-purple-700 hover:bg-purple-600 text-white font-bold rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-200 text-sm uppercase tracking-wider">
+                        🧠 Ver arquitectura completa del LLM ↗
+                    </button>
+                    <p class="text-xs text-slate-500 mt-2">Explorá cada componente del pipeline paso a paso</p>
+                </div>
             </div>
 
+            <!-- CAPACIDADES EMERGENTES (condensado) -->
+            <div class="bg-slate-900 text-white rounded-xl p-6 mt-8">
+                <div class="font-bold text-purple-400 text-base mb-2">💧 Un fenómeno clave: capacidades emergentes</div>
+                <p class="text-slate-300 text-sm mb-3">Nadie programó a estos modelos para razonar paso a paso, traducir idiomas o escribir código. Esas capacidades <strong class="text-purple-300">aparecieron solas al cruzar cierto umbral de escala</strong> — como el agua que pasa de líquida a vapor en un grado exacto, sin que ninguna molécula "decida" cambiar.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                    <div class="bg-slate-800 rounded-lg p-3 text-xs text-slate-300">
+                        <span class="font-bold text-purple-300">Few-shot learning:</span> muéstrale 2-3 ejemplos de un formato nuevo y generalizará el patrón sin reentrenamiento.
+                    </div>
+                    <div class="bg-slate-800 rounded-lg p-3 text-xs text-slate-300">
+                        <span class="font-bold text-purple-300">Chain-of-thought:</span> pedir que piense "paso a paso" dispara la precisión en matemáticas y lógica — nadie programó eso explícitamente.
+                    </div>
+                </div>
+                <p class="text-slate-500 text-xs mt-3 italic">¿Comprensión real o reconocimiento de patrones a escala masiva? El debate no está resuelto. Lo que sí es claro: el comportamiento es funcional y las aplicaciones son inmediatas.</p>
+            </div>
+
+            <!-- ¿Por qué la IA inventa cosas? -->
+            <div class="glass-panel p-8 mt-8 border-t-4 border-t-amber-400">
+                <h3 class="text-xl font-bold text-slate-800 mb-2">¿Por qué la IA a veces "inventa" información?</h3>
+                <p class="text-slate-500 text-sm mb-6">Este fenómeno se llama <b>alucinación</b> y tiene una causa
+                    matemática directa.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">🎲</div>
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm">No busca: predice</h4>
+                        <p class="text-sm text-slate-600">Un modelo de lenguaje no consulta una base de datos de
+                            "verdades". Calcula cuál es la siguiente palabra <i>más probable</i> dado el contexto. A
+                            veces esa probabilidad apunta a algo incorrecto.</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">📅</div>
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm">Tiene fecha de corte</h4>
+                        <p class="text-sm text-slate-600">El modelo se entrenó con datos hasta cierto punto en el
+                            tiempo. No sabe lo que pasó después. Si se le pregunta por hechos recientes, improvisa con
+                            lo que tiene.</p>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">💡</div>
+                        <h4 class="font-bold text-amber-900 mb-2 text-sm">La solución: RAG</h4>
+                        <p class="text-sm text-amber-800">En lugar de que el modelo "recuerde", le entregamos el texto
+                            exacto de nuestros documentos y le pedimos que responda <i>solo con eso</i>. Esto es lo que
+                            veremos en el siguiente capítulo.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CAPÍTULO 4: De Hablar a Actuar -->
+        <section id="cap4" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
+            <header class="mb-10">
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 4</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Arquitecturas de Implementación
+                </h2>
+
+                <div class="guru-quote p-6 rounded-r-lg mb-8 text-lg text-slate-800 font-medium">
+                    "Un modelo de IA general sabe mucho del mundo, pero nada de tu empresa, tus datos ni lo que ocurrió
+                    ayer. Conectarlo a tu contexto específico —y darle las herramientas adecuadas para operar— es la
+                    diferencia entre una demo impresionante y un sistema que genera valor real."
+                </div>
+            </header>
+
             <!-- Panel: ¿Qué puede hacer tu organización? -->
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mt-8 mb-0 shadow-sm">
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-8 shadow-sm">
                 <h3 class="text-xl font-bold text-slate-900 mb-1">¿Qué puede realmente hacer tu organización con la IA?
                 </h3>
                 <p class="text-slate-500 text-sm mb-6">No todas las formas de trabajar con IA requieren los mismos
@@ -1054,192 +1126,6 @@
                     competencia.
                 </div>
             </div>
-
-            <!-- CAPACIDADES EMERGENTES -->
-            <div class="glass-panel p-6 md:p-8 mt-8 border-t-4 border-t-purple-500 bg-white">
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Capacidades Emergentes: Lo que Nadie Programó</h3>
-                <p class="text-slate-500 text-sm mb-6">El fenómeno más sorprendente —y más debatido— de los modelos de
-                    lenguaje modernos.</p>
-
-                <div
-                    class="guru-quote p-5 rounded-r-lg mb-7 text-slate-700 italic text-sm bg-purple-50 border-l-purple-500">
-                    "Nadie programó a estos modelos para razonar paso a paso, para traducir idiomas en los que apenas
-                    vieron ejemplos, o para escribir código desde una descripción en lenguaje natural. Esas capacidades
-                    aparecieron solas, al cruzar cierto umbral de escala. Eso es lo que los científicos llaman
-                    <b>emergencia</b>."
-                </div>
-
-                <!-- Analogía agua -->
-                <div class="bg-slate-900 text-white rounded-xl p-6 mb-7">
-                    <div class="font-bold text-purple-400 text-base mb-3">💧 La Analogía del Cambio de Fase</div>
-                    <p class="text-slate-300 text-sm mb-3">El agua a 99°C sigue siendo líquida. A 100°C, de repente, es
-                        vapor. No hay una molécula de H₂O que "decida" cambiar: es el sistema completo el que cruza un
-                        umbral y exhibe un comportamiento cualitativamente nuevo.</p>
-                    <p class="text-slate-300 text-sm">Los modelos de lenguaje siguen el mismo patrón. Con 1,000 millones
-                        de parámetros, no saben hacer aritmética. Con 10,000 millones, resuelven problemas simples. Con
-                        100,000 millones, razonan en varios pasos. <strong class="text-purple-300">Nadie programó ese
-                            salto: ocurrió en el umbral.</strong></p>
-                </div>
-
-                <!-- Cards de capacidades -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
-                        <div class="font-bold text-purple-800 mb-1">🔢 Aprendizaje con Pocos Ejemplos (Few-Shot)</div>
-                        <p class="text-sm text-slate-700 mb-2">Muéstrale al modelo 3 ejemplos de un formato nuevo —por
-                            ejemplo, "Pregunta → Respuesta en JSON"— y generalizará el patrón a cualquier pregunta nueva
-                            sin reentrenamiento.</p>
-                        <div class="bg-white border border-purple-100 rounded-lg p-3 text-xs font-mono text-slate-600">
-                            <div>Ejemplo 1: "ciudad: Madrid" → &#123;"país":"España"&#125;</div>
-                            <div>Ejemplo 2: "ciudad: Tokio" → &#123;"país":"Japón"&#125;</div>
-                            <div class="text-purple-700 mt-1">Pregunta: "ciudad: Berlín" →
-                                <strong>&#123;"país":"Alemania"&#125;</strong> ✓
-                            </div>
-                        </div>
-                        <p class="text-xs text-slate-500 mt-2 italic">Ningún sistema de reglas clásico haría esto. Es
-                            capacidad de abstracción, no memorización.</p>
-                    </div>
-                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
-                        <div class="font-bold text-purple-800 mb-1">🧠 Razonamiento en Cadena (Chain-of-Thought)</div>
-                        <p class="text-sm text-slate-700 mb-2">Si le pides al modelo que piense "paso a paso", su
-                            precisión en matemáticas y lógica se dispara. Sin ese prompt, falla. Con él, razona. Nadie
-                            entrenó explícitamente ese comportamiento: emergió de ver millones de textos con
-                            razonamientos encadenados.</p>
-                        <div class="bg-white border border-purple-100 rounded-lg p-3 text-xs text-slate-600">
-                            <div class="text-red-600">Sin cadena: "¿Cuántos días hay en 3 semanas?" → <s>24</s></div>
-                            <div class="text-emerald-700 mt-1">Con cadena: "3 semanas × 7 días/semana = <strong>21
-                                    días</strong>" ✓</div>
-                        </div>
-                        <p class="text-xs text-slate-500 mt-2 italic">La forma en que se formula el prompt cambia
-                            radicalmente la capacidad de razonamiento.</p>
-                    </div>
-                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
-                        <div class="font-bold text-purple-800 mb-1">💻 Generación de Código desde Lenguaje Natural</div>
-                        <p class="text-sm text-slate-700 mb-2">Los modelos no se entrenaron como "generadores de
-                            código". Vieron código junto a sus explicaciones en texto en miles de repositorios y
-                            documentaciones. Al cruzar cierta escala, la conexión entre intención en lenguaje natural y
-                            sintaxis de programación emergió sola.</p>
-                        <div class="bg-slate-800 text-emerald-300 rounded-lg p-3 text-xs font-mono">
-                            <div class="text-slate-400"># Prompt: "función que calcula el factorial"</div>
-                            <div>def factorial(n):</div>
-                            <div>&nbsp;&nbsp;if n == 0: return 1</div>
-                            <div>&nbsp;&nbsp;return n * factorial(n-1)</div>
-                        </div>
-                        <p class="text-xs text-slate-500 mt-2 italic">Hoy los modelos escriben código en decenas de
-                            lenguajes sin haber sido "programados como compiladores".</p>
-                    </div>
-                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
-                        <div class="font-bold text-purple-800 mb-1">🌍 Traducción Sin Entrenamiento Explícito</div>
-                        <p class="text-sm text-slate-700 mb-2">Algunos modelos traducen correctamente entre pares de
-                            idiomas con muy pocos ejemplos en el dataset de entrenamiento —e incluso entre idiomas que
-                            nunca vieron juntos— porque aprendieron la <em>estructura profunda</em> del lenguaje, no los
-                            diccionarios. La representación interna del modelo captura significados, no palabras.</p>
-                        <p class="text-xs text-slate-500 italic">Esta capacidad desafió a los traductores especializados
-                            que llevaban años entrenando con datos paralelos masivos.</p>
-                    </div>
-                </div>
-
-                <!-- La pregunta filosófica -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-amber-50 border border-amber-300 rounded-xl p-5">
-                        <div class="font-bold text-amber-900 mb-2">⚠️ El debate que no está resuelto</div>
-                        <p class="text-sm text-slate-700">¿Son estas capacidades "comprensión" real o sofisticado
-                            reconocimiento de patrones a escala masiva? La comunidad científica no tiene consenso. Lo
-                            que sí es claro: el comportamiento es funcional, los resultados son reales y las
-                            aplicaciones son inmediatas —independientemente de lo que ocurra "dentro".</p>
-                    </div>
-                    <div class="bg-emerald-50 border border-emerald-300 rounded-xl p-5">
-                        <div class="font-bold text-emerald-800 mb-2">✅ Lo que esto significa en la práctica</div>
-                        <p class="text-sm text-slate-700">No necesitas saber si el modelo "entiende" para aprovecharlo.
-                            Pero sí necesitas saber que tiene límites, que puede fallar en tareas que parecen simples, y
-                            que algunas capacidades pueden aparecer (o desaparecer) de forma impredecible entre
-                            versiones. <strong>El conocimiento del mecanismo previene expectativas incorrectas.</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Callout práctico: Lo que esto significa al trabajar con IA -->
-            <div class="glass-panel p-8 mt-8 bg-slate-800 text-white">
-                <h3 class="text-xl font-bold text-emerald-400 mb-2">Lo que esto significa al trabajar con IA</h3>
-                <p class="text-slate-300 text-sm mb-5">Los mecanismos que acabas de ver tienen consecuencias directas en
-                    el día a día. Cuatro reglas prácticas derivadas de la arquitectura:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-slate-700 rounded-xl p-4">
-                        <div class="font-bold text-emerald-300 mb-1 text-sm">📝 El prompt importa más de lo que parece
-                        </div>
-                        <p class="text-slate-300 text-xs">El mecanismo de atención usa literalmente cada palabra del
-                            prompt para ponderar qué es relevante. Un prompt vago produce respuestas vagas —no por
-                            pereza del modelo, sino porque matemáticamente no tiene señal suficiente.</p>
-                    </div>
-                    <div class="bg-slate-700 rounded-xl p-4">
-                        <div class="font-bold text-amber-300 mb-1 text-sm">⚠️ No confíes en el tono de confianza</div>
-                        <p class="text-slate-300 text-xs">El modelo genera texto fluido y seguro porque su objetivo de
-                            entrenamiento es predecir la siguiente palabra —no verificar hechos. Una respuesta
-                            incorrecta suena exactamente igual que una correcta. La seguridad del tono no es señal de
-                            verdad.</p>
-                    </div>
-                    <div class="bg-slate-700 rounded-xl p-4">
-                        <div class="font-bold text-blue-300 mb-1 text-sm">📅 El modelo no sabe lo que pasó ayer</div>
-                        <p class="text-slate-300 text-xs">El conocimiento del modelo tiene una fecha de corte fija. Todo
-                            lo ocurrido después no existe para él. Si necesitas respuestas sobre información reciente o
-                            interna, necesitas RAG (lo veremos en el próximo capítulo).</p>
-                    </div>
-                    <div class="bg-slate-700 rounded-xl p-4">
-                        <div class="font-bold text-purple-300 mb-1 text-sm">🎯 Fine-tuning ≠ "enseñarle todo desde cero"
-                        </div>
-                        <p class="text-slate-300 text-xs">El modelo base ya tiene miles de millones de parámetros
-                            aprendidos. El fine-tuning ajusta ese conocimiento hacia un dominio o estilo específico — no
-                            lo reemplaza. Es más parecido a especializar a un profesional que a contratar a uno nuevo.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ¿Por qué la IA inventa cosas? -->
-            <div class="glass-panel p-8 mt-8 border-t-4 border-t-amber-400">
-                <h3 class="text-xl font-bold text-slate-800 mb-2">¿Por qué la IA a veces "inventa" información?</h3>
-                <p class="text-slate-500 text-sm mb-6">Este fenómeno se llama <b>alucinación</b> y tiene una causa
-                    matemática directa.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
-                        <div class="text-2xl mb-2">🎲</div>
-                        <h4 class="font-bold text-slate-800 mb-2 text-sm">No busca: predice</h4>
-                        <p class="text-sm text-slate-600">Un modelo de lenguaje no consulta una base de datos de
-                            "verdades". Calcula cuál es la siguiente palabra <i>más probable</i> dado el contexto. A
-                            veces esa probabilidad apunta a algo incorrecto.</p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
-                        <div class="text-2xl mb-2">📅</div>
-                        <h4 class="font-bold text-slate-800 mb-2 text-sm">Tiene fecha de corte</h4>
-                        <p class="text-sm text-slate-600">El modelo se entrenó con datos hasta cierto punto en el
-                            tiempo. No sabe lo que pasó después. Si se le pregunta por hechos recientes, improvisa con
-                            lo que tiene.</p>
-                    </div>
-                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
-                        <div class="text-2xl mb-2">💡</div>
-                        <h4 class="font-bold text-amber-900 mb-2 text-sm">La solución: RAG</h4>
-                        <p class="text-sm text-amber-800">En lugar de que el modelo "recuerde", le entregamos el texto
-                            exacto de nuestros documentos y le pedimos que responda <i>solo con eso</i>. Esto es lo que
-                            veremos en el siguiente capítulo.</p>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- CAPÍTULO 4: De Hablar a Actuar -->
-        <section id="cap4" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
-            <header class="mb-10">
-                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 4</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Arquitecturas de Implementación
-                </h2>
-
-                <div class="guru-quote p-6 rounded-r-lg mb-8 text-lg text-slate-800 font-medium">
-                    "Un modelo de IA general sabe mucho del mundo, pero nada de tu empresa, tus datos ni lo que ocurrió
-                    ayer. Conectarlo a tu contexto específico —y darle las herramientas adecuadas para operar— es la
-                    diferencia entre una demo impresionante y un sistema que genera valor real."
-                </div>
-            </header>
 
             <!-- BLOQUE 1: El problema de partida -->
             <div class="glass-panel p-6 md:p-8 mb-8 bg-slate-50 border-t-4 border-t-slate-400">
@@ -1962,6 +1848,39 @@
                 </div>
             </header>
 
+            <!-- Reglas prácticas derivadas de la arquitectura -->
+            <div class="glass-panel p-8 mt-0 mb-8 bg-slate-800 text-white">
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">Lo que esto significa al trabajar con IA</h3>
+                <p class="text-slate-300 text-sm mb-5">Los mecanismos internos de los LLMs tienen consecuencias directas en el día a día. Cuatro reglas prácticas derivadas de la arquitectura:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-700 rounded-xl p-4">
+                        <div class="font-bold text-emerald-300 mb-1 text-sm">📝 El prompt importa más de lo que parece</div>
+                        <p class="text-slate-300 text-xs">El mecanismo de atención usa literalmente cada palabra del
+                            prompt para ponderar qué es relevante. Un prompt vago produce respuestas vagas —no por
+                            pereza del modelo, sino porque matemáticamente no tiene señal suficiente.</p>
+                    </div>
+                    <div class="bg-slate-700 rounded-xl p-4">
+                        <div class="font-bold text-amber-300 mb-1 text-sm">⚠️ No confíes en el tono de confianza</div>
+                        <p class="text-slate-300 text-xs">El modelo genera texto fluido y seguro porque su objetivo de
+                            entrenamiento es predecir la siguiente palabra —no verificar hechos. Una respuesta
+                            incorrecta suena exactamente igual que una correcta. La seguridad del tono no es señal de
+                            verdad.</p>
+                    </div>
+                    <div class="bg-slate-700 rounded-xl p-4">
+                        <div class="font-bold text-blue-300 mb-1 text-sm">📅 El modelo no sabe lo que pasó ayer</div>
+                        <p class="text-slate-300 text-xs">El conocimiento del modelo tiene una fecha de corte fija. Todo
+                            lo ocurrido después no existe para él. Si necesitas respuestas sobre información reciente o
+                            interna, necesitas RAG (visto en el capítulo anterior).</p>
+                    </div>
+                    <div class="bg-slate-700 rounded-xl p-4">
+                        <div class="font-bold text-purple-300 mb-1 text-sm">🎯 Fine-tuning ≠ "enseñarle todo desde cero"</div>
+                        <p class="text-slate-300 text-xs">El modelo base ya tiene miles de millones de parámetros
+                            aprendidos. El fine-tuning ajusta ese conocimiento hacia un dominio o estilo específico — no
+                            lo reemplaza. Es más parecido a especializar a un profesional que a contratar a uno nuevo.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- RESUMEN DEL VIAJE -->
             <div class="glass-panel p-6 md:p-8 mb-10 border-t-4 border-t-slate-700 bg-slate-50">
                 <h3 class="text-xl font-bold text-slate-800 mb-1">El mapa que construiste en esta guía estratégica</h3>
@@ -2527,7 +2446,226 @@
             nav('cap1');
             renderTokens();
         };
-    </script>
-</body>
+        // ── LLM Architecture Diagram ──────────────────────────────────────
+        const llmSteps = [
+            {
+                emoji: '📝', label: 'Texto de Entrada', colorTitle: 'text-blue-400',
+                title: 'El Prompt: todo empieza aquí',
+                desc: 'El texto que el usuario escribe es el punto de partida. El modelo recibe toda esta entrada de una sola vez — puede ser una pregunta, una instrucción o cualquier secuencia de caracteres.',
+                detail: 'A diferencia de cómo los humanos leemos (de izquierda a derecha), el Transformer procesa la secuencia completa en paralelo. Cada posición puede "ver" a todas las demás desde el primer momento, lo que le permite captar relaciones de largo alcance de inmediato.',
+                key: 'El modelo no "lee" linealmente. Procesa toda la secuencia de entrada de forma simultánea.'
+            },
+            {
+                emoji: '🔤', label: 'Tokenización', colorTitle: 'text-cyan-400',
+                title: 'Tokenización: texto → números',
+                desc: 'El texto se divide en tokens — unidades que pueden ser palabras completas, partes de palabras o signos de puntuación. "inteligencia" puede dividirse en ["intelig", "encia"]. Cada token recibe un ID numérico único.',
+                detail: 'Un modelo como GPT-4 tiene un vocabulario de ~100,000 tokens. "Hola mundo" podría tokenizarse como [15339, 14502]. El modelo nunca ve letras: solo trabaja con estos IDs. Esta es la razón por la que los modelos fallan al contar letras: "strawberry" puede ser un solo token, sin información interna sobre sus caracteres.',
+                key: 'Los modelos no procesan letras ni palabras — trabajan exclusivamente con IDs numéricos de tokens.'
+            },
+            {
+                emoji: '🗺️', label: 'Embeddings', colorTitle: 'text-emerald-400',
+                title: 'Embeddings: el significado en geometría',
+                desc: 'Cada token ID se convierte en un vector de alta dimensión (768–12,288 números) que captura su significado. Tokens con usos similares quedan cerca en ese espacio matemático. Se añade codificación posicional para que el modelo sepa el orden.',
+                detail: '"Rey" − "Hombre" + "Mujer" ≈ "Reina". Esta aritmética funciona porque el entrenamiento organizó el espacio vectorial según los contextos de uso. La codificación posicional resuelve un problema clave: el Transformer no tiene orden implícito como las redes recurrentes — hay que inyectarlo explícitamente.',
+                key: 'El significado semántico, las relaciones entre conceptos y el orden de la secuencia están codificados en geometría vectorial.'
+            },
+            {
+                emoji: '👁️', label: 'Self-Attention', colorTitle: 'text-purple-400',
+                title: 'Self-Attention: el mecanismo de contexto',
+                desc: 'Cada token "mira" a todos los demás y decide cuánto peso darle a cada uno. Al procesar "banco" en "fui al banco a pescar", el mecanismo pondera "pescar" más que "fui", desambiguando el significado.',
+                detail: 'Funciona con tres matrices: Query (Q), Key (K) y Value (V). Atención = softmax(Q·Kᵀ/√d)·V. Un transformer moderno tiene 32–96 cabezas de atención en paralelo, cada una especializándose en patrones distintos: sintaxis, correferencia, relaciones semánticas. Escala cuadráticamente con el contexto — de ahí que las ventanas largas sean costosas.',
+                key: 'Sin self-attention, "banco" siempre significaría lo mismo. Este mecanismo es lo que permite entender el contexto.'
+            },
+            {
+                emoji: '🧠', label: 'Red Feedforward', colorTitle: 'text-indigo-400',
+                title: 'Red Feedforward: la memoria factual',
+                desc: 'Después de la atención, cada token pasa por una red neuronal feedforward. Aquí se almacena el conocimiento factual: hechos, relaciones causales, datos del mundo. Es el componente más voluminoso en parámetros.',
+                detail: 'El bloque (self-attention + FFN) se apila 32–96 veces. Las primeras capas capturan sintaxis básica, las intermedias semántica, las últimas razonamiento abstracto. GPT-3 tiene 96 bloques. Entre cada bloque hay normalización de capas y conexiones residuales que estabilizan el entrenamiento a escala.',
+                key: 'Representa la mayor parte de los parámetros totales y almacena el conocimiento del mundo que el modelo adquirió durante el pre-entrenamiento.'
+            },
+            {
+                emoji: '🎲', label: 'Softmax', colorTitle: 'text-orange-400',
+                title: 'Softmax: la distribución de probabilidades',
+                desc: 'La capa final proyecta el vector resultante sobre todo el vocabulario y asigna a cada token una probabilidad. La suma de todas es exactamente 1. El modelo no elige siempre el token más probable.',
+                detail: 'La "temperatura" controla la aleatoriedad. Temperatura → 0: siempre el token más probable (predecible). Temperatura = 1: muestreo proporcional (creativo). Temperatura > 1: mayor aleatoriedad, mayor riesgo de incoherencia. Por esto el mismo prompt puede producir respuestas distintas en cada ejecución.',
+                key: 'El modelo no "elige" — muestrea según una distribución de probabilidad ajustada por temperatura.'
+            },
+            {
+                emoji: '↩️', label: 'Token Generado', colorTitle: 'text-emerald-400',
+                title: 'Bucle autorregresivo: token a token',
+                desc: 'El token generado se concatena al input y todo el proceso se repite desde cero. Cada token generado se convierte en contexto para predecir el siguiente. Así, de un token por vez, emerge el texto completo.',
+                detail: 'Para generar "La IA es útil": genera "La" → recalcula con [..., "La"] → genera "IA" → y así. Esto explica por qué los LLMs son lentos en textos largos y por qué una alucinación temprana se amplifica: un dato incorrecto generado se convierte en contexto para los tokens siguientes.',
+                key: 'No hay planificación previa del texto completo. Cada token se genera sin saber los que vendrán después.'
+            }
+        ];
 
+        let currentLLMStep = 0;
+
+        function openLLMDiagram() {
+            document.getElementById('llm-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            selectLLMStep(0);
+        }
+
+        function closeLLMDiagram() {
+            document.getElementById('llm-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function selectLLMStep(index) {
+            currentLLMStep = index;
+            const step = llmSteps[index];
+            for (let i = 0; i < llmSteps.length; i++) {
+                const el = document.getElementById('llm-s' + i);
+                if (el) el.classList.toggle('llm-step-active', i === index);
+            }
+            document.querySelectorAll('.llm-dot').forEach(function(el, i) {
+                el.classList.toggle('llm-dot-active', i === index);
+            });
+            document.getElementById('llm-step-counter').textContent = 'Paso ' + (index + 1) + ' de ' + llmSteps.length;
+            document.getElementById('llm-step-detail').innerHTML =
+                '<div class="max-w-3xl mx-auto">' +
+                    '<h3 class="font-bold text-lg mb-2 ' + step.colorTitle + '">' + step.emoji + ' ' + step.title + '</h3>' +
+                    '<p class="text-slate-300 text-sm mb-3 leading-relaxed">' + step.desc + '</p>' +
+                    '<p class="text-slate-400 text-xs mb-4 leading-relaxed">' + step.detail + '</p>' +
+                    '<div class="bg-slate-700 border-l-4 border-purple-500 rounded-r-lg px-4 py-2">' +
+                        '<span class="text-purple-300 font-bold text-xs">💡 Clave: </span>' +
+                        '<span class="text-slate-300 text-xs">' + step.key + '</span>' +
+                    '</div>' +
+                '</div>';
+            document.getElementById('llm-prev-btn').disabled = index === 0;
+            document.getElementById('llm-next-btn').disabled = index === llmSteps.length - 1;
+        }
+
+        function prevLLMStep() { if (currentLLMStep > 0) selectLLMStep(currentLLMStep - 1); }
+        function nextLLMStep() { if (currentLLMStep < llmSteps.length - 1) selectLLMStep(currentLLMStep + 1); }
+
+        document.addEventListener('keydown', function(e) {
+            const modal = document.getElementById('llm-modal');
+            if (modal.style.display === 'none' || modal.style.display === '') return;
+            if (e.key === 'Escape') closeLLMDiagram();
+            if (e.key === 'ArrowRight') nextLLMStep();
+            if (e.key === 'ArrowLeft') prevLLMStep();
+        });
+    </script>
+
+<!-- LLM Architecture Modal -->
+<div id="llm-modal" style="display:none" class="fixed inset-0 z-50 flex flex-col" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 bg-slate-950/95" onclick="closeLLMDiagram()"></div>
+    <div class="relative z-10 flex flex-col h-full">
+
+        <!-- Header -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-slate-700 bg-slate-900 flex-shrink-0">
+            <div>
+                <h2 class="text-white font-bold text-lg">🧠 Arquitectura de un LLM</h2>
+                <p class="text-slate-400 text-xs">Haz clic en cada componente para explorar su función</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <span id="llm-step-counter" class="text-slate-400 text-sm font-mono"></span>
+                <button onclick="closeLLMDiagram()" class="text-slate-400 hover:text-white text-2xl transition-colors leading-none px-2">✕</button>
+            </div>
+        </div>
+
+        <!-- Diagram area -->
+        <div class="flex-1 overflow-y-auto bg-slate-900 p-6 flex flex-col items-center justify-center gap-5">
+
+            <!-- Pipeline flow -->
+            <div class="flex flex-wrap items-center justify-center gap-2 w-full max-w-5xl">
+
+                <div onclick="selectLLMStep(0)" id="llm-s0"
+                    class="llm-step flex flex-col items-center gap-2 bg-blue-900 border-2 border-blue-500 rounded-xl p-4 w-28 text-center">
+                    <span class="text-3xl">📝</span>
+                    <span class="text-blue-200 text-xs font-bold leading-tight">Texto de Entrada</span>
+                </div>
+
+                <div class="llm-arrow">→</div>
+
+                <div onclick="selectLLMStep(1)" id="llm-s1"
+                    class="llm-step flex flex-col items-center gap-2 bg-cyan-900 border-2 border-cyan-500 rounded-xl p-4 w-28 text-center">
+                    <span class="text-3xl">🔤</span>
+                    <span class="text-cyan-200 text-xs font-bold leading-tight">Tokenización</span>
+                </div>
+
+                <div class="llm-arrow">→</div>
+
+                <div onclick="selectLLMStep(2)" id="llm-s2"
+                    class="llm-step flex flex-col items-center gap-2 bg-emerald-900 border-2 border-emerald-500 rounded-xl p-4 w-28 text-center">
+                    <span class="text-3xl">🗺️</span>
+                    <span class="text-emerald-200 text-xs font-bold leading-tight">Embeddings</span>
+                </div>
+
+                <div class="llm-arrow">→</div>
+
+                <!-- Transformer Block -->
+                <div class="border-2 border-dashed border-purple-500 rounded-2xl p-3 flex flex-col items-center gap-2">
+                    <span class="text-purple-400 text-xs font-bold uppercase tracking-widest">Transformer Block ×N</span>
+                    <div class="flex items-center gap-2">
+                        <div onclick="selectLLMStep(3)" id="llm-s3"
+                            class="llm-step flex flex-col items-center gap-2 bg-purple-900 border-2 border-purple-500 rounded-xl p-3 w-24 text-center">
+                            <span class="text-2xl">👁️</span>
+                            <span class="text-purple-200 text-xs font-bold leading-tight">Self-Attention</span>
+                        </div>
+                        <span class="text-slate-500 text-lg font-bold">+</span>
+                        <div onclick="selectLLMStep(4)" id="llm-s4"
+                            class="llm-step flex flex-col items-center gap-2 bg-indigo-900 border-2 border-indigo-500 rounded-xl p-3 w-24 text-center">
+                            <span class="text-2xl">🧠</span>
+                            <span class="text-indigo-200 text-xs font-bold leading-tight">Red Feedforward</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="llm-arrow">→</div>
+
+                <div onclick="selectLLMStep(5)" id="llm-s5"
+                    class="llm-step flex flex-col items-center gap-2 bg-orange-900 border-2 border-orange-500 rounded-xl p-4 w-28 text-center">
+                    <span class="text-3xl">🎲</span>
+                    <span class="text-orange-200 text-xs font-bold leading-tight">Softmax</span>
+                </div>
+
+                <div class="llm-arrow">→</div>
+
+                <div onclick="selectLLMStep(6)" id="llm-s6"
+                    class="llm-step flex flex-col items-center gap-2 bg-emerald-800 border-2 border-emerald-400 rounded-xl p-4 w-28 text-center">
+                    <span class="text-3xl">↩️</span>
+                    <span class="text-emerald-200 text-xs font-bold leading-tight">Token Generado</span>
+                </div>
+
+            </div>
+
+            <p class="text-slate-600 text-xs italic text-center">↺ El token generado se añade al input y el proceso se repite hasta completar la respuesta</p>
+
+            <!-- Dots -->
+            <div class="flex gap-3 items-center">
+                <span class="llm-dot" onclick="selectLLMStep(0)"></span>
+                <span class="llm-dot" onclick="selectLLMStep(1)"></span>
+                <span class="llm-dot" onclick="selectLLMStep(2)"></span>
+                <span class="llm-dot" onclick="selectLLMStep(3)"></span>
+                <span class="llm-dot" onclick="selectLLMStep(4)"></span>
+                <span class="llm-dot" onclick="selectLLMStep(5)"></span>
+                <span class="llm-dot" onclick="selectLLMStep(6)"></span>
+            </div>
+
+        </div>
+
+        <!-- Detail panel -->
+        <div id="llm-step-detail" class="border-t border-slate-700 bg-slate-800 px-6 py-5 flex-shrink-0 min-h-[180px] overflow-y-auto">
+        </div>
+
+        <!-- Footer nav -->
+        <div class="flex items-center justify-between px-6 py-3 bg-slate-900 border-t border-slate-800 flex-shrink-0">
+            <button id="llm-prev-btn" onclick="prevLLMStep()"
+                class="px-5 py-2 bg-slate-700 hover:bg-slate-600 disabled:opacity-30 disabled:cursor-not-allowed text-white rounded-lg text-sm font-medium transition-colors">
+                ← Anterior
+            </button>
+            <span class="text-slate-600 text-xs hidden md:block">Teclas ← → para navegar · ESC para cerrar</span>
+            <button id="llm-next-btn" onclick="nextLLMStep()"
+                class="px-5 py-2 bg-purple-700 hover:bg-purple-600 disabled:opacity-30 disabled:cursor-not-allowed text-white rounded-lg text-sm font-medium transition-colors">
+                Siguiente →
+            </button>
+        </div>
+
+    </div>
+</div>
+
+</body>
 </html>
