@@ -374,25 +374,23 @@
             </div>
         </section>
 
-        <!-- CAPÍTULO 2: Viaje en el Tiempo -->
+        <!-- CAPÍTULO 2: Historia y evolución -->
         <section id="cap2" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
             <header class="mb-10">
                 <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 2</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Historia y Evolución de la IA
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Historia y evolución de la IA
                 </h2>
 
                 <div class="guru-quote p-6 rounded-r-lg mb-6 text-lg text-slate-800 font-medium">
-                    "Conocer la historia de la IA no es un ejercicio académico: es la mejor herramienta para evaluar el
-                    momento actual con criterio. Cada ciclo de sobreexpectativas ha seguido el mismo patrón. Quien
-                    reconoce ese patrón puede tomar decisiones estratégicas en lugar de reaccionar al ruido del
-                    mercado."
+                    "Conocer la historia de la IA ayuda a leer las noticias de hoy con calma: el entusiasmo desmedido y
+                    las decepciones ya pasaron varias veces."
                 </div>
                 <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-2 text-sm text-amber-900">
-                    <b>El patrón que se repite:</b> Cada era de la IA sigue el mismo ciclo —
-                    <span class="font-semibold">sobreexpectativa</span> →
+                    <b>El patrón que se repite:</b> cada era de la IA sigue un ciclo parecido:
+                    <span class="font-semibold">entusiasmo</span> →
                     <span class="font-semibold">invierno</span> →
-                    <span class="font-semibold">revolución silenciosa</span>.
-                    Reconocer en qué fase estamos hoy es la primera habilidad de un líder tecnológico.
+                    <span class="font-semibold">avance silencioso</span>.
+                    Reconocer este patrón ayuda a no creer en todo lo que se promete, ni descartar todo lo que funciona.
                 </div>
             </header>
 
@@ -412,8 +410,8 @@
                         class="glass-panel p-8 shadow-md border-t-4 border-t-emerald-500 flex-1 flex flex-col justify-start min-h-[480px]">
                         <div class="text-center text-slate-400 mt-auto mb-auto">
                             <span class="text-5xl block mb-4">⏱</span>
-                            <p class="text-lg">Selecciona una era en la línea de tiempo para explorar su impacto
-                                histórico y extraer la lección estratégica.</p>
+                            <p class="text-lg">Elegí un hito de la línea de tiempo para ver qué pasó y qué nos deja
+                                para hoy.</p>
                         </div>
                     </div>
                 </div>
@@ -426,25 +424,33 @@
                     <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🔄</div>
                         <h4 class="font-bold text-emerald-900 mb-2 text-sm">El ciclo se repite</h4>
-                        <p class="text-sm text-slate-600">Hype → inversión masiva → promesas incumplidas → invierno →
-                            revolución silenciosa. Reconocer en qué fase estamos es la principal ventaja del ejecutivo
-                            informado.</p>
+                        <p class="text-sm text-slate-600">Entusiasmo → inversión masiva → promesas incumplidas →
+                            invierno → avance silencioso. Reconocerlo es una forma de leer las noticias con criterio.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🔬</div>
                         <h4 class="font-bold text-slate-800 mb-2 text-sm">La ciencia sobrevive al mercado</h4>
                         <p class="text-sm text-slate-600">Durante los inviernos de la IA, el capital se retiró pero los
-                            investigadores siguieron publicando. Las breakthroughs de hoy son la acumulación silenciosa
-                            de décadas de trabajo que nadie financiaba.</p>
+                            investigadores siguieron publicando. Los avances de hoy son la acumulación silenciosa de
+                            décadas de trabajo con poco financiamiento.</p>
                     </div>
                     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">📍</div>
                         <h4 class="font-bold text-amber-900 mb-2 text-sm">Estamos dentro de un ciclo</h4>
-                        <p class="text-sm text-slate-600">El ciclo actual comenzó alrededor de 2017 y sigue en curso.
-                            Identificar el momento correcto para invertir, adoptar o esperar no es intuición: es lectura
-                            de historia.</p>
+                        <p class="text-sm text-slate-600">El ciclo actual se aceleró con los Transformers (2017) y
+                            explotó con ChatGPT (2022). Todavía está en curso: conviene mirarlo con la perspectiva de los
+                            ciclos anteriores.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Puente → Cap 3 -->
+            <div class="mt-8 p-6 bg-slate-50 border-l-4 border-slate-400 rounded-r-xl">
+                <p class="text-slate-700 text-sm leading-relaxed">
+                    <strong>Ya sabés de dónde viene. Ahora, ¿cómo funciona por dentro?</strong> En el
+                    <button onclick="nav('cap3')" class="underline text-emerald-700 hover:text-emerald-600">siguiente
+                        capítulo</button> abrimos el cerebro de un modelo de lenguaje.
+                </p>
             </div>
         </section>
 
@@ -2222,111 +2228,102 @@
         }
 
         // === CAPÍTULO 2: LÍNEA DE TIEMPO ===
+        // Verificado al 20/10/2026. Ver documento de correcciones §11 (datos verificados).
         const timelineData = [
             {
-                era: "Precedentes Ficticios", year: "1726", title: "Gulliver's Travels",
-                desc: "En el 'Viaje a Laputa' (Libro III), Jonathan Swift imagina 'El Motor': un armazón de madera con fragmentos de palabras que, al girar, generaba oraciones al azar. Su intención era satirizar a la academia ciega que sustituye el pensamiento por el mecanismo.",
-                figures: "Jonathan Swift — satirista irlandés",
-                details: ["La máquina imaginaria se llamaba 'El Gran Motor de Laputa' y requería 40 colaboradores girando asas —ironía explícita sobre el trabajo colectivo sin pensamiento—", "El capítulo inspiró a Alan Turing, quien lo citó directamente en su paper de 1950 como precedente literario de la IA", "Swift anticipó el principio central de los LLMs: generar texto por combinación estadística de fragmentos, sin comprensión real del contenido"],
-                insight: "Swift describió, sin saberlo, el principio estadístico de los modelos de lenguaje modernos: la 'creatividad' como permutaciones de tokens ponderados. Trescientos años después, los LLMs calculan exactamente eso."
+                era: "Precedentes", year: "1726", title: "La máquina de Gulliver",
+                desc: "En 'Los viajes de Gulliver', Jonathan Swift describe una máquina que combina palabras al azar para escribir libros sobre cualquier tema.",
+                insight: "Una sátira que hoy suena familiar: generar texto combinando palabras. La diferencia es que los modelos actuales no combinan al azar, sino según probabilidades aprendidas."
             },
             {
-                era: "Máquinas Físicas", year: "1914", title: "El Ajedrecista",
-                desc: "El ingeniero español Leonardo Torres Quevedo presenta en Madrid un autómata electromecánico capaz de jugar finales de ajedrez (Rey y Torre contra Rey) de forma autónoma, usando electroimanes y sensores eléctricos. Sin software, sin microprocesadores.",
-                figures: "Leonardo Torres Quevedo — ingeniero y matemático español",
-                details: ["Construido con 260 piezas eléctricas y electromagnéticas, jugaba finales de ajedrez sin cometer errores, décadas antes de que existiera el software", "Torres Quevedo también inventó el primer control remoto (1903) y el primer funicular aéreo transoceánico —era el equivalente de un 'founder tecnológico' de principios de siglo", "La máquina demostró que la lógica formal podía implementarse en hardware puro: el razonamiento no requería mente biológica"],
-                insight: "Décadas antes de los ordenadores, Torres Quevedo demostró que la lógica formal podía automatizarse con pura física. La IA no empezó con el software: empezó con el hardware."
+                era: "Precedentes", year: "1914", title: "El Ajedrecista",
+                desc: "El ingeniero español Leonardo Torres Quevedo presenta un autómata electromecánico que juega un final de ajedrez (rey y torre contra rey).",
+                insight: "Automatizar decisiones con reglas es mucho más viejo que la computadora."
             },
             {
-                era: "Lenguaje", year: "1921", title: "Nace la palabra 'Robot'",
-                desc: "Karel Čapek estrena en Praga 'R.U.R.' (Rossum's Universal Robots). Introduce el término 'robot' —del checo 'robota', trabajo forzado— para describir seres artificiales creados para servir y que acaban rebelándose contra sus creadores.",
-                figures: "Karel Čapek — escritor y dramaturgo checo",
-                details: ["La obra era una crítica al capitalismo industrial y a la deshumanización del trabajo, no una predicción tecnológica literal", "Fue traducida a 30 idiomas y estrenada en Broadway en 1922, popularizando la narrativa de 'rebelión de las máquinas' que domina el imaginario colectivo hasta hoy", "El término 'robota' en checo significa literalmente servidumbre o trabajo forzado —la elección de esa palabra sesgó décadas de debate ético sobre la IA"],
-                insight: "El vocabulario moldea el imaginario colectivo. Llamar 'robota' (esclavitud) a las máquinas sembró décadas de narrativa sobre rebelión y amenaza que aún domina el debate público sobre IA."
+                era: "Fundamentos", year: "1943", title: "La neurona matemática",
+                desc: "Warren McCulloch y Walter Pitts publican un modelo matemático simplificado de cómo una neurona podría procesar información.",
+                insight: "La idea de base de las redes neuronales de hoy tiene más de 80 años."
             },
             {
-                era: "Lógica Formal", year: "1943", title: "La Primera Neurona Artificial",
-                desc: "Warren McCulloch (neurofisiólogo) y Walter Pitts (matemático) publican 'A Logical Calculus of Ideas Immanent in Nervous Activity': el primer modelo matemático de cómo una neurona biológica puede realizar operaciones lógicas. Es la base teórica de todas las redes neuronales.",
-                figures: "Warren McCulloch (44 años) y Walter Pitts (19 años) — MIT",
-                details: ["El paper tiene 18 páginas y fue escrito sin ordenadores ni simulaciones: pura matemática en papel. Pitts vivía en la calle cuando lo escribió", "Demostraron que una neurona artificial puede implementar cualquier función lógica: AND, OR, NOT —convirtiendo la biología en álgebra booleana", "La arquitectura esencial del Deep Learning moderno es una extensión directa de este modelo de 1943; la teoría se adelantó al hardware por cuatro décadas"],
-                insight: "La arquitectura esencial del Deep Learning actual se dibujó en papel hace más de 80 años. La teoría pura se adelantó a la computación por décadas; solo faltaban los datos y el hardware."
+                era: "Fundamentos", year: "1950", title: "El Test de Turing",
+                desc: "Alan Turing propone el 'juego de la imitación': si una máquina conversa de forma indistinguible de una persona, ¿podemos decir que piensa?",
+                insight: "Hoy los chatbots conversan con mucha fluidez. Turing nos deja una pregunta abierta: ¿conversar bien es lo mismo que entender?"
             },
             {
-                era: "Lógica Formal", year: "1950", title: "Test de Turing",
-                desc: "Alan Turing publica 'Computing Machinery and Intelligence', donde propone el 'Juego de la Imitación': si un juez humano no puede distinguir las respuestas de una máquina de las de un humano en una conversación escrita, la máquina puede considerarse inteligente.",
-                figures: "Alan Turing — matemático, padre de la computación moderna",
-                details: ["Turing predijo que para el año 2000, una máquina podría engañar al 30% de los jueces en una conversación de 5 minutos —predicción que tardó más de 60 años en cumplirse", "El 'Juego de la Imitación' original incluía un tercer jugador humano que también fingía ser del otro género —el test era sobre imitación, no sobre inteligencia real"],
-                insight: "Turing desplazó el debate filosófico ('¿puede pensar?') hacia uno pragmático ('¿actúa de forma indistinguible?'). En los negocios funciona igual: el ROI importa más que el mecanismo interno."
+                era: "Fundamentos", year: "1956", title: "Nace el nombre 'Inteligencia Artificial'",
+                desc: "John McCarthy y colegas organizan la conferencia de Dartmouth. El término 'Inteligencia Artificial' había aparecido en la propuesta del encuentro, en 1955.",
+                insight: "Llamarla 'inteligencia' generó expectativas enormes desde el primer día. Esa tensión entre lo que se promete y lo que se logra recorre toda la historia."
             },
             {
-                era: "Bautizo del Campo", year: "1955–1956", title: "La Conferencia de Dartmouth",
-                desc: "John McCarthy acuña el término 'Artificial Intelligence' en la propuesta escrita de 1955 para un proyecto de investigación de verano. La conferencia celebrada en Dartmouth College en 1956, con McCarthy, Minsky, Shannon y otros, funda el campo como disciplina académica.",
-                figures: "John McCarthy, Marvin Minsky, Claude Shannon, Nathaniel Rochester",
-                details: ["La propuesta original prometía resolver 'todos los problemas de la IA en un verano de 10 personas' —una de las predicciones más optimistas (e incorrectas) de la historia de la ciencia", "McCarthy rechazó conscientemente nombres alternativos como 'Automata Theory' o 'Complex Information Processing': quería algo que sonara ambicioso y generara financiación", "La elección del nombre 'Inteligencia Artificial' fue una apuesta de marketing que funcionó a corto plazo y creó expectativas imposibles a largo plazo"],
-                insight: "Nombrar algo 'Inteligencia Artificial' fue una apuesta de marketing audaz: generó expectativas inmensas y atrajo financiación, pero plantó también la semilla del primer gran desengaño cuando la realidad no cumplió las promesas."
+                era: "Fundamentos", year: "1958", title: "El Perceptrón",
+                desc: "Frank Rosenblatt presenta el perceptrón, una de las primeras redes neuronales capaces de aprender a partir de ejemplos.",
+                insight: "Primera ola de entusiasmo por las máquinas que aprenden. Los límites de esos primeros modelos llegaron poco después."
             },
             {
-                era: "Primera IA Conversacional", year: "1966", title: "ELIZA",
-                desc: "Joseph Weizenbaum crea en el MIT el programa ELIZA, capaz de simular una conversación en lenguaje natural imitando a un psicoterapeuta. El programa no 'entendía' nada: aplicaba reglas de sustitución de palabras. Aun así, muchos usuarios le atribuían comprensión y empatía reales.",
-                figures: "Joseph Weizenbaum — profesor e investigador del MIT",
-                details: ["Su script más famoso (DOCTOR) estaba escrito en menos de 200 líneas de código y no tenía ningún modelo del mundo ni del usuario", "Weizenbaum quedó horrorizado al ver que sus propios colegas y su secretaria confesaban problemas personales al programa como si fuera un terapeuta real; llamó a esto 'la ilusión más peligrosa de la informática'", "En 2022, ingenieros de Google afirmaron públicamente que el modelo LaMDA 'tenía sentimientos' — el Efecto ELIZA continúa vigente, ahora a escala corporativa"],
-                insight: "El 'Efecto ELIZA': los humanos proyectamos intención y emoción sobre sistemas que simplemente hacen coincidencia de patrones. Este sesgo cognitivo sigue siendo clave para entender por qué sobrevaloramos (y sobretememos) la IA hoy."
+                era: "Fundamentos", year: "1966", title: "ELIZA y el efecto ELIZA",
+                desc: "Joseph Weizenbaum crea ELIZA, un programa que imitaba a un terapeuta con reglas simples. Muchas personas sintieron que las entendía.",
+                insight: "Tendemos a atribuirles comprensión a las máquinas que hablan como nosotros. Sigue pasando hoy, con sistemas mucho más capaces."
             },
             {
-                era: "Inviernos", year: "1974–1993", title: "Los Inviernos de la IA",
-                desc: "El campo sufre dos colapsos de financiación. El primero (1974–1980) llega tras el informe Lighthill, que concluye que la IA no cumpliría sus promesas. El segundo (1987–1993) hunde los costosos '<span class=\"tt\" data-tt=\"sistemasexpertos\">Sistemas Expertos</span>'. Entre medias, en 1986, Rumelhart, Hinton y Williams popularizan <span class=\"tt\" data-tt=\"backpropagation\">Backpropagation</span>, el algoritmo que sobrevive ambos inviernos y resucita el campo.",
-                figures: "James Lighthill (informe crítico) · Hinton, Rumelhart & Williams (backpropagation, 1986)",
-                details: ["El informe Lighthill (1974) fue encargado por el gobierno británico y resultó en el corte total de fondos públicos para IA en el Reino Unido durante casi una década", "El mercado de Sistemas Expertos llegó a valer 400M$/año en 1988 y colapsó a casi cero en 18 meses: las empresas no podían mantener el coste de actualizar manualmente las bases de reglas", "La lección más valiosa: el progreso científico real (backpropagation, redes convolucionales) continuó en silencio durante los inviernos, financiado por universidades cuando el capital privado se retiró"],
-                insight: "El ciclo hype-desilusión no es nuevo: la IA lo ha recorrido dos veces antes del boom actual. La lección es doble: el progreso científico continúa aunque el mercado se retire, pero las promesas sin ROI real siempre terminan igual."
+                era: "Inviernos", year: "1974–1980", title: "El primer invierno",
+                desc: "Las promesas no se cumplen al ritmo anunciado y los gobiernos recortan el financiamiento de la investigación en IA.",
+                insight: "Cuando la expectativa supera mucho a la realidad, llega la decepción. La ciencia sigue, pero con menos recursos."
             },
             {
-                era: "Datos", year: "1997", title: "Deep Blue vence a Kasparov",
-                desc: "La supercomputadora Deep Blue (IBM) derrota al campeón mundial Garry Kasparov en un torneo oficial de seis partidas. Kasparov, que había ganado el enfrentamiento anterior en 1996, acusó a IBM de trampas. La empresa retiró la máquina sin aceptar la revancha.",
-                figures: "Garry Kasparov vs. Deep Blue — equipo de Feng-hsiung Hsu (IBM)",
-                details: ["Deep Blue evaluaba hasta 200 millones de posiciones por segundo usando fuerza bruta y reglas codificadas a mano por grandes maestros; Kasparov evaluaba unas 3 por segundo usando intuición", "El movimiento Bd6 de la partida 2 —que Kasparov atribuyó a 'inteligencia casi humana'— fue en realidad un error de software que eligió un movimiento aleatorio al no encontrar una solución clara", "IBM desmanteló la máquina y rechazó la revancha de Kasparov, quien lo consideró una falta de integridad científica. La victoria nunca fue replicada en condiciones abiertas"],
-                insight: "Deep Blue no 'entendía' el ajedrez: evaluaba hasta 200 millones de posiciones por segundo mediante fuerza bruta y reglas expertas codificadas a mano. La distinción entre 'calcular muy rápido' y 'razonar' importa más que el resultado."
+                era: "Inviernos", year: "1986", title: "La retropropagación",
+                desc: "Rumelhart, Hinton y Williams popularizan la retropropagación (<span class=\"tt\" data-tt=\"backpropagation\">backpropagation</span>), el método que permite entrenar redes neuronales de varias capas.",
+                insight: "La técnica central con la que se entrenan las redes neuronales actuales se difundió en medio de una época de escepticismo."
             },
             {
-                era: "Deep Learning", year: "2006", title: "El Renacimiento del Deep Learning",
-                desc: "Geoffrey Hinton publica técnicas para entrenar redes neuronales profundas de forma eficiente. Junto a Yann LeCun y Yoshua Bengio —futuros ganadores del Premio Turing en 2018—, rescatan el enfoque neural ignorado durante los inviernos, aprovechando la creciente disponibilidad de datos y la bajada de precio de las GPUs.",
-                figures: "Geoffrey Hinton, Yann LeCun, Yoshua Bengio — 'Los Padrinos del Deep Learning'",
-                details: ["Hinton publicó técnicas de 'pre-entrenamiento voraz por capas' que resolvían el problema del gradiente que desvanece en redes profundas —el obstáculo técnico que había bloqueado el campo por 20 años", "LeCun ya había aplicado redes convolucionales al reconocimiento de escritura bancaria en los años 90, pero sin adopción masiva por limitaciones de hardware y datos", "Los tres recibieron el Premio Turing (el 'Nobel de la informática') en 2018. La revolución que iniciaron en silencio en 2006 tardó seis años en hacerse visible para el mundo"],
-                insight: "La tercera revolución de la IA nació en silencio, en laboratorios académicos sin cobertura mediática ni inversión institucional. Seis años después, AlexNet lo cambió todo. Las transformaciones reales se gestan lejos del ruido."
+                era: "Inviernos", year: "1987–1993", title: "El segundo invierno",
+                desc: "Colapsa el mercado de los '<span class=\"tt\" data-tt=\"sistemasexpertos\">sistemas expertos</span>' (programas basados en reglas escritas a mano) y de las computadoras especializadas en IA.",
+                insight: "Los sistemas de reglas eran frágiles y caros de mantener. La lección abrió paso a sistemas que aprenden de los datos."
             },
             {
-                era: "Deep Learning", year: "2012", title: "El Momento AlexNet",
-                desc: "Una red neuronal profunda entrenada en GPUs aplasta a la competencia en el concurso ImageNet de reconocimiento visual, reduciendo el margen de error a la mitad. La fórmula: algoritmos de los años 80 + millones de imágenes etiquetadas + tarjetas gráficas de videojuegos reconvertidas en aceleradoras de IA.",
-                figures: "Alex Krizhevsky, Ilya Sutskever, Geoffrey Hinton — Universidad de Toronto",
-                details: ["AlexNet redujo el error de reconocimiento visual del 26% al 15% de golpe; el progreso previo en el campo era de décimas de punto porcentual por año — fue un salto sin precedentes", "La red tenía 60 millones de parámetros —hoy GPT-4 tiene estimados 1.8 billones, unas 30,000 veces más", "Después de la publicación, Google, Microsoft y Baidu hicieron ofertas simultáneas para comprar el equipo. Google ganó por ~44M$. Ilya Sutskever se convirtió luego en cofundador de OpenAI"],
-                insight: "El punto de inflexión del deep learning moderno — <span class=\"tt\" data-tt=\"alexnet\">AlexNet</span> demostró que GPUs + datos + redes profundas lo cambiaban todo. Fue el momento en que la academia se convirtió en industria."
+                era: "Hitos", year: "1997", title: "Deep Blue vence a Kasparov",
+                desc: "La computadora <span class=\"tt\" data-tt=\"deepblue\">Deep Blue</span>, de IBM, le gana un match a seis partidas al campeón mundial de ajedrez Garry Kasparov.",
+                insight: "Fuerza de cálculo enorme en un problema con reglas cerradas. Impresionante, pero muy lejos de una inteligencia general."
             },
             {
-                era: "Generativa", year: "2016", title: "AlphaGo derrota al mejor jugador de Go",
-                desc: "DeepMind presenta AlphaGo, que derrota a Lee Sedol —uno de los mejores jugadores de Go de la historia— en un torneo de cinco partidas. El Go tiene más combinaciones posibles que átomos en el universo observable; durante décadas se consideró imposible para la IA por requerir 'intuición'.",
-                figures: "Lee Sedol (9-dan) vs. AlphaGo — DeepMind (Demis Hassabis)",
-                details: ["El movimiento 37 de la partida 2 —catalogado por comentaristas humanos como 'error obvio' antes de entender su genialidad— no lo habría considerado ningún jugador profesional entre 10,000: fue razonamiento emergente real", "Lee Sedol lloró durante y después de las partidas. Dijo que sintió 'que jugaba contra algo que no es humano'. Se retiró del Go profesional en 2019, citando a la IA como razón", "AlphaGo Zero (2017) aprendió sin ningún dato de partidas humanas, solo jugando contra sí mismo, y derrotó a la versión que venció a Sedol por 100-0 en dos días"],
-                insight: "A diferencia de <span class=\"tt\" data-tt=\"deepblue\">Deep Blue</span>, <span class=\"tt\" data-tt=\"alphago\">AlphaGo</span> no usó fuerza bruta: aprendió jugando contra sí mismo (Aprendizaje por Refuerzo) e inventó movimientos que ningún maestro humano había considerado. Era la primera señal de razonamiento emergente."
+                era: "Deep Learning", year: "2012", title: "El momento AlexNet",
+                desc: "Una red neuronal profunda (<span class=\"tt\" data-tt=\"alexnet\">AlexNet</span>) entrenada con GPUs gana por amplio margen una competencia de reconocimiento de imágenes (ImageNet).",
+                insight: "Ideas viejas + muchos datos + GPUs = el inicio de la revolución actual."
             },
             {
-                era: "Generativa", year: "2017", title: "La Arquitectura Transformer",
-                desc: "El equipo de Google Brain publica 'Attention Is All You Need'. El mecanismo de 'Atención' permite a la red procesar texto en paralelo, relacionando cualquier palabra con cualquier otra en la frase al mismo tiempo, sin importar la distancia entre ellas. Elimina las limitaciones de los modelos secuenciales anteriores.",
-                figures: "Vaswani, Shazeer, Parmar et al. — Google Brain (8 autores originales)",
-                details: ["El paper fue rechazado inicialmente por revisores que lo consideraban 'demasiado simple' — la elegancia de la solución jugó en su contra antes de jugar a su favor", "Los 8 autores originales han fundado o cofundado posteriormente la mayoría de las startups de IA más influyentes: Adept, Cohere, Character.AI, entre otras", "El mecanismo de Atención resuelve el 'problema del olvido de largo plazo' que tenían las redes recurrentes (LSTM, GRU): ahora cualquier token puede atender directamente a cualquier otro, sin importar la distancia"],
-                insight: "El motor de combustión moderno de la IA. Habilitó el entrenamiento a escalas de datos y parámetros antes imposibles. Todos los modelos generativos actuales —de texto, imagen, audio y video— son descendientes directos de este artículo."
+                era: "Deep Learning", year: "2016", title: "AlphaGo",
+                desc: "<span class=\"tt\" data-tt=\"alphago\">AlphaGo</span>, de DeepMind, vence al campeón Lee Sedol en Go, un juego considerado mucho más difícil de dominar que el ajedrez para una computadora.",
+                insight: "La combinación de redes neuronales y aprendizaje por refuerzo logró algo que se creía a décadas de distancia."
             },
             {
-                era: "Generativa", year: "2022", title: "La IA llega al Gran Público",
-                desc: "Los modelos de lenguaje de gran escala se democratizan: cualquier persona puede conversar con una IA en lenguaje natural sin conocimientos técnicos. La adopción alcanza 100 millones de usuarios en 60 días, superando la velocidad de plataformas como Instagram o TikTok. El empleado de oficina promedio tiene por primera vez acceso directo a la tecnología.",
-                figures: "Sam Altman (OpenAI) — Microsoft, Google y Meta respondieron en semanas",
-                details: ["100 millones de usuarios en 60 días: Instagram tardó 2.5 años, TikTok 9 meses. Ninguna tecnología en la historia alcanzó esa velocidad de adopción", "El lanzamiento fue considerado por la propia OpenAI como un 'test beta' interno — el impacto superó todas sus proyecciones en órdenes de magnitud", "Satya Nadella (Microsoft) anunció la integración en productos de Office en menos de 3 meses —el ciclo de decisión corporativa más rápido en la historia reciente de una compañía de 2 billones de dólares"],
-                insight: "El ciclo se repite: sobreexpectativa masiva, expectativas desproporcionadas y cobertura mediática exagerada. Pero esta vez el producto funciona en el escritorio de cualquier empleado. La historia enseña a distinguir el ruido del cambio estructural real."
+                era: "Generativa", year: "2017", title: "El Transformer",
+                desc: "Investigadores de Google publican 'Attention Is All You Need'. Proponen una arquitectura que procesa todas las palabras de un texto a la vez, en lugar de una por una.",
+                insight: "Procesar en paralelo permitió entrenar modelos muchísimo más grandes. Es el motor de todos los modelos de lenguaje actuales."
             },
             {
-                era: "Agéntica", year: "2024–2026", title: "La Era de los Agentes Autónomos",
-                desc: "Superada la euforia del texto, la industria pivotea hacia Agentes: sistemas de IA capaces de usar herramientas externas (búsqueda web, código, APIs empresariales), mantener memoria entre sesiones, planificar pasos encadenados y ejecutar tareas completas con mínima supervisión humana.",
-                figures: "Anthropic (Claude), OpenAI (GPT-4o), Google (Gemini), Meta (Llama) — competencia simultánea",
-                details: ["Los agentes pueden encadenar decenas de pasos, usar herramientas externas (navegadores, bases de datos, APIs), detectar sus propios errores y corregir el rumbo sin intervención humana", "Las primeras demos de agentes multi-paso mostraron tasas de error del 30-50% en tareas complejas: el reto actual no es la capacidad, es la fiabilidad y la gobernanza", "El mercado de software 'agéntico' se proyecta en 47 mil millones de dólares para 2030 (Gartner, 2024) — aún estamos en los primeros 18 meses de esta era"],
-                insight: "La IA dejó de ser una herramienta pasiva a la que se le hacen preguntas para convertirse en un motor que ejecuta flujos de trabajo completos. El debate ya no es de capacidad, sino de gobernanza: ¿quién supervisa? ¿quién rinde cuentas cuando el agente se equivoca?"
+                era: "Generativa", year: "2018–2020", title: "De GPT-1 a GPT-3",
+                desc: "OpenAI publica GPT-1 (2018), GPT-2 (2019) y GPT-3 (2020, 175.000 millones de parámetros). Google publica BERT (2018).",
+                insight: "Al aumentar el tamaño, los modelos empezaron a hacer tareas para las que no habían sido entrenados específicamente."
+            },
+            {
+                era: "Explosión", year: "Nov. 2022", title: "ChatGPT",
+                desc: "OpenAI lanza ChatGPT el 30 de noviembre de 2022. Según una estimación de UBS, llega a 100 millones de usuarios mensuales en unos dos meses.",
+                insight: "La tecnología ya existía; lo nuevo fue ponerla en una interfaz de chat que cualquiera podía usar. A partir de acá, la IA se volvió masiva."
+            },
+            {
+                era: "Explosión", year: "2023", title: "La carrera se acelera",
+                desc: "OpenAI lanza GPT-4 (marzo); Anthropic lanza Claude (marzo); Meta publica Llama, un modelo de pesos abiertos (febrero); Google presenta Gemini (diciembre).",
+                insight: "Varios competidores, modelos que aceptan imágenes, y modelos abiertos que cualquiera puede descargar."
+            },
+            {
+                era: "Explosión", year: "2024", title: "Razonamiento, Nobel y regulación",
+                desc: "Entra en vigor la Ley de IA de la Unión Europea (agosto). OpenAI presenta o1, un modelo que 'piensa' antes de responder (septiembre). El Nobel de Física premia a Hopfield y Hinton, y el de Química a Hassabis y Jumper (con Baker), por trabajos de IA (octubre). Anthropic publica el Model Context Protocol (noviembre).",
+                insight: "La IA pasa de responder rápido a razonar más tiempo, recibe el máximo reconocimiento científico y empieza a regularse."
+            },
+            {
+                era: "Agentes", year: "2025–2026", title: "De responder a hacer",
+                desc: "DeepSeek publica un modelo de razonamiento abierto de bajo costo (enero 2025). Se masifican los agentes: sistemas que usan herramientas, operan computadoras y completan tareas de varios pasos. Llegan los primeros grandes fallos judiciales y acuerdos por derechos de autor.",
+                insight: "La IA deja de ser solo un chat al que se le pregunta. Más capacidad de acción significa también más necesidad de control humano."
             }
         ];
 
@@ -2336,7 +2333,7 @@
                 const li = document.createElement('li');
                 li.innerHTML = `
                     <button class="w-full text-left p-4 hover:bg-slate-50 transition-colors flex items-center gap-4 group" onclick="selectTimeline(${index}, this)">
-                        <span class="font-black text-slate-800 w-16 text-right group-hover:text-emerald-600 transition-colors">${item.year}</span>
+                        <span class="font-black text-slate-800 w-24 shrink-0 text-right text-sm md:text-base group-hover:text-emerald-600 transition-colors">${item.year}</span>
                         <span class="text-slate-600 font-medium truncate text-sm md:text-base">${item.title}</span>
                     </button>`;
                 list.appendChild(li);
@@ -2357,7 +2354,7 @@
                 <p class="text-base text-slate-700 leading-relaxed mb-5">${item.desc}</p>
                 ${detailBullets ? `<ul class="space-y-2 mb-5">${detailBullets}</ul>` : ''}
                 <div class="bg-slate-50 p-5 rounded-lg border border-slate-200 border-l-4 border-l-slate-700 shadow-sm">
-                    <strong class="text-slate-900 block mb-2 text-sm uppercase tracking-wider">💡 Lección Estratégica</strong>
+                    <strong class="text-slate-900 block mb-2 text-sm uppercase tracking-wider">💡 Lo que nos deja</strong>
                     <span class="text-slate-600 text-sm font-medium leading-relaxed">${item.insight}</span>
                 </div>`;
         }
