@@ -2004,165 +2004,172 @@
             </div>
         </section>
 
-        <!-- CAPÍTULO 4: De Hablar a Actuar -->
+        <!-- CAPÍTULO 6: Usarla bien (id cap4) -->
         <section id="cap4" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
             <header class="mb-10">
-                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 4</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Arquitecturas de Implementación
-                </h2>
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 6</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Usarla bien: RAG, skills y
+                    agentes</h2>
 
                 <div class="guru-quote p-6 rounded-r-lg mb-8 text-lg text-slate-800 font-medium">
-                    "Un modelo de IA general sabe mucho del mundo, pero nada de tu empresa, tus datos ni lo que ocurrió
-                    ayer. Conectarlo a tu contexto específico —y darle las herramientas adecuadas para operar— es la
-                    diferencia entre una demo impresionante y un sistema que genera valor real."
+                    "Un modelo sabe mucho del mundo, pero nada de tu trabajo, tus documentos ni lo que pasó ayer. Darle
+                    el contexto correcto —y las herramientas justas— es la diferencia entre una respuesta genérica y una
+                    que de verdad sirve."
                 </div>
             </header>
 
-            <!-- Panel: ¿Qué puede hacer tu organización? -->
+            <!-- Usar / Ajustar / Entrenar -->
             <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-8 shadow-sm">
-                <h3 class="text-xl font-bold text-slate-900 mb-1">¿Qué puede realmente hacer tu organización con la IA?
+                <h3 class="text-xl font-bold text-slate-900 mb-1">Usar, ajustar o entrenar: ¿de qué estamos hablando?
                 </h3>
                 <p class="text-slate-500 text-sm mb-6">No todas las formas de trabajar con IA requieren los mismos
-                    recursos ni producen los mismos resultados. Existen tres niveles de relación con la tecnología,
-                    con implicaciones muy distintas para cualquier organización.</p>
+                    recursos. Cuando alguien dice "entrenar un modelo", conviene saber a cuál de estos tres niveles se
+                    refiere.</p>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-sm border-collapse">
+                    <table class="w-full text-sm border-collapse min-w-[640px]">
                         <thead>
                             <tr class="bg-slate-800 text-white">
                                 <th class="text-left p-3 rounded-tl-lg">Nivel</th>
                                 <th class="text-left p-3">¿Qué implica?</th>
                                 <th class="text-left p-3">¿Quién lo hace?</th>
-                                <th class="text-left p-3 rounded-tr-lg">Coste / Requisito</th>
+                                <th class="text-left p-3 rounded-tr-lg">Costo / requisito</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-100">
+                        <tbody class="divide-y divide-slate-100 align-top">
                             <tr class="bg-emerald-50">
                                 <td class="p-3 font-bold text-emerald-800">🟢 Usar</td>
-                                <td class="p-3 text-slate-700">Acceder a un modelo ya entrenado vía <span class="tt" data-tt="api">API</span>, interfaz web o
-                                    herramienta integrada (ChatGPT, Copilot, Claude…)</td>
-                                <td class="p-3 text-slate-700">Cualquier empresa o persona, sin conocimientos técnicos
+                                <td class="p-3 text-slate-700">Usar un modelo ya entrenado. <b>Con una app</b> (ChatGPT,
+                                    Claude, Copilot…) o <b>por <span class="tt" data-tt="api">API</span></b>, desde otro
+                                    programa.</td>
+                                <td class="p-3 text-slate-700">Una app: cualquier persona. La API: requiere programar.
                                 </td>
-                                <td class="p-3 text-slate-700">Desde $0 (planes gratuitos) hasta suscripciones
-                                    empresariales</td>
+                                <td class="p-3 text-slate-700">Desde gratis hasta suscripciones; por API, se paga por
+                                    uso.</td>
                             </tr>
                             <tr class="bg-amber-50">
-                                <td class="p-3 font-bold text-amber-800">🟡 Ajustar (Fine-tuning)</td>
-                                <td class="p-3 text-slate-700">Reentrenar parcialmente un modelo base con ejemplos
-                                    específicos para cambiar su comportamiento o estilo. <strong>No es subir documentos
-                                        ni darle contexto</strong> — eso es RAG (nivel Usar). Requiere preparar datasets
-                                    estructurados, infraestructura de cómputo y desarrollo técnico especializado.</td>
-                                <td class="p-3 text-slate-700">Equipos de ingeniería de ML con experiencia específica.
-                                    La mayoría de empresas <em>no tiene</em> esta capacidad internamente.</td>
-                                <td class="p-3 text-slate-700">Miles a decenas de miles de dólares, semanas de trabajo,
-                                    infraestructura cloud especializada</td>
+                                <td class="p-3 font-bold text-amber-800">🟡 Ajustar (<span class="tt"
+                                        data-tt="finetuning">fine-tuning</span>)</td>
+                                <td class="p-3 text-slate-700">Reentrenar parcialmente un modelo con ejemplos propios
+                                    para cambiar su comportamiento o estilo. <strong>No es subir documentos ni darle
+                                        contexto</strong>: eso es usar (con RAG o un Proyecto). Requiere datos
+                                    preparados, infraestructura y desarrollo técnico especializado.</td>
+                                <td class="p-3 text-slate-700">Equipos técnicos con experiencia específica. La mayoría
+                                    de las organizaciones <em>no tiene</em> esta capacidad internamente.</td>
+                                <td class="p-3 text-slate-700">Estimación: miles a decenas de miles de USD, semanas de
+                                    trabajo.</td>
                             </tr>
                             <tr class="bg-red-50">
                                 <td class="p-3 font-bold text-red-800">🔴 Entrenar desde cero</td>
-                                <td class="p-3 text-slate-700">Construir un modelo fundacional propio con billones de
-                                    parámetros, desde datos crudos hasta producción</td>
+                                <td class="p-3 text-slate-700">Construir un modelo fundacional propio, desde los datos
+                                    crudos hasta el producto.</td>
                                 <td class="p-3 text-slate-700">Solo grandes laboratorios: OpenAI, Anthropic, Google,
-                                    Meta, Mistral</td>
-                                <td class="p-3 text-slate-700">Decenas a cientos de millones de dólares, miles de GPUs,
-                                    años de trabajo</td>
+                                    Meta, Mistral, DeepSeek, Alibaba (Qwen), xAI.</td>
+                                <td class="p-3 text-slate-700">Decenas a cientos de millones de USD (estimaciones
+                                    públicas; los laboratorios no publican cifras), miles de GPUs.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="mt-5 p-4 bg-slate-50 border-l-4 border-slate-400 rounded-r-lg text-sm text-slate-700">
-                    <strong>Nota práctica:</strong> Cuando alguien proponga "entrenar tu propio modelo", es necesario
-                    clarificar a qué nivel se refiere. En el 99% de los casos empresariales, la respuesta correcta es
-                    <em>usar</em> — no ajustar ni construir desde cero. La ventaja competitiva no está en tener un
-                    modelo propio, sino en aplicar los modelos existentes a tus datos y procesos mejor que la
-                    competencia.
+                    <strong>Nota práctica:</strong> en la gran mayoría de los casos, la respuesta correcta es
+                    <em>usar</em> bien un modelo existente: darle el contexto, las instrucciones y las herramientas
+                    adecuadas. Eso es lo que vemos en este capítulo.
                 </div>
             </div>
 
-            <!-- BLOQUE 1: El problema de partida -->
+            <!-- El problema de partida -->
             <div class="glass-panel p-6 md:p-8 mb-8 bg-slate-50 border-t-4 border-t-slate-400">
                 <h3 class="text-xl font-bold text-slate-900 mb-2">El problema que queremos resolver</h3>
-                <p class="text-slate-500 text-sm mb-6">Antes de ver las soluciones, hay que entender con precisión qué
-                    le falta a un modelo base —por brillante que sea.</p>
+                <p class="text-slate-500 text-sm mb-6">Antes de ver las soluciones, hay que entender qué le falta a un
+                    modelo, por brillante que sea.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-white border border-red-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">📅</div>
                         <div class="font-bold text-red-800 mb-1 text-sm">Conocimiento congelado</div>
                         <p class="text-xs text-slate-600">El modelo fue entrenado hasta cierta fecha. No sabe qué pasó
-                            después, qué cambió en tu empresa, ni cuáles son tus precios de hoy. Si le preguntas,
+                            después, qué cambió en tu trabajo ni cuáles son los precios de hoy. Si le preguntás,
                             improvisa.</p>
                     </div>
                     <div class="bg-white border border-red-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🏢</div>
-                        <div class="font-bold text-red-800 mb-1 text-sm">Ciego a tu organización</div>
-                        <p class="text-xs text-slate-600">No conoce tus contratos, tus manuales internos, tus políticas
-                            de RRHH ni tu CRM. Sabe del mundo; no sabe de tu empresa.</p>
+                        <div class="font-bold text-red-800 mb-1 text-sm">No conoce lo tuyo</div>
+                        <p class="text-xs text-slate-600">No conoce tus documentos, tus manuales internos, tus
+                            procedimientos ni tus clientes. Sabe del mundo; no sabe de tu trabajo.</p>
                     </div>
                     <div class="bg-white border border-red-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🗣️</div>
-                        <div class="font-bold text-red-800 mb-1 text-sm">Solo responde, no actúa</div>
-                        <p class="text-xs text-slate-600">Un modelo base solo genera texto. No puede buscar en internet,
-                            consultar una base de datos, enviar un correo ni ejecutar ninguna acción en el mundo real.
-                        </p>
+                        <div class="font-bold text-red-800 mb-1 text-sm">Solo genera texto</div>
+                        <p class="text-xs text-slate-600">El modelo, por sí solo, solo genera texto. No busca en
+                            internet, no consulta bases de datos ni envía mails. <b>Las apps le agregan esas
+                                capacidades con herramientas</b> (Capítulo 4).</p>
                     </div>
                 </div>
                 <div class="mt-5 bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-900">
-                    <strong>La arquitectura correcta resuelve uno o todos estos problemas.</strong> RAG ataca el primero
-                    y el segundo. Los Agentes atacan los tres. La elección depende del tipo de tarea.
+                    <strong>Cada solución ataca uno o varios de estos problemas.</strong> RAG le da información. Las
+                    skills le dan procedimientos. Los agentes le dan autonomía para actuar. La elección depende de la
+                    tarea.
                 </div>
             </div>
 
-            <!-- BLOQUE 2: El mapa de los tres niveles -->
+            <!-- Los tres niveles -->
             <div class="mb-8">
                 <h3 class="text-xl font-bold text-slate-900 mb-1">Los tres niveles de potencia</h3>
-                <p class="text-slate-500 text-sm mb-5">Cada nivel resuelve un problema mayor, pero añade complejidad y
-                    requiere más supervisión.</p>
+                <p class="text-slate-500 text-sm mb-5">Cada nivel resuelve un problema mayor, pero suma complejidad y
+                    pide más supervisión.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                    <div class="bg-slate-100 rounded-xl p-5 border border-slate-300">
+                    <div class="bg-slate-100 rounded-xl p-5 border border-slate-300 flex flex-col">
                         <div class="text-3xl mb-2">🤖</div>
-                        <div class="font-bold text-slate-800 mb-2">Nivel 1 — Modelo base</div>
-                        <div class="text-xs text-slate-500 mb-3">Conocimiento general del mundo · Sin datos propios ·
-                            Puede alucinar sobre hechos específicos</div>
-                        <div class="text-xs bg-slate-200 text-slate-600 rounded-lg px-3 py-2">Útil para: redacción,
-                            resúmenes, brainstorming, traducción</div>
+                        <div class="font-bold text-slate-800 mb-2">Nivel 1 — Solo el modelo</div>
+                        <div class="text-xs text-slate-500 mb-3">Conocimiento general del mundo · Sin datos tuyos ·
+                            Puede inventar sobre hechos específicos</div>
+                        <div class="text-xs bg-slate-200 text-slate-600 rounded-lg px-3 py-2 mb-2">Útil para:
+                            redacción, resúmenes, ideas, traducción</div>
+                        <div class="text-xs text-slate-700 mt-auto"><b>En tu app:</b> un chat sin archivos ni
+                            herramientas.</div>
                     </div>
-                    <div class="bg-blue-50 rounded-xl p-5 border border-blue-300">
+                    <div class="bg-blue-50 rounded-xl p-5 border border-blue-300 flex flex-col">
                         <div class="text-3xl mb-2">🤖 + 📂</div>
-                        <div class="font-bold text-blue-800 mb-2">Nivel 2 — Modelo + RAG</div>
-                        <div class="text-xs text-blue-700 mb-3">Accede a tus documentos · Respuestas precisas y citadas
-                            · Errores mínimos · Fácil de auditar</div>
-                        <div class="text-xs bg-blue-100 text-blue-700 rounded-lg px-3 py-2">Útil para: asistentes
-                            internos, Q&A sobre documentos, soporte al cliente</div>
+                        <div class="font-bold text-blue-800 mb-2">Nivel 2 — Modelo + contexto (RAG)</div>
+                        <div class="text-xs text-blue-700 mb-3">Accede a tus documentos · Respuestas con fuente ·
+                            Menos errores · Más fácil de verificar</div>
+                        <div class="text-xs bg-blue-100 text-blue-700 rounded-lg px-3 py-2 mb-2">Útil para:
+                            preguntas sobre documentos, asistentes internos, soporte</div>
+                        <div class="text-xs text-slate-700 mt-auto"><b>En tu app:</b> un Proyecto con documentos;
+                            adjuntar archivos; búsqueda web.</div>
                     </div>
-                    <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-300">
+                    <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-300 flex flex-col">
                         <div class="text-3xl mb-2">🤖 + 🔧</div>
                         <div class="font-bold text-emerald-800 mb-2">Nivel 3 — Agente de IA</div>
                         <div class="text-xs text-emerald-700 mb-3">Razona · Planifica · Usa herramientas · Ejecuta
                             acciones · Requiere supervisión activa</div>
-                        <div class="text-xs bg-emerald-100 text-emerald-700 rounded-lg px-3 py-2">Útil para: flujos de
-                            trabajo completos, automatización de procesos, análisis end-to-end</div>
+                        <div class="text-xs bg-emerald-100 text-emerald-700 rounded-lg px-3 py-2 mb-2">Útil para:
+                            tareas de varios pasos, automatizar procesos</div>
+                        <div class="text-xs text-slate-700 mt-auto"><b>En tu app:</b> herramientas y conectores que
+                            pueden ejecutar varios pasos (crear archivos, consultar servicios, operar en tu nombre).
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- BLOQUE 3: RAG en profundidad -->
+            <!-- RAG -->
             <div class="glass-panel overflow-hidden mb-8">
                 <div class="bg-slate-800 text-white p-6">
-                    <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Nivel 2</div>
-                    <h3 class="text-2xl font-bold">RAG — Generación con Recuperación</h3>
+                    <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Nivel 2 · Información
+                    </div>
+                    <h3 class="text-2xl font-bold"><span class="tt" data-tt="rag">RAG</span> — Generación con
+                        recuperación</h3>
                     <p class="text-slate-300 text-sm mt-1">Retrieval-Augmented Generation</p>
                 </div>
                 <div class="p-6 md:p-8 bg-white">
-
-                    <!-- Analogía -->
                     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-7">
-                        <div class="font-bold text-blue-800 mb-2">📚 La Analogía del Consultor con Dossier</div>
-                        <p class="text-sm text-slate-700">Imagina que contratas al mejor consultor del mundo, pero le
-                            pides que responda una pregunta sobre tu empresa <em>sin haberla pisado nunca</em>.
-                            Improvisará basándose en su experiencia general. Ahora imagina que, antes de la reunión, le
-                            entregas una carpeta con tus documentos clave y le dices: "Responde solo con lo que hay
-                            aquí". De repente, sus respuestas son precisas, verificables y citadas. Eso es RAG.</p>
+                        <div class="font-bold text-blue-800 mb-2">📚 La analogía del consultor con carpeta</div>
+                        <p class="text-sm text-slate-700">Imaginá que le pedís al mejor consultor del mundo que responda
+                            una pregunta sobre tu trabajo <em>sin conocerlo</em>. Va a improvisar con su experiencia
+                            general. Ahora imaginá que antes le das una carpeta con tus documentos clave y le decís:
+                            "Respondé solo con lo que hay acá". De repente, sus respuestas son precisas, verificables y
+                            con fuente. Eso es RAG.</p>
                     </div>
 
-                    <!-- Cómo funciona -->
                     <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-widest">Cómo funciona en 3 pasos
                     </h4>
                     <div class="space-y-4 relative border-l-2 border-blue-300 ml-3 text-sm mb-7">
@@ -2171,100 +2178,327 @@
                                 class="absolute w-6 h-6 bg-blue-600 text-white rounded-full -left-[13px] top-0 border-2 border-white flex items-center justify-center text-xs font-bold">1</span>
                             <strong class="text-slate-800 block mb-1">Indexación: convertir documentos en
                                 vectores</strong>
-                            <p class="text-slate-500">Todos tus documentos —manuales, contratos, wikis, correos— se
-                                fragmentan y cada fragmento se convierte en un vector numérico (embedding) que captura
-                                su significado matemático. Estos vectores se guardan en una base de datos especializada.
-                            </p>
+                            <p class="text-slate-500">Los documentos (manuales, contratos, wikis, correos) se parten en
+                                fragmentos y cada fragmento se convierte en un vector numérico (<span class="tt"
+                                    data-tt="embedding">embedding</span>) que captura su significado. Esos vectores se
+                                guardan en una base de datos especializada.</p>
                         </div>
                         <div class="pl-6 relative">
                             <span
                                 class="absolute w-6 h-6 bg-blue-600 text-white rounded-full -left-[13px] top-0 border-2 border-white flex items-center justify-center text-xs font-bold">2</span>
-                            <strong class="text-slate-800 block mb-1">Recuperación: búsqueda por similitud
-                                semántica</strong>
-                            <p class="text-slate-500">Cuando un usuario hace una pregunta, esta también se convierte en
-                                un vector. El sistema busca matemáticamente los fragmentos de documentos más similares
-                                al vector de la pregunta —no por palabras clave, sino por significado. Recupera los
-                                párrafos más relevantes.</p>
+                            <strong class="text-slate-800 block mb-1">Recuperación: búsqueda por significado</strong>
+                            <p class="text-slate-500">Cuando hacés una pregunta, también se convierte en un vector. El
+                                sistema busca los fragmentos más parecidos, no por palabras clave sino por significado, y
+                                recupera los más relevantes.</p>
                         </div>
                         <div class="pl-6 relative">
                             <span
                                 class="absolute w-6 h-6 bg-blue-600 text-white rounded-full -left-[13px] top-0 border-2 border-white flex items-center justify-center text-xs font-bold">3</span>
-                            <strong class="text-slate-800 block mb-1">Generación restringida: responde solo con ese
-                                contexto</strong>
-                            <p class="text-slate-500">El modelo recibe la pregunta del usuario <em>más</em> los párrafos
-                                recuperados, y la instrucción explícita: "Responde basándote estrictamente en este
-                                contexto. Si la respuesta no está aquí, dilo." Las alucinaciones colapsan porque el
-                                modelo ya no necesita improvisar.</p>
+                            <strong class="text-slate-800 block mb-1">Generación con ese contexto</strong>
+                            <p class="text-slate-500">El modelo recibe tu pregunta <em>más</em> los fragmentos
+                                recuperados, con una instrucción del tipo: "Respondé basándote en este contexto. Si la
+                                respuesta no está acá, decilo." Las alucinaciones <b>se reducen mucho</b>, pero no
+                                desaparecen: el modelo todavía puede interpretar mal un fragmento, o la búsqueda puede
+                                traer el fragmento equivocado. Por eso es clave que cite la fuente y que puedas
+                                verificarla.</p>
                         </div>
                     </div>
 
-                    <!-- Ejemplo antes / después -->
-                    <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-widest">Antes y después: un
-                        ejemplo real</h4>
+                    <h4 class="font-bold text-slate-800 mb-1 text-sm uppercase tracking-widest">Antes y después</h4>
+                    <p class="mb-4"><span
+                            class="inline-block bg-slate-200 text-slate-700 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded">Escenario
+                            ilustrativo</span></p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-7">
                         <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm">
                             <div class="font-bold text-red-700 mb-2">❌ Sin RAG</div>
-                            <div
-                                class="bg-white rounded-lg p-3 mb-2 font-mono text-xs text-slate-600 border border-red-100">
-                                <div class="text-slate-400 mb-1">Empleado pregunta:</div>
-                                <div>"¿Cuántos días de vacaciones me corresponden en mi primer año?"</div>
+                            <div class="bg-white rounded-lg p-3 mb-2 font-mono text-xs text-slate-600 border border-red-100">
+                                <div class="text-slate-400 mb-1">Pregunta:</div>
+                                <div>"¿Cuál es el procedimiento para pedir un reintegro de gastos?"</div>
                             </div>
                             <div class="bg-white rounded-lg p-3 font-mono text-xs border border-red-100">
-                                <div class="text-slate-400 mb-1">IA responde (inventando):</div>
-                                <div class="text-red-600">"En general, en España lo habitual son 22 días laborables..."
-                                </div>
+                                <div class="text-slate-400 mb-1">IA responde (genérico):</div>
+                                <div class="text-red-600">"Generalmente, tenés que completar un formulario y presentarlo
+                                    con los comprobantes a tu supervisor…"</div>
                             </div>
                             <p class="text-xs text-red-700 mt-2">Respuesta basada en conocimiento general, no en tu
-                                política específica.</p>
+                                procedimiento.</p>
                         </div>
                         <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm">
                             <div class="font-bold text-emerald-700 mb-2">✅ Con RAG</div>
-                            <div
-                                class="bg-white rounded-lg p-3 mb-2 font-mono text-xs text-slate-600 border border-emerald-100">
-                                <div class="text-slate-400 mb-1">Empleado pregunta:</div>
-                                <div>"¿Cuántos días de vacaciones me corresponden en mi primer año?"</div>
+                            <div class="bg-white rounded-lg p-3 mb-2 font-mono text-xs text-slate-600 border border-emerald-100">
+                                <div class="text-slate-400 mb-1">Pregunta:</div>
+                                <div>"¿Cuál es el procedimiento para pedir un reintegro de gastos?"</div>
                             </div>
                             <div class="bg-white rounded-lg p-3 font-mono text-xs border border-emerald-100">
-                                <div class="text-slate-400 mb-1">IA responde (con tu política):</div>
-                                <div class="text-emerald-700">"Según el Manual de RRHH (pág. 14), en el primer año
-                                    corresponden 15 días hábiles, proporcionales a la fecha de incorporación."</div>
+                                <div class="text-slate-400 mb-1">IA responde (con tu manual):</div>
+                                <div class="text-emerald-700">"Según el Manual de Procedimientos (sección 4.2), cargás el
+                                    gasto en el sistema dentro de los 30 días, adjuntás la factura y lo aprueba tu
+                                    responsable de área."</div>
                             </div>
-                            <p class="text-xs text-emerald-700 mt-2">Respuesta precisa, citada y auditable.</p>
+                            <p class="text-xs text-emerald-700 mt-2">Respuesta concreta, con fuente y verificable.</p>
                         </div>
                     </div>
 
-                    <!-- Limitaciones -->
+                    <div class="bg-sky-50 border border-sky-200 rounded-xl p-4 text-sm text-sky-900 mb-4">
+                        <b>¿Dónde lo ves en tu app?</b> Cuando subís documentos a un Proyecto o le preguntás sobre
+                        archivos adjuntos, la app hace algo parecido: según el tamaño, le pasa todo el texto o solo los
+                        fragmentos más relevantes.
+                    </div>
                     <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-900">
-                        <strong>⚠️ Limitaciones de RAG:</strong> Es excelente para recuperar información puntual, pero
-                        tiene dificultades cuando la respuesta requiere sintetizar y razonar sobre muchos documentos a
-                        la vez, o cuando la pregunta involucra cálculos y acciones. Para eso existe el siguiente nivel.
+                        <strong>⚠️ Limitaciones de RAG:</strong> es excelente para recuperar información puntual, pero
+                        le cuesta cuando la respuesta requiere sintetizar muchos documentos a la vez, o cuando la tarea
+                        involucra cálculos y acciones.
                     </div>
                 </div>
             </div>
 
-            <!-- BLOQUE 4: Agentes en profundidad -->
-            <div class="glass-panel overflow-hidden mb-8">
-                <div class="bg-emerald-800 text-white p-6">
-                    <div class="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-1">Nivel 3</div>
-                    <h3 class="text-2xl font-bold">Agentes de IA — De Responder a Ejecutar</h3>
-                    <p class="text-emerald-200 text-sm mt-1">Autonomía, Herramientas y Razonamiento Encadenado</p>
+            <!-- SKILLS (sección nueva) -->
+            <div class="glass-panel overflow-hidden mb-8" id="skills">
+                <div class="bg-purple-800 text-white p-6">
+                    <div class="text-xs font-bold uppercase tracking-widest text-purple-300 mb-1">Procedimientos</div>
+                    <h3 class="text-2xl font-bold">Skills: enseñarle a la IA cómo hacés las cosas</h3>
                 </div>
                 <div class="p-6 md:p-8 bg-white">
-
-                    <!-- Analogía -->
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 mb-7">
-                        <div class="font-bold text-emerald-800 mb-2">🤝 La Analogía del Asistente Ejecutivo</div>
-                        <p class="text-sm text-slate-700">Un chatbot responde preguntas directas: le haces una consulta y te da
-                            una respuesta. Un agente es como un asistente ejecutivo competente: le das un objetivo
-                            —"prepara el informe de ventas del trimestre y envíaselo al equipo directivo"— y él decide
-                            qué pasos dar, consulta las bases de datos necesarias, hace los cálculos, formatea el
-                            documento y lo envía. <strong>La diferencia no es de inteligencia, es de capacidad de
-                                acción.</strong></p>
+                    <div class="guru-quote p-5 rounded-r-lg mb-7 text-slate-800 text-sm md:text-base font-medium">
+                        "RAG le da a la IA información sobre tu trabajo. Una skill le da otra cosa: <b>el
+                            procedimiento</b>. Es la diferencia entre pasarle a alguien nuevo el manual de la empresa y
+                        enseñarle cómo se arma, paso a paso, el informe que tu equipo hace todas las semanas."
                     </div>
 
-                    <!-- El bucle cognitivo -->
-                    <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-widest">El bucle cognitivo del
-                        agente (<span class="tt" data-tt="react">ReAct</span>)</h4>
+                    <!-- ¿Qué es? -->
+                    <h4 class="font-bold text-slate-800 mb-3 text-lg">¿Qué es una skill?</h4>
+                    <p class="text-sm text-slate-700 mb-3">Una skill es un <b>paquete de instrucciones preparado para
+                            una tarea concreta</b>, que la app le pasa al modelo solo cuando hace falta. Técnicamente es
+                        una carpeta con:</p>
+                    <ul class="text-sm text-slate-700 list-disc pl-6 space-y-1 mb-3">
+                        <li>un archivo principal de instrucciones (en el estándar abierto se llama <code
+                                class="bg-slate-100 px-1 rounded text-xs">SKILL.md</code>), que empieza con un
+                            <b>nombre</b> y una <b>descripción</b> de cuándo usarla;</li>
+                        <li>y, opcionalmente, archivos de apoyo: plantillas, ejemplos, guías de estilo o pequeños
+                            programas (scripts).</li>
+                    </ul>
+                    <p class="text-sm text-slate-700 mb-2">En otras palabras: <b>una skill es un buen prompt guardado,
+                            con sus materiales, listo para reusar.</b> Todo lo que viste en el <button
+                            onclick="nav('capPrompt')" class="underline text-emerald-700 hover:text-emerald-600">Capítulo
+                            5</button> sobre cómo escribir prompts se aplica acá.</p>
+                    <p class="text-[11px] text-slate-400 mb-8">Anthropic presentó las <i>Agent Skills</i> en octubre de
+                        2025 y en diciembre de 2025 publicó el formato como estándar abierto (<a
+                            href="https://agentskills.io/" target="_blank" rel="noopener noreferrer"
+                            class="underline hover:text-emerald-600">agentskills.io</a>) para que otras apps puedan
+                        usarlo. Otras apps tienen funciones parecidas con otros nombres (por ejemplo, los GPTs
+                        personalizados). Fuentes: Anthropic; agentskills.io.</p>
+
+                    <!-- Carga progresiva -->
+                    <h4 class="font-bold text-slate-800 mb-1 text-lg">Cómo funciona por dentro: carga progresiva</h4>
+                    <p class="text-sm text-slate-500 mb-4">Con la metáfora del Capítulo 4: la habitación y los
+                        papelitos.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
+                        <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                            <div class="flex items-center gap-2 mb-2"><span
+                                    class="bg-purple-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold">1</span><b
+                                    class="text-purple-900">El índice</b></div>
+                            <p class="text-slate-700 mb-3">Al empezar cada chat, la app pone en el paquete <b>solo el
+                                    nombre y la descripción</b> de cada skill instalada. Ocupa muy poco espacio.</p>
+                            <p class="text-xs text-purple-800 bg-white border border-purple-100 rounded-lg p-2">🚪
+                                Debajo de la puerta pasa una lista: "Hay estos manuales: 'Informe semanal', 'Revisión de
+                                contratos'…"</p>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                            <div class="flex items-center gap-2 mb-2"><span
+                                    class="bg-purple-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold">2</span><b
+                                    class="text-purple-900">El manual</b></div>
+                            <p class="text-slate-700 mb-3">Si tu pedido coincide con la descripción de una skill, el
+                                modelo <b>pide leerla</b> (como cualquier herramienta, Capítulo 4, pasos 6 y 7) y la app
+                                le pasa las instrucciones completas.</p>
+                            <p class="text-xs text-purple-800 bg-white border border-purple-100 rounded-lg p-2">🚪 El
+                                cerebro pide: "pasame el manual 'Informe semanal'". Le llega por debajo de la puerta.</p>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                            <div class="flex items-center gap-2 mb-2"><span
+                                    class="bg-purple-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold">3</span><b
+                                    class="text-purple-900">Los materiales</b></div>
+                            <p class="text-slate-700 mb-3">Si las instrucciones lo indican, el modelo pide también las
+                                plantillas o ejecuta los scripts de la skill.</p>
+                            <p class="text-xs text-purple-800 bg-white border border-purple-100 rounded-lg p-2">🚪
+                                "Pasame la plantilla" o "ejecutá este programa que arma el gráfico".</p>
+                        </div>
+                    </div>
+                    <p class="text-center font-extrabold text-purple-900 mb-2">"Una skill no le enseña nada nuevo al
+                        modelo: es texto (y a veces código) que la app le pasa justo cuando lo necesita."</p>
+                    <p class="text-sm text-slate-600 text-center mb-8">¿Por qué por partes? Si la app cargara todas las
+                        skills completas en cada chat, el paquete se llenaría de instrucciones que no hacen falta.
+                        Cargarlas de a poco mantiene el contexto limpio (recordá: "perdido en el medio", Capítulo 3).</p>
+
+                    <!-- Comparación -->
+                    <h4 class="font-bold text-slate-800 mb-3 text-lg">Skill, prompt, Proyecto, conector, agente: ¿cuál es
+                        cuál?</h4>
+                    <div class="overflow-x-auto mb-3">
+                        <table class="w-full text-sm border-collapse min-w-[640px]">
+                            <thead>
+                                <tr class="bg-slate-800 text-white">
+                                    <th class="text-left p-3 rounded-tl-lg"></th>
+                                    <th class="text-left p-3">Qué le aporta al modelo</th>
+                                    <th class="text-left p-3">Cuándo entra al paquete</th>
+                                    <th class="text-left p-3 rounded-tr-lg">Ejemplo</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 align-top">
+                                <tr>
+                                    <td class="p-3 font-bold text-slate-800">Prompt</td>
+                                    <td class="p-3 text-slate-600">Un pedido puntual</td>
+                                    <td class="p-3 text-slate-600">Cuando lo escribís</td>
+                                    <td class="p-3 text-slate-600 italic">"Resumí este mail"</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-slate-800">Instrucciones personalizadas</td>
+                                    <td class="p-3 text-slate-600">Preferencias generales sobre vos</td>
+                                    <td class="p-3 text-slate-600">En todos los chats</td>
+                                    <td class="p-3 text-slate-600 italic">"Respondé en español rioplatense, sin jerga"</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-slate-800">Proyecto</td>
+                                    <td class="p-3 text-slate-600">Instrucciones y documentos de un tema</td>
+                                    <td class="p-3 text-slate-600">En todos los chats de ese Proyecto</td>
+                                    <td class="p-3 text-slate-600 italic">Proyecto "Lanzamiento Q3" con el brief y el
+                                        cronograma</td>
+                                </tr>
+                                <tr class="bg-purple-50">
+                                    <td class="p-3 font-bold text-purple-900">Skill</td>
+                                    <td class="p-3 text-slate-700">Un <b>procedimiento</b> reutilizable (instrucciones +
+                                        materiales)</td>
+                                    <td class="p-3 text-slate-700">Solo cuando la tarea lo pide</td>
+                                    <td class="p-3 text-slate-700 italic">"Así se arma el informe semanal del equipo"</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-slate-800">Conector / <span class="tt"
+                                            data-tt="mcp">MCP</span></td>
+                                    <td class="p-3 text-slate-600"><b>Acceso</b> a un servicio externo (Drive, mail,
+                                        CRM)</td>
+                                    <td class="p-3 text-slate-600">Cuando el modelo pide usarlo</td>
+                                    <td class="p-3 text-slate-600 italic">Leer un archivo de tu Drive</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-slate-800">Agente</td>
+                                    <td class="p-3 text-slate-600"><b>Autonomía</b> para encadenar pasos y
+                                        herramientas</td>
+                                    <td class="p-3 text-slate-600">Durante toda la tarea</td>
+                                    <td class="p-3 text-slate-600 italic">"Prepará el informe, armá el gráfico y dejalo
+                                        como borrador"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-8">Se combinan: un agente puede usar una skill que le indica
+                        cómo hacer el informe y un conector que le da acceso a los datos.</p>
+
+                    <!-- Cómo se usan -->
+                    <h4 class="font-bold text-slate-800 mb-3 text-lg">Cómo se usan</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-8">
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                            <div class="text-2xl mb-2">⚙️</div>
+                            <b class="text-slate-800 block mb-1">1. Activarlas</b>
+                            <p class="text-slate-600">En las apps que las soportan, se activan desde la configuración.
+                                Algunas vienen incluidas (por ejemplo, para crear documentos o planillas) y otras las
+                                agrega cada persona u organización.</p>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                            <div class="text-2xl mb-2">🪄</div>
+                            <b class="text-slate-800 block mb-1">2. Usarlas sin nombrarlas</b>
+                            <p class="text-slate-600">No hace falta invocarlas: si tu pedido coincide con la
+                                descripción, el modelo la carga solo. Por eso la <b>descripción</b> es lo más importante
+                                de una skill: es lo que el modelo lee para decidir si la usa.</p>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                            <div class="text-2xl mb-2">🎯</div>
+                            <b class="text-slate-800 block mb-1">3. Pedirlas explícitamente</b>
+                            <p class="text-slate-600">Si querés asegurarte, nombrala en el pedido: "Usá la skill de
+                                informe semanal con estos datos".</p>
+                        </div>
+                    </div>
+
+                    <!-- Ejemplo SKILL.md -->
+                    <h4 class="font-bold text-slate-800 mb-1 text-lg">Crear tu propia skill</h4>
+                    <p class="mb-3"><span
+                            class="inline-block bg-slate-200 text-slate-700 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded">Escenario
+                            ilustrativo</span></p>
+                    <div class="overflow-x-auto mb-4">
+                        <pre class="bg-slate-900 text-slate-100 rounded-xl p-5 text-xs leading-relaxed"><code><span class="text-slate-500">---</span>
+<span class="text-emerald-300">name:</span> informe-semanal
+<span class="text-emerald-300">description:</span> Arma el informe semanal de ventas del equipo comercial. Usar cuando
+  se pida el informe semanal, el resumen de la semana o el reporte para la reunión
+  de los lunes.
+<span class="text-slate-500">---</span>
+
+<span class="text-purple-300"># Informe semanal de ventas</span>
+
+1. Pedí la planilla de la semana si no está adjunta.
+2. Calculá con código el total por región y la variación contra la semana anterior.
+3. Escribí el informe con esta estructura:
+   - Resumen en 3 viñetas (lo más importante primero).
+   - Tabla: Región | Ventas | Variación %.
+   - Alertas: regiones con caída mayor al 10%.
+4. Tono: claro y directo, sin adjetivos. Máximo una página.
+5. Si falta un dato, escribí "sin dato"; no lo estimes.</code></pre>
+                    </div>
+                    <ul class="text-sm text-slate-700 space-y-2 mb-5">
+                        <li>📌 La <b>descripción</b> dice <i>cuándo</i> usarla (y por eso incluye las formas en que la
+                            gente lo pide).</li>
+                        <li>📌 Las <b>instrucciones</b> aplican todo lo del Capítulo 5: tarea, formato, criterios y
+                            permiso para decir "sin dato".</li>
+                        <li>📌 El paso 2 manda a <b>calcular con código</b>: la skill combina procedimiento y
+                            herramienta (Capítulo 4).</li>
+                    </ul>
+                    <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900 mb-6">
+                        <b>¿Y esto qué me cambia?</b> Si hay una tarea que hacés seguido y siempre le explicás lo mismo a
+                        la IA, eso es una skill esperando ser escrita. Escribila una vez, bien, y reusala.
+                    </div>
+
+                    <!-- Cuidados -->
+                    <div class="bg-red-50 border border-red-200 rounded-xl p-5 text-sm text-red-900">
+                        <b class="block mb-2">⚠️ Cuidados</b>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><b>Una skill puede incluir código que se ejecuta con tus permisos.</b> Instalá solo
+                                skills de fuentes confiables (ver Prompt injection, Capítulo 7).</li>
+                            <li><b>Revisá qué hace antes de activarla:</b> leé sus instrucciones. Son texto: se pueden
+                                leer.</li>
+                            <li><b>Si una skill no se activa cuando esperás</b>, casi siempre el problema es la
+                                descripción: hacela más concreta e incluí las palabras con las que pedís esa tarea.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agentes -->
+            <div class="glass-panel overflow-hidden mb-8">
+                <div class="bg-emerald-800 text-white p-6">
+                    <div class="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-1">Nivel 3 · Autonomía
+                    </div>
+                    <h3 class="text-2xl font-bold">Agentes de IA: de responder a hacer</h3>
+                    <p class="text-emerald-200 text-sm mt-1">Autonomía, herramientas y razonamiento encadenado</p>
+                </div>
+                <div class="p-6 md:p-8 bg-white">
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 mb-7">
+                        <div class="font-bold text-emerald-800 mb-2">🤝 La analogía del asistente</div>
+                        <p class="text-sm text-slate-700">Un chatbot responde preguntas: le hacés una consulta y te da
+                            una respuesta. Un agente es como un asistente competente: le das un objetivo —"prepará el
+                            informe de ventas del mes y mandáselo al equipo"— y él decide qué pasos dar, consulta los
+                            datos, hace los cálculos, arma el documento y lo envía. <strong>La diferencia no es de
+                                inteligencia, es de capacidad de acción.</strong></p>
+                    </div>
+
+                    <!-- Flujo vs agente -->
+                    <div class="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-7 text-sm text-slate-700">
+                        <div class="font-bold text-sky-900 mb-2">🔀 Flujo de trabajo vs. agente</div>
+                        <p>No todo lo que se llama "agente" lo es. Un <b>flujo de trabajo</b> sigue pasos fijos
+                            definidos por una persona (siempre: leer el mail → extraer datos → cargarlos en una
+                            planilla). Un <b>agente</b> decide por su cuenta qué pasos dar y qué herramientas usar. El
+                            flujo es más predecible y fácil de controlar; el agente es más flexible y más riesgoso.
+                            <b>Si una tarea siempre se hace igual, un flujo (o incluso un script común) suele ser mejor
+                                que un agente.</b></p>
+                    </div>
+
+                    <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-widest">El bucle del agente
+                        (<span class="tt" data-tt="react">ReAct</span>)</h4>
                     <div class="bg-slate-900 text-white rounded-xl p-6 mb-7">
                         <div
                             class="flex flex-col md:flex-row items-center justify-center gap-2 text-sm text-center flex-wrap">
@@ -2272,191 +2506,188 @@
                                 <div class="text-xs text-slate-400 mb-1">Recibe</div>
                                 <div class="font-bold text-white">Objetivo</div>
                             </div>
-                            <div class="text-emerald-400 font-bold text-lg">→</div>
+                            <div class="text-emerald-400 font-bold text-lg" aria-hidden="true">→</div>
                             <div class="bg-emerald-900 border border-emerald-600 rounded-lg px-4 py-3 min-w-[120px]">
                                 <div class="text-xs text-emerald-300 mb-1">Piensa</div>
                                 <div class="font-bold text-white">Razona</div>
                             </div>
-                            <div class="text-emerald-400 font-bold text-lg">→</div>
+                            <div class="text-emerald-400 font-bold text-lg" aria-hidden="true">→</div>
                             <div class="bg-emerald-900 border border-emerald-600 rounded-lg px-4 py-3 min-w-[120px]">
                                 <div class="text-xs text-emerald-300 mb-1">Decide</div>
                                 <div class="font-bold text-white">Actúa</div>
                             </div>
-                            <div class="text-emerald-400 font-bold text-lg">→</div>
+                            <div class="text-emerald-400 font-bold text-lg" aria-hidden="true">→</div>
                             <div class="bg-emerald-900 border border-emerald-600 rounded-lg px-4 py-3 min-w-[120px]">
                                 <div class="text-xs text-emerald-300 mb-1">Evalúa</div>
                                 <div class="font-bold text-white">Observa</div>
                             </div>
-                            <div class="text-emerald-400 font-bold text-lg">→</div>
+                            <div class="text-emerald-400 font-bold text-lg" aria-hidden="true">→</div>
                             <div class="bg-slate-700 rounded-lg px-4 py-3 min-w-[120px]">
                                 <div class="text-xs text-slate-400 mb-1">Corrige y</div>
                                 <div class="font-bold text-white">Repite</div>
                             </div>
                         </div>
-                        <p class="text-slate-400 text-xs text-center mt-4">Este bucle se repite hasta completar el
-                            objetivo o hasta que el agente detecta que necesita ayuda humana.</p>
+                        <p class="text-slate-400 text-xs text-center mt-4">Es el mismo ciclo de los pasos 6 y 7 del
+                            Capítulo 4 (pedido → ejecución → resultado), repetido hasta completar el objetivo o hasta
+                            que el agente detecta que necesita ayuda humana.</p>
                     </div>
 
-                    <!-- Ejemplo de flujo -->
-                    <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-widest">Un agente en acción:
-                        ejemplo paso a paso</h4>
+                    <h4 class="font-bold text-slate-800 mb-1 text-sm uppercase tracking-widest">Un agente en acción</h4>
+                    <p class="mb-4"><span
+                            class="inline-block bg-slate-200 text-slate-700 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded">Escenario
+                            ilustrativo</span></p>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-7">
-                        <div class="text-sm font-bold text-slate-700 mb-4">Tarea: <span class="text-emerald-700">"Genera
-                                y envía el reporte mensual de ventas al equipo directivo"</span></div>
+                        <div class="text-sm font-bold text-slate-700 mb-4">Tarea: <span class="text-emerald-700">"Generá
+                                y enviá el reporte mensual de ventas al equipo"</span></div>
                         <div class="space-y-3 text-sm">
                             <div class="flex gap-3 items-start">
-                                <span
-                                    class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
-                                <div><strong class="text-slate-700">Razona:</strong> <span
-                                        class="text-slate-600">Necesito datos de ventas del mes. Voy a consultar la base
-                                        de datos de CRM.</span></div>
+                                <span class="bg-emerald-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                                <div><strong class="text-slate-700">Razona:</strong> <span class="text-slate-600">Necesito
+                                        los datos de ventas del mes. Voy a consultar el CRM.</span></div>
                             </div>
                             <div class="flex gap-3 items-start">
-                                <span
-                                    class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                                <span class="bg-emerald-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold shrink-0">2</span>
                                 <div><strong class="text-slate-700">Actúa:</strong> <span class="text-slate-600">Ejecuta
-                                        query SQL → obtiene tabla de ventas por región y producto.</span></div>
+                                        una consulta → obtiene la tabla de ventas por región y producto.</span></div>
                             </div>
                             <div class="flex gap-3 items-start">
-                                <span
-                                    class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
-                                <div><strong class="text-slate-700">Razona:</strong> <span class="text-slate-600">Tengo
-                                        los datos. Voy a calcular variación vs. mes anterior y generar los
+                                <span class="bg-emerald-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                                <div><strong class="text-slate-700">Razona:</strong> <span class="text-slate-600">Tengo los
+                                        datos. Voy a calcular la variación contra el mes anterior y armar los
                                         gráficos.</span></div>
                             </div>
                             <div class="flex gap-3 items-start">
-                                <span
-                                    class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                                <span class="bg-emerald-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold shrink-0">4</span>
                                 <div><strong class="text-slate-700">Actúa:</strong> <span class="text-slate-600">Ejecuta
-                                        código Python → genera gráficos y crea documento en formato PDF.</span></div>
+                                        código Python → genera los gráficos y arma el documento en PDF.</span></div>
                             </div>
                             <div class="flex gap-3 items-start">
-                                <span
-                                    class="bg-emerald-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">5</span>
-                                <div><strong class="text-slate-700">Actúa:</strong> <span class="text-slate-600">Llama a
-                                        la API de correo → envía el reporte a la lista de distribución del equipo
-                                        directivo.</span></div>
+                                <span class="bg-amber-500 text-white rounded-full w-7 h-7 flex items-center justify-center text-[10px] font-bold shrink-0">4b</span>
+                                <div><strong class="text-slate-700">Pide aprobación:</strong> <span
+                                        class="text-slate-600">Muestra el borrador y la lista de destinatarios antes de
+                                        enviar.</span></div>
+                            </div>
+                            <div class="flex gap-3 items-start">
+                                <span class="bg-emerald-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold shrink-0">5</span>
+                                <div><strong class="text-slate-700">Actúa:</strong> <span class="text-slate-600">Con tu
+                                        visto bueno, envía el reporte por mail a la lista del equipo.</span></div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Herramientas + Multi-agente -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
                         <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
                             <div class="font-bold text-emerald-800 mb-3">🔧 ¿Qué herramientas puede usar?</div>
-                            <div class="space-y-1 text-xs text-slate-700">
-                                <div class="flex items-center gap-2"><span class="text-emerald-600">→</span> Búsqueda en
-                                    internet en tiempo real</div>
-                                <div class="flex items-center gap-2"><span class="text-emerald-600">→</span> Consultas a
-                                    bases de datos (SQL, APIs)</div>
-                                <div class="flex items-center gap-2"><span class="text-emerald-600">→</span> Ejecución
-                                    de código (Python, JS)</div>
-                                <div class="flex items-center gap-2"><span class="text-emerald-600">→</span> Lectura y
-                                    escritura de archivos</div>
-                                <div class="flex items-center gap-2"><span class="text-emerald-600">→</span> Envío de
-                                    correos y mensajes</div>
-                                <div class="flex items-center gap-2"><span class="text-emerald-600">→</span> Reservas en
-                                    calendarios</div>
-                                <div class="flex items-center gap-2"><span class="text-emerald-600">→</span> Interacción
-                                    con cualquier API externa</div>
-                            </div>
+                            <ul class="space-y-1 text-xs text-slate-700">
+                                <li>→ Búsqueda en internet</li>
+                                <li>→ Consultas a bases de datos y servicios (APIs)</li>
+                                <li>→ Ejecución de código</li>
+                                <li>→ Lectura y escritura de archivos</li>
+                                <li>→ Envío de correos y mensajes</li>
+                                <li>→ Calendarios y otros conectores</li>
+                            </ul>
                         </div>
                         <div class="bg-slate-800 text-white rounded-xl p-5">
-                            <div class="font-bold text-emerald-400 mb-3">🤝 Sistemas Multi-Agente</div>
-                            <p class="text-sm text-slate-300 mb-3">Los agentes pueden colaborar entre sí, cada uno
-                                especializado en una subtarea:</p>
+                            <div class="font-bold text-emerald-400 mb-3">🤝 Sistemas multi-agente</div>
+                            <p class="text-sm text-slate-300 mb-3">Varios agentes pueden colaborar, cada uno
+                                especializado en una parte:</p>
                             <div class="space-y-2 text-xs">
-                                <div class="bg-slate-700 rounded-lg p-2">🔍 <strong class="text-white">Agente
-                                        Investigador</strong> <span class="text-slate-400">— busca y recupera
-                                        datos</span></div>
-                                <div class="bg-slate-700 rounded-lg p-2">📊 <strong class="text-white">Agente
-                                        Analista</strong> <span class="text-slate-400">— procesa y calcula</span></div>
-                                <div class="bg-slate-700 rounded-lg p-2">✍️ <strong class="text-white">Agente
-                                        Redactor</strong> <span class="text-slate-400">— genera el documento
-                                        final</span></div>
-                                <div class="bg-slate-700 rounded-lg p-2">✅ <strong class="text-white">Agente
-                                        Revisor</strong> <span class="text-slate-400">— valida antes de entregar</span>
-                                </div>
+                                <div class="bg-slate-700 rounded-lg p-2">🔍 <strong class="text-white">Investigador</strong>
+                                    <span class="text-slate-400">— busca y recupera datos</span></div>
+                                <div class="bg-slate-700 rounded-lg p-2">📊 <strong class="text-white">Analista</strong>
+                                    <span class="text-slate-400">— procesa y calcula</span></div>
+                                <div class="bg-slate-700 rounded-lg p-2">✍️ <strong class="text-white">Redactor</strong>
+                                    <span class="text-slate-400">— escribe el documento final</span></div>
+                                <div class="bg-slate-700 rounded-lg p-2">✅ <strong class="text-white">Revisor</strong>
+                                    <span class="text-slate-400">— valida antes de entregar</span></div>
                             </div>
+                            <p class="text-xs text-slate-400 mt-3">Más agentes no significa mejores resultados: suma
+                                complejidad y puntos de falla. Se usa cuando la tarea realmente se divide en partes
+                                independientes.</p>
                         </div>
                     </div>
 
-                    <!-- Riesgo -->
                     <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-900">
-                        <strong>⚠️ El riesgo de la agencia:</strong> A mayor autonomía, mayor superficie de error. Un
-                        agente que se equivoca puede ejecutar acciones irreversibles —enviar correos incorrectos,
-                        modificar bases de datos, eliminar archivos. Por eso la gobernanza es crítica: define qué
-                        herramientas puede usar, establece aprobaciones humanas en los puntos de no retorno y diseña el
-                        alcance antes de darle autonomía.
+                        <strong>⚠️ El riesgo de la autonomía:</strong> a mayor autonomía, mayor margen de error. Un
+                        agente que se equivoca puede ejecutar acciones irreversibles: enviar correos incorrectos,
+                        modificar datos, borrar archivos. Por eso conviene definir qué herramientas puede usar, pedir
+                        aprobación humana en los puntos sin vuelta atrás y limitar el alcance antes de darle autonomía.
                     </div>
                 </div>
             </div>
 
-            <!-- BLOQUE 5: ¿Cuándo usar cada uno? -->
+            <!-- ¿Cuándo usar cada uno? -->
             <div class="glass-panel p-6 md:p-8 border-t-4 border-t-amber-400 bg-white">
-                <h3 class="text-xl font-bold text-slate-900 mb-1">¿Cuándo usar cada arquitectura?</h3>
-                <p class="text-slate-500 text-sm mb-6">Una guía práctica para elegir la herramienta correcta según el
-                    problema.</p>
+                <h3 class="text-xl font-bold text-slate-900 mb-1">¿Cuándo usar cada cosa?</h3>
+                <p class="text-slate-500 text-sm mb-6">Una guía práctica para elegir según la tarea. La regla: lo más
+                    simple que funcione.</p>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-sm border-collapse">
+                    <table class="w-full text-sm border-collapse min-w-[600px]">
                         <thead>
                             <tr class="bg-slate-800 text-white">
                                 <th class="text-left p-3 rounded-tl-lg">Situación</th>
-                                <th class="text-center p-3">Modelo base</th>
+                                <th class="text-center p-3">Solo el modelo</th>
                                 <th class="text-center p-3">+ RAG</th>
+                                <th class="text-center p-3">+ Skill</th>
                                 <th class="text-center p-3 rounded-tr-lg">+ Agente</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100">
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 text-slate-700">Redactar un correo profesional</td>
+                                <td class="p-3 text-slate-700">Redactar un correo</td>
                                 <td class="p-3 text-center text-emerald-600 font-bold">✓</td>
+                                <td class="p-3 text-center text-slate-300">–</td>
                                 <td class="p-3 text-center text-slate-300">–</td>
                                 <td class="p-3 text-center text-slate-300">–</td>
                             </tr>
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 text-slate-700">Responder preguntas sobre tus políticas internas</td>
+                                <td class="p-3 text-slate-700">Responder preguntas sobre tus procedimientos internos</td>
                                 <td class="p-3 text-center text-red-400">✗</td>
                                 <td class="p-3 text-center text-emerald-600 font-bold">✓</td>
                                 <td class="p-3 text-center text-slate-300">–</td>
+                                <td class="p-3 text-center text-slate-300">–</td>
                             </tr>
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 text-slate-700">Asistente de soporte al cliente con base de conocimiento
+                                <td class="p-3 text-slate-700">Armar siempre el mismo informe con el formato de tu equipo
                                 </td>
-                                <td class="p-3 text-center text-red-400">✗</td>
+                                <td class="p-3 text-center text-amber-500">◑</td>
+                                <td class="p-3 text-center text-slate-300">–</td>
                                 <td class="p-3 text-center text-emerald-600 font-bold">✓</td>
                                 <td class="p-3 text-center text-slate-300">–</td>
                             </tr>
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 text-slate-700">Generar reporte mensual desde base de datos + enviar</td>
-                                <td class="p-3 text-center text-red-400">✗</td>
+                                <td class="p-3 text-slate-700">Asistente de soporte con base de conocimiento</td>
                                 <td class="p-3 text-center text-red-400">✗</td>
                                 <td class="p-3 text-center text-emerald-600 font-bold">✓</td>
+                                <td class="p-3 text-center text-slate-300">–</td>
+                                <td class="p-3 text-center text-slate-300">–</td>
                             </tr>
                             <tr class="hover:bg-slate-50">
-                                <td class="p-3 text-slate-700">Monitorizar precios de competidores y alertar</td>
+                                <td class="p-3 text-slate-700">Generar el reporte mensual desde los datos y enviarlo</td>
                                 <td class="p-3 text-center text-red-400">✗</td>
-                                <td class="p-3 text-center text-red-400">✗</td>
-                                <td class="p-3 text-center text-emerald-600 font-bold">✓</td>
-                            </tr>
-                            <tr class="bg-slate-50 hover:bg-slate-100">
-                                <td class="p-3 text-slate-700">Proceso completo de onboarding de empleado nuevo</td>
                                 <td class="p-3 text-center text-red-400">✗</td>
                                 <td class="p-3 text-center text-amber-500">◑</td>
+                                <td class="p-3 text-center text-emerald-600 font-bold">✓</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="p-3 text-slate-700">Seguir precios de la competencia y avisar</td>
+                                <td class="p-3 text-center text-red-400">✗</td>
+                                <td class="p-3 text-center text-red-400">✗</td>
+                                <td class="p-3 text-center text-slate-300">–</td>
                                 <td class="p-3 text-center text-emerald-600 font-bold">✓</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <p class="text-xs text-slate-500 mt-3">✓ alcanza · ◑ ayuda en parte · ✗ no alcanza · – no hace falta</p>
             </div>
 
-            <!-- Recurso IBM: AI Agents -->
+            <!-- Recurso IBM -->
             <div
                 class="bg-slate-900 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-inner border border-slate-700 mt-8">
                 <div class="text-white text-center md:text-left">
-                    <strong class="block text-lg mb-1 text-emerald-400">Profundiza en Agentes de IA</strong>
-                    <p class="text-sm text-slate-400">Recurso de referencia de IBM para entender agentes en contexto
-                        empresarial.</p>
+                    <strong class="block text-lg mb-1 text-emerald-400">Profundizá en agentes de IA</strong>
+                    <p class="text-sm text-slate-400">Recurso de referencia de IBM sobre agentes.</p>
                 </div>
                 <a href="https://www.ibm.com/es-es/think/ai-agents" target="_blank" rel="noopener noreferrer"
                     class="px-6 py-3 bg-blue-700 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600 hover:-translate-y-1 transition-transform duration-200 text-sm uppercase tracking-wider whitespace-nowrap text-center">
@@ -2464,16 +2695,16 @@
                 </a>
             </div>
 
-            <!-- Puente → Cap 5 -->
+            <!-- Puente → Cap 7 -->
             <div class="mt-8 p-6 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl">
                 <p class="text-amber-900 text-sm leading-relaxed">
-                    <strong>Mayor autonomía = mayor impacto potencial.</strong> Pero también mayor superficie de riesgo.
-                    Un agente que puede enviar correos, ejecutar código y escribir en bases de datos tiene el poder de
-                    hacer mucho bien — y también de cometer errores costosos a velocidad de máquina. En el siguiente
-                    capítulo analizamos qué puede salir mal y cómo construir las salvaguardas correctas.
+                    <strong>Más autonomía = más impacto posible.</strong> Pero también más riesgo. Un agente que puede
+                    enviar correos, ejecutar código y escribir en bases de datos puede hacer mucho bien, y también
+                    equivocarse rápido. En el <button onclick="nav('cap5')"
+                        class="underline text-amber-900 hover:text-amber-700">siguiente capítulo</button> vemos qué puede
+                    salir mal y qué hábitos lo previenen.
                 </p>
             </div>
-
         </section>
 
         <!-- CAPÍTULO 5: El Lado Oscuro -->
