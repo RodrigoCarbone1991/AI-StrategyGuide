@@ -1542,6 +1542,468 @@
             </div>
         </section>
 
+        <!-- CAPÍTULO 5 (NUEVO): Hablarle bien: cómo el modelo lee tu prompt -->
+        <section id="capPrompt" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
+            <header class="mb-10">
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 5</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Hablarle bien: cómo el modelo
+                    lee tu prompt</h2>
+
+                <div class="guru-quote p-6 rounded-r-lg mb-8 text-lg text-slate-800 font-medium">
+                    "Tu prompt no es una orden que el modelo obedece: es el comienzo de un texto que el modelo va a
+                    continuar. Cada palabra que escribís cambia las probabilidades de lo que viene después. Por eso, la
+                    misma pregunta hecha de dos formas distintas puede dar dos respuestas muy distintas."
+                </div>
+            </header>
+
+            <!-- ¿Qué es un prompt? -->
+            <div class="glass-panel p-6 md:p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">¿Qué es un <span class="tt"
+                        data-tt="prompt">prompt</span> (y qué no)?</h3>
+                <p class="text-slate-700 mb-5"><b>Un prompt es todo lo que le escribís al modelo para pedirle
+                        algo:</b> la pregunta, el contexto, los ejemplos, el formato que querés. Pero ojo: tu prompt es
+                    <b>solo una parte del paquete</b> que vimos en el <button onclick="nav('capEnter')"
+                        class="underline text-emerald-700 hover:text-emerald-600">Capítulo 4</button>. Antes van las
+                    instrucciones de la app, la fecha, tu Proyecto, la memoria y el historial del chat. El modelo lee
+                    todo junto, como un solo texto, y no distingue "lo importante" de "lo accesorio" salvo por lo que el
+                    propio texto le indica.</p>
+                <div class="p-5 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-900">
+                    <b>Corrección de una idea común: "El prompt es una orden, y el modelo la ejecuta."</b> No
+                    exactamente. El modelo no tiene un "intérprete de órdenes". Lo que hace es <b>continuar el texto</b>
+                    de la forma más coherente según lo que aprendió en sus tres etapas de entrenamiento (Capítulo 3).
+                    Como en las etapas 2 y 3 aprendió a comportarse como asistente, la continuación más probable de un
+                    pedido suele ser <b>cumplirlo</b>. Pero sigue siendo continuación de texto: si el pedido es ambiguo,
+                    el modelo completa los huecos con lo más típico.
+                </div>
+            </div>
+
+            <!-- El viaje de tu prompt adentro del modelo -->
+            <div class="glass-panel p-6 md:p-8 mb-8 border-t-4 border-t-purple-500">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">El viaje de tu prompt adentro del modelo</h3>
+                <p class="text-sm text-slate-500 mb-4">El mecanismo lo viste en el Capítulo 3. Acá lo leemos en clave de
+                    prompt, con un ejemplo:</p>
+                <div class="bg-slate-800 text-slate-100 rounded-xl p-4 mb-6 text-sm">
+                    <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest block mb-1">Tu
+                        prompt</span>
+                    "Resumí este mail en tres puntos para mi jefa"
+                </div>
+                <ol class="space-y-3">
+                    <li class="flex gap-4 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                        <span class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-black shrink-0">1</span>
+                        <div><b class="text-slate-900">Tokens.</b> <span class="text-slate-700">El texto se parte en
+                                pedazos y cada pedazo se vuelve un número de un vocabulario fijo. "Resumí este mail…" pasa
+                                a ser una secuencia de números.</span></div>
+                    </li>
+                    <li class="flex gap-4 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                        <span class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-black shrink-0">2</span>
+                        <div><b class="text-slate-900">Embeddings.</b> <span class="text-slate-700">Cada token se
+                                convierte en una lista de cientos o miles de números que representan su significado.
+                                "mail" y "correo" quedan cerca en ese espacio.</span></div>
+                    </li>
+                    <li class="flex gap-4 bg-purple-50 border border-purple-300 rounded-xl p-4">
+                        <span class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-black shrink-0">3</span>
+                        <div><b class="text-slate-900">Atención.</b> <span class="text-slate-700">Cada token "mira" a
+                                los demás y decide a cuáles prestarles atención. "tres" se conecta con "puntos"; "jefa"
+                                le da tono y destinatario. <b>Acá es donde tu prompt hace su trabajo:</b> cada palabra
+                                que agregás es algo más a lo que se puede prestar atención.</span></div>
+                    </li>
+                    <li class="flex gap-4 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                        <span class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-black shrink-0">4</span>
+                        <div><b class="text-slate-900">Capas.</b> <span class="text-slate-700">El paso 3 (más una red
+                                feedforward) se repite en decenas de capas apiladas. En cada capa, la representación de
+                                cada token se enriquece con información de todo el contexto.</span></div>
+                    </li>
+                    <li class="flex gap-4 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                        <span class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-black shrink-0">5</span>
+                        <div><b class="text-slate-900">Probabilidades.</b> <span class="text-slate-700">Al final, el
+                                modelo produce un puntaje para <b>cada token de su vocabulario</b> y lo convierte en
+                                probabilidades: qué tan probable es cada uno como siguiente.</span></div>
+                    </li>
+                    <li class="flex gap-4 bg-slate-50 border border-slate-200 rounded-xl p-4">
+                        <span class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-black shrink-0">6</span>
+                        <div><b class="text-slate-900">Elegir y repetir.</b> <span class="text-slate-700">Elige un
+                                token, lo agrega al texto y vuelve a empezar con el texto un token más largo. Así hasta
+                                terminar la respuesta.</span></div>
+                    </li>
+                </ol>
+
+                <details class="mt-5 border border-slate-200 rounded-xl overflow-hidden">
+                    <summary
+                        class="bg-slate-100 px-5 py-3 cursor-pointer text-sm font-semibold text-slate-700 hover:bg-slate-200 transition-colors select-none">
+                        🧮 Para curiosos: las fórmulas</summary>
+                    <div class="p-5 space-y-4 text-sm text-slate-700 bg-white">
+                        <div>
+                            <b>Atención (paso 3):</b>
+                            <div class="font-mono bg-slate-900 text-emerald-300 rounded-lg px-4 py-3 mt-2 overflow-x-auto">
+                                Atención(Q, K, V) = softmax(Q·Kᵀ / √d) · V</div>
+                            <p class="mt-2">Cada token hace una "pregunta" (Q), la compara con la "etiqueta" de los demás
+                                (K) y toma una mezcla de su "contenido" (V), pesada por qué tan bien coinciden. <span
+                                    class="text-[11px] text-slate-400">(Vaswani et al., <a
+                                        href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer"
+                                        class="underline hover:text-emerald-600">2017</a>)</span></p>
+                        </div>
+                        <div>
+                            <b>Probabilidades con temperatura (paso 5):</b>
+                            <div class="font-mono bg-slate-900 text-emerald-300 rounded-lg px-4 py-3 mt-2 overflow-x-auto">
+                                P(tokenᵢ) = e^(zᵢ/T) / Σⱼ e^(zⱼ/T)</div>
+                            <p class="mt-2">z es el puntaje de cada token y T, la temperatura. Temperatura baja: casi
+                                siempre el más probable. Alta: más variedad.</p>
+                        </div>
+                        <div>
+                            <b>La respuesta completa (paso 6):</b>
+                            <div class="font-mono bg-slate-900 text-emerald-300 rounded-lg px-4 py-3 mt-2 overflow-x-auto whitespace-nowrap">
+                                P(respuesta | prompt) = P(t₁ | prompt) · P(t₂ | prompt, t₁) · P(t₃ | prompt, t₁, t₂) · …
+                            </div>
+                            <p class="mt-2">Tu prompt aparece en <b>cada uno</b> de los factores: condiciona todas las
+                                probabilidades de la respuesta.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <p class="mt-6 text-center text-lg font-extrabold text-purple-900">"Tu prompt no se 'lee y se obedece':
+                    condiciona cada una de las probabilidades de la respuesta, token por token."</p>
+                <div class="mt-5 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900">
+                    <b class="block mb-1">¿Y esto qué me cambia?</b>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Todo lo que escribís <b>pesa</b>: un detalle de contexto ("para mi jefa", "en tono formal",
+                            "máximo 100 palabras") cambia las probabilidades de cada palabra de la respuesta.</li>
+                        <li>Lo que <b>no</b> escribís, el modelo lo rellena con lo más típico. Prompt genérico →
+                            respuesta genérica.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ¿Qué activa tu prompt? -->
+            <div class="glass-panel p-6 md:p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-5">¿Qué "activa" tu prompt adentro del modelo?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">🧭</div>
+                        <h4 class="font-bold text-slate-800 mb-2">1. Condiciona la distribución</h4>
+                        <p class="text-slate-600">El modelo aprendió de muchísimos tipos de texto: mails formales,
+                            foros, manuales, papers, chistes. Tu prompt "ubica" la respuesta en una de esas zonas. Por
+                            eso darle un <b>rol y una audiencia</b> ("explicáselo a alguien que recién entra al equipo")
+                            funciona: no le da conocimientos nuevos, pero le indica qué tipo de texto continuar.</p>
+                    </div>
+                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">💡</div>
+                        <h4 class="font-bold text-purple-900 mb-2">2. Enciende conceptos internos</h4>
+                        <p class="text-slate-700 mb-3">Adentro del modelo, los conceptos están representados como
+                            patrones de activación de sus neuronas artificiales. Las palabras que usás activan los
+                            conceptos relacionados, y esos conceptos influyen en la respuesta.</p>
+                        <div class="bg-white border border-purple-200 rounded-lg p-3 text-xs text-slate-700">
+                            <span class="inline-block bg-purple-600 text-white text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded mb-1">Caso
+                                real</span><br>
+                            En mayo de 2024, Anthropic identificó millones de estos patrones ("features") dentro de un
+                            modelo Claude, por ejemplo uno asociado al Golden Gate Bridge. Al amplificarlo
+                            artificialmente, el modelo empezaba a mencionar el puente en cualquier conversación (la demo
+                            se llamó <i>Golden Gate Claude</i>).
+                            <span class="block text-[11px] text-slate-400 mt-1">Fuente: Anthropic, <a
+                                    href="https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="underline hover:text-emerald-600"><i>Scaling Monosemanticity</i></a>, mayo
+                                2024</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">📚</div>
+                        <h4 class="font-bold text-slate-800 mb-2">3. Le enseña en el momento</h4>
+                        <p class="text-slate-600">Si le mostrás ejemplos en el prompt, el modelo detecta el patrón y lo
+                            sigue, <b>sin que cambie nada de su entrenamiento</b> (aprendizaje en contexto, o
+                            <span class="tt" data-tt="fewshot">few-shot</span>). Esto se mostró a gran escala con GPT-3.
+                            Cuando cerrás el chat, ese "aprendizaje" desaparece: solo existía dentro de ese paquete.</p>
+                        <p class="text-[11px] text-slate-400 mt-2">Fuente: Brown et al., <a
+                                href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener noreferrer"
+                                class="underline hover:text-emerald-600">"Language Models are Few-Shot Learners"</a>,
+                            2020</p>
+                    </div>
+                </div>
+                <div class="mt-5 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900">
+                    <b>¿Y esto qué me cambia?</b> No hace falta adivinar palabras mágicas. Lo que funciona es darle al
+                    modelo las señales correctas: quién sos, para quién es, qué querés, con qué datos y en qué formato.
+                </div>
+            </div>
+
+            <!-- Por qué la forma de pedir cambia tanto -->
+            <div class="glass-panel p-6 md:p-8 mb-8 border-t-4 border-t-amber-400">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">Por qué la forma de pedir cambia tanto la respuesta
+                </h3>
+                <p class="text-slate-700 text-sm mb-2">Como el modelo continúa texto según probabilidades, <b>pequeños
+                        cambios en el prompt pueden mover mucho el resultado</b>. Está medido: un estudio de 2023
+                    encontró que cambiar solo el <b>formato</b> de un prompt (separadores, mayúsculas, espacios), sin
+                    cambiar su significado, podía mover el rendimiento de un modelo abierto en hasta <b>76 puntos
+                        porcentuales</b> en ciertas tareas. Los modelos actuales son más robustos, pero el principio se
+                    mantiene: <b>cómo pedís importa</b>.</p>
+                <p class="text-[11px] text-slate-400 mb-6">Fuente: Sclar et al., <a
+                        href="https://arxiv.org/abs/2310.11324" target="_blank" rel="noopener noreferrer"
+                        class="underline hover:text-emerald-600">arXiv:2310.11324</a> (ICLR 2024); medido con
+                    LLaMA-2-13B usando ejemplos en el prompt.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-6">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <h4 class="font-bold text-slate-800 mb-2">🌫️ Ambigüedad → respuesta promedio</h4>
+                        <p class="text-slate-600">"Escribime un mail para un cliente" no dice qué cliente, qué tono, qué
+                            objetivo. El modelo rellena con lo más típico: un mail correcto, genérico y que no sirve.</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <h4 class="font-bold text-slate-800 mb-2">🙂 Preguntas que empujan la respuesta</h4>
+                        <p class="text-slate-600">Los asistentes tienden a darle la razón al usuario (<span class="tt"
+                                data-tt="sycophancy">complacencia</span>). Una investigación de Anthropic mostró que los
+                            asistentes entrenados con feedback humano tienden a coincidir con lo que el usuario parece
+                            creer, incluso cuando está equivocado. "¿No es cierto que este plan es bueno?" invita a un
+                            sí. Mejor: "Señalá los tres puntos más débiles de este plan."</p>
+                        <p class="text-[11px] text-slate-400 mt-2">Fuente: Sharma et al., <a
+                                href="https://arxiv.org/abs/2310.13548" target="_blank" rel="noopener noreferrer"
+                                class="underline hover:text-emerald-600">2023</a></p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <h4 class="font-bold text-slate-800 mb-2">🕳️ Lo que está en el medio se pierde</h4>
+                        <p class="text-slate-600">En prompts muy largos, la información del medio se aprovecha peor
+                            (Capítulo 3, "perdido en el medio"). Lo más importante conviene ponerlo <b>al principio o al
+                                final</b>, y bien marcado.</p>
+                        <p class="text-[11px] text-slate-400 mt-2">Fuente: Liu et al., <a
+                                href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener noreferrer"
+                                class="underline hover:text-emerald-600">"Lost in the Middle"</a>, 2023</p>
+                    </div>
+                </div>
+                <div class="p-5 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-900">
+                    <b>Corrección de una idea común: "Hay frases mágicas que hacen que la IA responda mejor."</b>
+                    Circulan muchas ("sos un experto con 30 años de experiencia", "te voy a dar una propina"). No hay
+                    evidencia sólida de que una frase mágica funcione de forma general y estable entre modelos. Lo que
+                    sí funciona, de forma consistente, es <b>claridad, contexto, ejemplos y formato</b>.
+                </div>
+            </div>
+
+            <!-- Anatomía de un buen prompt -->
+            <div class="glass-panel p-6 md:p-8 mb-8 border-t-4 border-t-emerald-500">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Anatomía de un buen prompt: armalo vos</h3>
+                <p class="text-sm text-slate-500 mb-5">Activá cada pieza y mirá cómo se arma el prompt. <span
+                        class="inline-block bg-slate-200 text-slate-700 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded">Escenario
+                        ilustrativo</span>: resumir un informe de ventas para una reunión.</p>
+                <div id="prompt-builder" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <fieldset>
+                        <legend class="sr-only">Piezas del prompt</legend>
+                        <div id="prompt-builder-options" class="space-y-2"></div>
+                    </fieldset>
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Tu prompt</div>
+                        <div id="prompt-builder-output" aria-live="polite"
+                            class="bg-slate-900 text-slate-100 rounded-xl p-4 text-sm leading-relaxed min-h-[220px] whitespace-pre-line">
+                        </div>
+                        <div id="prompt-builder-meter" class="mt-3 text-xs text-slate-500"></div>
+                    </div>
+                </div>
+                <p class="mt-6 text-center text-base md:text-lg font-extrabold text-slate-900">"Escribí el prompt como si
+                    se lo pasaras a una persona muy capaz que no te conoce y no puede hacerte preguntas."</p>
+            </div>
+
+            <!-- Técnicas -->
+            <div class="glass-panel p-6 md:p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Técnicas que funcionan (y por qué)</h3>
+                <p class="text-sm text-slate-500 mb-5">Cada técnica tiene una razón en el mecanismo que viste arriba.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse min-w-[640px]">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="text-left p-3 rounded-tl-lg">Técnica</th>
+                                <th class="text-left p-3">Por qué funciona</th>
+                                <th class="text-left p-3 rounded-tr-lg">Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 align-top">
+                            <tr>
+                                <td class="p-3 font-bold text-slate-800">Ser específico</td>
+                                <td class="p-3 text-slate-600">Menos huecos que el modelo tenga que rellenar con lo típico
+                                </td>
+                                <td class="p-3 text-slate-600 italic">"Mail de 5 líneas para reprogramar la reunión del
+                                    jueves con un proveedor, tono cordial" en vez de "un mail para un proveedor"</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-slate-800">Dar ejemplos (few-shot)</td>
+                                <td class="p-3 text-slate-600">Aprendizaje en contexto: el modelo detecta el patrón y lo
+                                    continúa</td>
+                                <td class="p-3 text-slate-600 italic">Pegar dos respuestas que te gustaron y pedir "seguí
+                                    este estilo"</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-slate-800">Pedir el paso a paso</td>
+                                <td class="p-3 text-slate-600">Cada token es cómputo: escribir el razonamiento le da más
+                                    pasos, y los resultados intermedios quedan en el contexto para usarlos después. En
+                                    los modelos de razonamiento esto ya pasa por defecto (Capítulo 4)</td>
+                                <td class="p-3 text-slate-600 italic">"Antes de responder, analizá los pros y contras de
+                                    cada opción"</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-slate-800">Separar instrucciones de datos</td>
+                                <td class="p-3 text-slate-600">Le ayuda a distinguir qué es pedido y qué es material.
+                                    Además, reduce el riesgo de que tome como instrucción algo que estaba en el material
+                                    (prompt injection, Capítulo 7)</td>
+                                <td class="p-3 text-slate-600 italic">Poner el texto a analizar entre comillas triples o
+                                    etiquetas como &lt;documento&gt;</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-slate-800">Pedir el formato</td>
+                                <td class="p-3 text-slate-600">El formato también es texto a continuar: si lo pedís, lo
+                                    sigue</td>
+                                <td class="p-3 text-slate-600 italic">"Respondé en una tabla con columnas Tarea /
+                                    Responsable / Fecha"</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-slate-800">Darle permiso para decir "no sé"</td>
+                                <td class="p-3 text-slate-600">Si no lo habilitás, la continuación más probable a una
+                                    pregunta es una respuesta, aunque sea inventada (Capítulo 3)</td>
+                                <td class="p-3 text-slate-600 italic">"Si la información no está en el documento,
+                                    decilo"</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-slate-800">Dividir tareas grandes</td>
+                                <td class="p-3 text-slate-600">Cada paso tiene un objetivo claro y podés revisar en el
+                                    medio</td>
+                                <td class="p-3 text-slate-600 italic">Primero "armá un índice", después "desarrollá la
+                                    sección 1"</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-bold text-slate-800">Iterar</td>
+                                <td class="p-3 text-slate-600">El primer resultado es un borrador. Corregirlo en el mismo
+                                    chat suma contexto</td>
+                                <td class="p-3 text-slate-600 italic">"Más corto. Sacá la jerga. Agregá un ejemplo
+                                    concreto."</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-4">Fuentes: Wei et al., <a
+                        href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener noreferrer"
+                        class="underline hover:text-emerald-600">"Chain-of-Thought Prompting Elicits Reasoning in Large
+                        Language Models"</a> (NeurIPS 2022); Kojima et al., <a href="https://arxiv.org/abs/2205.11916"
+                        target="_blank" rel="noopener noreferrer" class="underline hover:text-emerald-600">"Large
+                        Language Models are Zero-Shot Reasoners"</a> (NeurIPS 2022); Brown et al. (2020).</p>
+            </div>
+
+            <!-- Prompt design / engineering / context engineering -->
+            <div class="glass-panel p-6 md:p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Prompt design, prompt engineering y context
+                    engineering</h3>
+                <p class="text-sm text-slate-500 mb-5">Tres conceptos que se suelen mezclar, de lo más cotidiano a lo más
+                    técnico.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                        <h4 class="font-bold text-emerald-900 mb-1">✍️ Prompt design</h4>
+                        <p class="text-[11px] uppercase tracking-wide text-emerald-700 font-bold mb-3">Diseño del prompt
+                        </p>
+                        <p class="text-slate-700 mb-2"><b>Qué es:</b> escribir bien un pedido: claro, con contexto,
+                            formato y ejemplos.</p>
+                        <p class="text-slate-700 mb-2"><b>Quién:</b> cualquier persona que usa IA.</p>
+                        <p class="text-slate-700 mb-2"><b>Cómo se ve:</b> un buen mensaje en el chat.</p>
+                        <p class="text-emerald-800 font-semibold">¿Se entiende lo que pido?</p>
+                    </div>
+                    <div class="bg-sky-50 border border-sky-200 rounded-xl p-5">
+                        <h4 class="font-bold text-sky-900 mb-1">🧪 Prompt engineering</h4>
+                        <p class="text-[11px] uppercase tracking-wide text-sky-700 font-bold mb-3">Ingeniería de prompts
+                        </p>
+                        <p class="text-slate-700 mb-2"><b>Qué es:</b> diseñar, <b>probar y medir</b> prompts de forma
+                            sistemática para que funcionen bien de manera repetible.</p>
+                        <p class="text-slate-700 mb-2"><b>Quién:</b> quien arma un asistente, una plantilla o un flujo
+                            que van a usar otros.</p>
+                        <p class="text-slate-700 mb-2"><b>Cómo se ve:</b> varias versiones de un prompt comparadas con
+                            un conjunto de casos de prueba.</p>
+                        <p class="text-sky-800 font-semibold">¿Funciona igual de bien con 100 casos distintos?</p>
+                    </div>
+                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                        <h4 class="font-bold text-purple-900 mb-1">🧩 <span class="tt"
+                                data-tt="contextengineering">Context engineering</span></h4>
+                        <p class="text-[11px] uppercase tracking-wide text-purple-700 font-bold mb-3">Ingeniería de
+                            contexto</p>
+                        <p class="text-slate-700 mb-2"><b>Qué es:</b> decidir <b>todo lo que entra al paquete</b>:
+                            instrucciones, documentos, memoria, herramientas, historial (Capítulo 4).</p>
+                        <p class="text-slate-700 mb-2"><b>Quién:</b> quien construye apps y agentes.</p>
+                        <p class="text-slate-700 mb-2"><b>Cómo se ve:</b> un Proyecto bien armado, una skill, un agente
+                            con las herramientas justas.</p>
+                        <p class="text-purple-800 font-semibold">¿El modelo tiene la información correcta, y solo esa,
+                            en el momento justo?</p>
+                    </div>
+                </div>
+                <p class="mt-5 text-sm text-slate-700">Para el uso diario, alcanza con el diseño del prompt. Pero
+                    conviene saber que los otros dos niveles existen: cuando usás un Proyecto, una skill (Capítulo 6) o
+                    un asistente de tu empresa, alguien ya hizo ese trabajo por vos. Y a medida que los modelos mejoran,
+                    el foco se corre del "cómo lo escribo" al "<b>qué información le doy</b>".</p>
+            </div>
+
+            <!-- Laboratorio 3 -->
+            <div class="glass-panel overflow-hidden mb-8 border-t-4 border-t-purple-500">
+                <div class="p-6 md:p-8 pb-0">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-1 flex items-center gap-2"><span>🧪</span>
+                        Laboratorio 3: el mismo pedido, tres prompts</h3>
+                    <p class="text-sm text-slate-500 mb-4"><span
+                            class="inline-block bg-slate-200 text-slate-700 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded">Escenario
+                            ilustrativo</span> Las respuestas son ejemplos escritos para esta guía, no salidas reales de
+                        un modelo.</p>
+                </div>
+                <div id="prompt-lab-tabs" role="tablist" aria-label="Versiones del prompt"
+                    class="flex overflow-x-auto border-b border-slate-200 bg-white px-2"></div>
+                <div id="prompt-lab-panel" role="tabpanel" class="p-6 md:p-8 bg-white"></div>
+                <p class="px-6 md:px-8 pb-6 text-sm text-slate-600">Probalo vos: hacé el mismo pedido en tu app con los
+                    tres niveles de detalle y compará.</p>
+            </div>
+
+            <!-- Lo que el prompt no puede hacer -->
+            <div class="glass-panel p-6 md:p-8 mb-8 border-t-4 border-t-red-400">
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">Lo que el prompt no puede hacer</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+                        <h4 class="font-bold text-red-900 mb-2">No le agrega conocimiento</h4>
+                        <p class="text-slate-700">Si el dato no está en su entrenamiento ni en el paquete, un prompt
+                            mejor no lo hace aparecer: hay que dárselo (documento, búsqueda).</p>
+                    </div>
+                    <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+                        <h4 class="font-bold text-red-900 mb-2">No garantiza exactitud</h4>
+                        <p class="text-slate-700">Un buen prompt mejora las probabilidades, pero no convierte el cálculo
+                            mental en calculadora (Capítulo 4).</p>
+                    </div>
+                    <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+                        <h4 class="font-bold text-red-900 mb-2">No es una barrera de seguridad</h4>
+                        <p class="text-slate-700">Escribir "no reveles esta información" en un prompt no protege nada:
+                            el modelo no siempre lo cumple, y otro texto puede convencerlo de lo contrario (prompt
+                            injection, Capítulo 7).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seis reglas -->
+            <div class="glass-panel p-6 md:p-8 bg-slate-800 text-white" id="reglas-prompt">
+                <h3 class="text-2xl font-bold text-emerald-400 mb-5">Seis reglas para escribir prompts</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">1</span><div><b>Contexto primero.</b> Quién sos,
+                            para qué es y para quién.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">2</span><div><b>Un verbo concreto.</b>
+                            "Resumí", "compará", "listá", "corregí", no "fijate esto".</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">3</span><div><b>Separá el pedido del
+                                material.</b> Comillas, etiquetas o títulos.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">4</span><div><b>Pedí el formato.</b> Viñetas,
+                            tabla, largo máximo.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">5</span><div><b>Dale permiso para decir "no
+                                sé".</b> Y pedile que marque lo que no está seguro.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">6</span><div><b>Iterá.</b> El primer resultado
+                            es un borrador; corregilo en el mismo chat.</div></div>
+                </div>
+            </div>
+
+            <!-- Puente → Cap 6 -->
+            <div class="mt-8 p-6 bg-slate-50 border-l-4 border-slate-400 rounded-r-xl">
+                <p class="text-slate-700 text-sm leading-relaxed">
+                    <strong>Un buen prompt aprovecha lo que el modelo ya sabe. ¿Y si necesita saber de lo tuyo, o hacer
+                        cosas?</strong> En el <button onclick="nav('cap4')"
+                        class="underline text-emerald-700 hover:text-emerald-600">siguiente capítulo</button>: RAG,
+                    skills y agentes.
+                </p>
+            </div>
+        </section>
+
         <!-- CAPÍTULO 4: De Hablar a Actuar -->
         <section id="cap4" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
             <header class="mb-10">
@@ -3041,12 +3503,97 @@
             renderStack();
         }
 
+        // === CAPÍTULO 5: ARMÁ TU PROMPT (escenario ilustrativo) ===
+        const promptPieces = [
+            { id: 'contexto', label: '1. Contexto', why: 'Quién sos, para qué es, qué pasó antes', on: false, text: 'Trabajo en el área comercial. Mañana presento los resultados del trimestre a mi equipo.' },
+            { id: 'tarea', label: '2. Tarea', why: 'Qué querés, con un verbo concreto', on: true, text: 'Resumí el informe adjunto.' },
+            { id: 'datos', label: '3. Datos', why: 'El material, bien separado del pedido', on: false, text: 'El informe está entre las etiquetas <informe> y </informe>.' },
+            { id: 'formato', label: '4. Formato', why: 'Cómo querés la respuesta', on: false, text: 'Cinco viñetas de una línea, y al final una tabla con las tres cifras principales.' },
+            { id: 'criterios', label: '5. Criterios y límites', why: 'Qué priorizar, qué evitar, qué hacer si falta información', on: false, text: 'Priorizá lo que cambió respecto del trimestre anterior. Si un dato no está en el informe, decí "no figura"; no lo estimes.' },
+            { id: 'ejemplo', label: '6. Ejemplo (opcional)', why: 'Mostrar el estilo que buscás', on: false, text: 'Una viñeta de ejemplo: "Ventas en el norte: +12% (impulsadas por el producto X)".' }
+        ];
+
+        function buildPromptBuilder() {
+            const options = document.getElementById('prompt-builder-options');
+            const output = document.getElementById('prompt-builder-output');
+            const meter = document.getElementById('prompt-builder-meter');
+
+            promptPieces.forEach((piece) => {
+                const label = document.createElement('label');
+                label.className = 'flex items-start gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 text-sm';
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.checked = piece.on;
+                input.className = 'mt-1 accent-emerald-600';
+                input.addEventListener('change', () => { piece.on = input.checked; render(); });
+                const text = document.createElement('span');
+                text.innerHTML = `<b class="text-slate-800">${piece.label}</b><br><span class="text-xs text-slate-500">${piece.why}</span>`;
+                label.append(input, text);
+                options.appendChild(label);
+            });
+
+            function render() {
+                const active = promptPieces.filter(p => p.on);
+                // textContent: el ejemplo incluye etiquetas <informe> que deben verse como texto
+                output.textContent = active.length ? active.map(p => p.text).join('\n\n') : '(Prompt vacío: el modelo no sabe qué querés.)';
+                meter.textContent = `Piezas activas: ${active.length} de ${promptPieces.length}. ` +
+                    (active.length <= 1 ? 'Con tan poco, el modelo rellena todo lo demás con lo más típico.'
+                        : active.length < 5 ? 'Va mejorando: cada pieza le saca un hueco que antes tenía que adivinar.'
+                            : 'Un pedido así se parece al que le harías a una persona capaz que no te conoce.');
+            }
+
+            render();
+        }
+
+        // === CAPÍTULO 5: LABORATORIO 3 (escenario ilustrativo) ===
+        const promptLabData = [
+            {
+                id: 'vago', label: 'Vago',
+                prompt: 'Escribí un mail sobre la reunión.',
+                response: 'Estimado/a:\nQuería comentarte sobre la reunión. Quedo atento/a a tus comentarios.\nSaludos cordiales.',
+                note: 'El modelo rellenó todos los huecos con lo más típico: sin fecha, sin motivo, sin pedido concreto.'
+            },
+            {
+                id: 'contexto', label: 'Con contexto',
+                prompt: 'Escribí un mail a Laura, de Compras, para pasar la reunión del jueves 10 h al viernes a la misma hora porque se atrasó el informe de costos. Tono cordial, máximo 6 líneas.',
+                response: 'Hola, Laura:\nTe escribo para pedirte pasar la reunión del jueves a las 10 h al viernes a la misma hora. Se atrasó el informe de costos y prefiero llegar con los números completos.\n¿Te queda bien el viernes?\nGracias, saludos.',
+                note: 'Destinatario, motivo, tono y largo: cada dato movió las probabilidades hacia el mail que necesitabas.'
+            },
+            {
+                id: 'estructurado', label: 'Estructurado',
+                prompt: 'Igual que el anterior, más: "Terminá con una pregunta de sí o no para confirmar. Dame dos versiones: una formal y una más informal."',
+                response: 'Versión formal:\nEstimada Laura: le propongo trasladar la reunión del jueves 10 h al viernes en el mismo horario, dado que el informe de costos se demoró. ¿Le resulta conveniente?\n\nVersión informal:\nHola, Laura: ¿la pasamos al viernes a las 10? Se atrasó el informe de costos. ¿Te va?',
+                note: 'Formato y criterio explícitos: dos opciones listas para elegir y menos idas y vueltas.'
+            }
+        ];
+
+        function escapeHtml(str) {
+            return str.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+        }
+
+        function buildPromptLab() {
+            buildTabs(document.getElementById('prompt-lab-tabs'), document.getElementById('prompt-lab-panel'), promptLabData, (item) => `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Prompt</div>
+                        <div class="bg-slate-900 text-slate-100 rounded-xl p-4 whitespace-pre-line">${escapeHtml(item.prompt)}</div>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Respuesta de ejemplo</div>
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 whitespace-pre-line text-slate-700">${escapeHtml(item.response)}</div>
+                    </div>
+                </div>
+                <div class="mt-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg p-4 text-sm text-amber-900"><b>Qué cambió:</b> ${item.note}</div>`);
+        }
+
         window.onload = () => {
             buildTimeline();
             document.querySelector('#timeline-list button').click();
             buildMLTabs();
             buildEnterFlow();
             buildContextBuilder();
+            buildPromptBuilder();
+            buildPromptLab();
             nav('cap1');
             renderTokens();
         };
@@ -3178,7 +3725,11 @@
             alphago: 'Sistema de DeepMind que venció al campeón mundial de Go en 2016. Aprendió jugando contra sí mismo (Aprendizaje por Refuerzo) e inventó movimientos que ningún maestro humano había considerado.',
             llm: 'Modelo de Lenguaje Grande (Large Language Model): Transformer entrenado con billones de tokens, capaz de generar, resumir, traducir y razonar sobre texto en lenguaje natural.',
             iagenerativa: 'Rama de la IA que genera contenido nuevo (texto, imágenes, audio, código) a partir de patrones aprendidos durante el entrenamiento.',
-            mcp: 'Model Context Protocol: estándar abierto publicado por Anthropic en noviembre de 2024 para conectar modelos de IA con herramientas y fuentes de datos externas.'
+            mcp: 'Model Context Protocol: estándar abierto publicado por Anthropic en noviembre de 2024 para conectar modelos de IA con herramientas y fuentes de datos externas.',
+            prompt: 'Todo lo que le escribís al modelo para pedirle algo: la pregunta, el contexto, los ejemplos y el formato que querés. Es solo una parte del texto que recibe el modelo.',
+            fewshot: 'Técnica de mostrarle al modelo algunos ejemplos dentro del prompt para que siga el mismo patrón, sin reentrenarlo. También se la llama aprendizaje en contexto.',
+            sycophancy: 'Complacencia (sycophancy): tendencia de los asistentes a darle la razón al usuario o a coincidir con lo que parece creer, aunque esté equivocado.',
+            contextengineering: 'Ingeniería de contexto: diseñar todo lo que entra al paquete que recibe el modelo (instrucciones, documentos, memoria, herramientas, historial), no solo el prompt.'
         };
 
         (function() {
