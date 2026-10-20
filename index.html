@@ -3097,113 +3097,117 @@
             </div>
         </section>
 
-        <!-- CAPÍTULO 6: Recursos -->
+        <!-- CAPÍTULO 8: Recursos y autoevaluación (id cap6) -->
         <section id="cap6" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
             <header class="mb-10">
-                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 6</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Recursos y Aprendizaje Continuo
-                </h2>
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 8</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Recursos y autoevaluación</h2>
                 <div class="guru-quote p-6 rounded-r-lg mb-0 text-lg text-slate-800 font-medium">
-                    "Esta guía estratégica es el primer paso, no el destino. La IA evoluciona cada semana; mantenerse al
-                    día no
-                    es opcional para quien quiere liderar con criterio."
+                    "Esta guía es un punto de partida, no el destino. La IA cambia todo el tiempo: lo que no cambia es
+                    el criterio para usarla bien."
                 </div>
             </header>
 
-            <!-- Reglas prácticas derivadas de la arquitectura -->
+            <!-- Reglas prácticas -->
             <div class="glass-panel p-8 mt-0 mb-8 bg-slate-800 text-white">
                 <h3 class="text-xl font-bold text-emerald-400 mb-2">Lo que esto significa al trabajar con IA</h3>
-                <p class="text-slate-300 text-sm mb-5">Los mecanismos internos de los LLMs tienen consecuencias directas en el día a día. Cuatro reglas prácticas derivadas de la arquitectura:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-slate-700 rounded-xl p-4">
-                        <div class="font-bold text-emerald-300 mb-1 text-sm">📝 El prompt importa más de lo que parece</div>
-                        <p class="text-slate-300 text-xs">El mecanismo de atención usa literalmente cada palabra del
-                            prompt para ponderar qué es relevante. Un prompt vago produce respuestas vagas —no por
-                            pereza del modelo, sino porque matemáticamente no tiene señal suficiente.</p>
+                <p class="text-slate-300 text-sm mb-5">Seis reglas prácticas que salen de todo lo que viste. Las cinco
+                    primeras son las del <button onclick="nav('capEnter')"
+                        class="underline text-emerald-300 hover:text-emerald-200">Capítulo 4</button>.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">1</span><div><b>Si importa que sea de hoy, que
+                                busque.</b> Fijate que haya fuentes. Si necesitás datos recientes o internos, necesitás
+                            que la IA busque o que le des el documento.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">2</span><div><b>Si importa que sea exacto, que lo
+                                calcule con código.</b></div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">3</span><div><b>Si es un tema nuevo, abrí un chat
+                                nuevo.</b> Los chats largos acumulan ruido y pierden detalles.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">4</span><div><b>Lo que adjuntás sale de tu
+                                computadora.</b> Revisá la política de tu empresa antes de subir datos sensibles.</div>
                     </div>
-                    <div class="bg-slate-700 rounded-xl p-4">
-                        <div class="font-bold text-amber-300 mb-1 text-sm">⚠️ No confíes en el tono de confianza</div>
-                        <p class="text-slate-300 text-xs">El modelo genera texto fluido y seguro porque su objetivo de
-                            entrenamiento es predecir la siguiente palabra —no verificar hechos. Una respuesta
-                            incorrecta suena exactamente igual que una correcta. La seguridad del tono no es señal de
-                            verdad.</p>
-                    </div>
-                    <div class="bg-slate-700 rounded-xl p-4">
-                        <div class="font-bold text-blue-300 mb-1 text-sm">📅 El modelo no sabe lo que pasó ayer</div>
-                        <p class="text-slate-300 text-xs">El conocimiento del modelo tiene una fecha de corte fija. Todo
-                            lo ocurrido después no existe para él. Si necesitas respuestas sobre información reciente o
-                            interna, necesitas RAG (visto en el capítulo anterior).</p>
-                    </div>
-                    <div class="bg-slate-700 rounded-xl p-4">
-                        <div class="font-bold text-purple-300 mb-1 text-sm">🎯 Fine-tuning ≠ "enseñarle todo desde cero"</div>
-                        <p class="text-slate-300 text-xs">El modelo base ya tiene miles de millones de parámetros
-                            aprendidos. El fine-tuning ajusta ese conocimiento hacia un dominio o estilo específico — no
-                            lo reemplaza. Es más parecido a especializar a un profesional que a contratar a uno nuevo.</p>
-                    </div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">5</span><div><b>Seguro no es lo mismo que
+                                correcto.</b> El tono de la respuesta no te dice nada sobre si es verdad.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">6</span><div><b>El prompt importa: contexto
+                                concreto = respuesta concreta.</b> Las <button onclick="nav('capPrompt')"
+                                class="underline text-emerald-300 hover:text-emerald-200">seis reglas del Capítulo
+                                5</button> te ayudan a escribirlo.</div></div>
                 </div>
             </div>
 
-            <!-- RESUMEN DEL VIAJE -->
+            <!-- Mapa -->
             <div class="glass-panel p-6 md:p-8 mb-10 border-t-4 border-t-slate-700 bg-slate-50">
-                <h3 class="text-xl font-bold text-slate-800 mb-1">El mapa que construiste en esta guía estratégica</h3>
-                <p class="text-sm text-slate-500 mb-6">Seis capítulos. Seis marcos conceptuales para entender y liderar
-                    en la era de la IA.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-1">El mapa que construiste</h3>
+                <p class="text-sm text-slate-500 mb-6">Ocho capítulos, una idea por capítulo.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4">
                         <span class="text-emerald-600 font-black text-lg shrink-0">1</span>
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">La IA Hoy</div>
-                            <p class="text-xs text-slate-500 mt-0.5">La IA es estadística aplicada, datos y hardware
-                                convergiendo en el momento justo. El coste de acceso cayó un 99,9% en una década: ya no
-                                es una ventaja exclusiva de grandes corporaciones.</p>
-                        </div>
+                        <div><div class="font-bold text-slate-800 text-sm">La IA hoy</div>
+                            <p class="text-xs text-slate-500 mt-0.5">Estadística, datos y hardware que se juntaron. Usar
+                                IA avanzada cuesta una fracción de lo que costaba hace pocos años.</p></div>
                     </div>
                     <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4">
                         <span class="text-emerald-600 font-black text-lg shrink-0">2</span>
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">Historia y Evolución</div>
-                            <p class="text-xs text-slate-500 mt-0.5">La IA tiene 70 años de historia con dos "inviernos"
-                                y tres revoluciones. El ciclo hype → desilusión → adopción real se repite. Reconocerlo
-                                es ventaja competitiva.</p>
+                        <div><div class="font-bold text-slate-800 text-sm">Historia</div>
+                            <p class="text-xs text-slate-500 mt-0.5">70 años de entusiasmo, decepción y avances. El
+                                ciclo se repite: conviene no creer todas las promesas ni descartar lo que funciona.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4">
                         <span class="text-emerald-600 font-black text-lg shrink-0">3</span>
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">Cómo Funciona la IA</div>
-                            <p class="text-xs text-slate-500 mt-0.5">Los LLMs no "piensan": predicen el siguiente token.
-                                Un Modelo Fundacional preentrenado a escala masiva genera capacidades que nadie programó
-                                explícitamente.</p>
-                        </div>
+                        <div><div class="font-bold text-slate-800 text-sm">El cerebro</div>
+                            <p class="text-xs text-slate-500 mt-0.5">Un modelo predice el próximo token. De ese mecanismo
+                                surgen capacidades reales, pero sin garantía de verdad.</p></div>
                     </div>
                     <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4">
                         <span class="text-emerald-600 font-black text-lg shrink-0">4</span>
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">Implementación Práctica</div>
-                            <p class="text-xs text-slate-500 mt-0.5">RAG conecta el modelo a tus documentos. Los Agentes
-                                le dan herramientas para actuar. La arquitectura correcta depende del problema, no de la
-                                moda.</p>
-                        </div>
+                        <div><div class="font-bold text-slate-800 text-sm">¿Qué pasa cuando apretás Enter?</div>
+                            <p class="text-xs text-slate-500 mt-0.5">La app arma un paquete de texto, el modelo responde o
+                                pide herramientas, la app ejecuta. Todo es texto.</p></div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4">
+                        <span class="text-emerald-600 font-black text-lg shrink-0">5</span>
+                        <div><div class="font-bold text-slate-800 text-sm">Hablarle bien</div>
+                            <p class="text-xs text-slate-500 mt-0.5">Tu prompt no es una orden, es el comienzo de un
+                                texto: condiciona cada probabilidad de la respuesta. Contexto, formato y ejemplos le ganan
+                                a cualquier frase mágica.</p></div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white border border-slate-200 rounded-xl p-4">
+                        <span class="text-emerald-600 font-black text-lg shrink-0">6</span>
+                        <div><div class="font-bold text-slate-800 text-sm">Usarla bien</div>
+                            <p class="text-xs text-slate-500 mt-0.5">Contexto (RAG) para que sepa de lo tuyo; skills para
+                                que sepa cómo lo hacés; herramientas y agentes para que haga cosas. Lo más simple que
+                                funcione.</p></div>
                     </div>
                     <div class="flex items-start gap-4 bg-white border border-red-100 rounded-xl p-4">
-                        <span class="text-red-600 font-black text-lg shrink-0">5</span>
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">Riesgos y Gobernanza</div>
-                            <p class="text-xs text-slate-500 mt-0.5">Alucinaciones, sesgos, agencia excesiva y prompt
-                                injection son riesgos reales. Gobernar —no prohibir— es la respuesta. El checklist de 7
-                                preguntas es tu punto de partida.</p>
-                        </div>
+                        <span class="text-red-600 font-black text-lg shrink-0">7</span>
+                        <div><div class="font-bold text-slate-800 text-sm">Riesgos</div>
+                            <p class="text-xs text-slate-500 mt-0.5">Datos, alucinaciones, permisos, prompt injection.
+                                Hábitos simples los reducen mucho.</p></div>
                     </div>
                     <div class="flex items-start gap-4 bg-emerald-50 border border-emerald-200 rounded-xl p-4">
-                        <span class="text-emerald-600 font-black text-lg shrink-0">6</span>
-                        <div>
-                            <div class="font-bold text-slate-800 text-sm">Recursos y Aprendizaje Continuo</div>
-                            <p class="text-xs text-slate-500 mt-0.5">Esta guía estratégica es el punto de partida. El
-                                campo evoluciona cada semana. Los recursos de abajo son el camino para mantenerse al día
-                                con criterio, no con ruido.</p>
-                        </div>
+                        <span class="text-emerald-600 font-black text-lg shrink-0">8</span>
+                        <div><div class="font-bold text-slate-800 text-sm">Recursos</div>
+                            <p class="text-xs text-slate-500 mt-0.5">Este es el punto de partida.</p></div>
                     </div>
                 </div>
+            </div>
+
+            <!-- QUIZ -->
+            <div class="glass-panel overflow-hidden mb-10 border-t-4 border-t-emerald-500">
+                <div class="p-6 md:p-8 pb-4">
+                    <h3 class="text-xl font-bold text-slate-800 mb-1">Autoevaluación: ¿qué harías vos?</h3>
+                    <p class="text-sm text-slate-500">Ocho situaciones del día a día. Elegí una opción y mirá la
+                        devolución; si no acertás, podés volver a intentar.</p>
+                </div>
+                <div id="quiz-chat-area" aria-live="polite"
+                    class="px-4 md:px-8 pb-4 max-h-[520px] overflow-y-auto bg-slate-50 border-y border-slate-200"></div>
+                <div id="quiz-options-area" class="p-4 md:p-6 flex flex-col gap-3 bg-white"></div>
             </div>
 
             <!-- PORTAL DESTACADO -->
@@ -3212,22 +3216,22 @@
                 <div class="flex-1">
                     <span
                         class="inline-block bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4">🌐
-                        Portal Propio</span>
+                        Portal propio</span>
                     <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">IA Intelligence Briefing</h3>
                     <p class="text-slate-300 text-base leading-relaxed mb-6">Actualización continua sobre el ecosistema
-                        de inteligencia artificial: noticias, análisis e insights curados para mantenerse al día sin el
-                        ruido. Diseñado para perfiles no técnicos que necesitan contexto estratégico, no titulares.</p>
+                        de inteligencia artificial: noticias, análisis y novedades curadas para mantenerte al día sin el
+                        ruido. Pensado para personas sin perfil técnico que quieren contexto, no solo titulares.</p>
                     <a href="https://ai-intelligence-briefing--gen-lang-client-0108664474.us-east4.hosted.app/"
                         target="_blank" rel="noopener noreferrer"
                         class="inline-block bg-emerald-500 hover:bg-emerald-400 text-white font-bold px-7 py-3 rounded-lg transition-colors text-sm uppercase tracking-wider">
-                        Abrir Portal →
+                        Abrir portal →
                     </a>
                 </div>
             </div>
 
             <!-- CURSOS -->
-            <h3 class="text-xl font-bold text-slate-800 mb-1">Cursos Recomendados</h3>
-            <p class="text-sm text-slate-500 mb-5">Gratuitos, autodirigidos y diseñados para perfiles no técnicos.</p>
+            <h3 class="text-xl font-bold text-slate-800 mb-1">Cursos recomendados</h3>
+            <p class="text-sm text-slate-500 mb-5">Gratuitos y autodirigidos.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
 
                 <!-- Elements of AI -->
@@ -3248,7 +3252,7 @@
                             Helsinki</p>
                         <p class="text-sm text-slate-600">Fundamentos de inteligencia artificial sin código, con
                             ejercicios interactivos y ejemplos del mundo real. El punto de partida ideal para cualquier
-                            profesional no técnico que quiera entender el campo desde sus bases.</p>
+                            persona que quiera entender el campo desde sus bases.</p>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="https://course.elementsofai.com/" target="_blank" rel="noopener noreferrer"
@@ -3267,7 +3271,7 @@
                     </div>
                     <div class="p-6 flex-1">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="bg-slate-200 text-slate-700 text-xs font-bold px-2 py-1 rounded">Intermedio
+                            <div class="bg-slate-200 text-slate-700 text-xs font-bold px-2 py-1 rounded">Más avanzado
                             </div>
                             <div class="bg-slate-100 text-slate-600 text-xs px-2 py-1 rounded">Inglés</div>
                         </div>
@@ -3275,9 +3279,9 @@
                             Generative AI</h4>
                         <p class="text-xs text-slate-600 font-semibold mb-3 uppercase tracking-wide">Harvard Kennedy
                             School</p>
-                        <p class="text-sm text-slate-600">Análisis del impacto político, ético y social de la
-                            inteligencia artificial generativa desde una perspectiva de gobierno y liderazgo. Para
-                            quienes toman decisiones estratégicas y necesitan marcos de evaluación sólidos.</p>
+                        <p class="text-sm text-slate-600">Más avanzado, enfocado en política pública. Analiza el
+                            impacto político, ético y social de la IA generativa, para quienes quieren profundizar en el
+                            debate más allá del uso cotidiano.</p>
                     </div>
                     <div class="px-6 pb-6">
                         <a href="https://generative-ai-course.hks.harvard.edu/home" target="_blank"
@@ -3290,7 +3294,7 @@
             </div>
 
             <!-- LIBROS -->
-            <h3 class="text-xl font-bold text-slate-800 mb-1">Lecturas Recomendadas</h3>
+            <h3 class="text-xl font-bold text-slate-800 mb-1">Lecturas recomendadas</h3>
             <p class="text-sm text-slate-500 mb-5">Cuatro libros para distintos ángulos: ensayo, divulgación, filosofía
                 y matemáticas.</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -3306,8 +3310,8 @@
                             inteligencia artificial</p>
                         <p class="text-xs text-slate-500 mb-3">Consuelo López · Tomás Balmaceda · Maximiliano Zeller ·
                             Julián Feller · Carolina Aguerre · Enzo Tagliazucchi</p>
-                        <p class="text-sm text-slate-600">Seis miradas distintas — filosófica, cultural, técnica y
-                            política — sobre lo que la IA abre y lo que cierra. Para quienes quieren debate, no solo
+                        <p class="text-sm text-slate-600">Seis miradas distintas —filosófica, cultural, técnica y
+                            política— sobre lo que la IA abre y lo que cierra. Para quienes quieren debate, no solo
                             datos.</p>
                     </div>
                 </div>
@@ -3321,10 +3325,9 @@
                     <div class="p-5 flex-1 bg-white">
                         <p class="text-xs text-red-700 font-bold uppercase tracking-wide mb-1">La nueva inteligencia y
                             el contorno de lo humano</p>
-                        <p class="text-xs text-slate-500 mb-3">Mariano Sigman & Santiago Bilinkis · Ed. Debate</p>
+                        <p class="text-xs text-slate-500 mb-3">Mariano Sigman &amp; Santiago Bilinkis · Ed. Debate</p>
                         <p class="text-sm text-slate-600">Accesible y profundo a la vez. Explora qué define lo humano
-                            cuando las máquinas aprenden a pensar. El libro más recomendado para perfiles ejecutivos que
-                            quieren ampliar perspectiva.</p>
+                            cuando las máquinas aprenden. Muy recomendado para empezar.</p>
                     </div>
                 </div>
 
@@ -3898,6 +3901,210 @@
                 <div class="mt-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg p-4 text-sm text-amber-900"><b>Qué cambió:</b> ${item.note}</div>`);
         }
 
+        // === CAPÍTULO 8: AUTOEVALUACIÓN (quiz) ===
+        // Escenarios del uso cotidiano de la IA. La lógica no asume una cantidad fija de escenarios.
+        const quizScenarios = [
+            {
+                question: "Le preguntás a un asistente de IA: '¿Qué día es hoy?'. En una app te responde la fecha correcta. Usando el mismo modelo por API, sin ninguna configuración, te responde una fecha de hace varios meses. ¿Por qué?",
+                options: [
+                    "A) El modelo de la API es más viejo y está desactualizado.",
+                    "B) El modelo nunca sabe la fecha por sí solo: en la app, la aplicación se la escribe en las instrucciones; por API, nadie se la pasó y adivina según sus datos de entrenamiento.",
+                    "C) La app tiene un reloj interno conectado al modelo."
+                ],
+                correct: 1,
+                feedback: {
+                    0: "❌ <b>No es eso.</b> Puede ser exactamente el mismo modelo. La diferencia está en lo que recibe: la app le agrega la fecha como texto; la API, por defecto, no.",
+                    1: "✅ <b>Exacto.</b> El modelo vive en una 'habitación sin ventanas'. La fecha le llega como un papelito más que la app agrega al paquete. Sin ese papelito, solo puede adivinar.",
+                    2: "❌ <b>Casi.</b> No hay un reloj conectado al modelo: la app lee la fecha de su propio sistema y se la escribe como texto. El modelo solo lee texto."
+                }
+            },
+            {
+                question: "Le pedís a la IA que sume una columna de 300 importes de un Excel. Te da un total con mucha seguridad. ¿Qué hacés?",
+                options: [
+                    "A) Lo uso: si lo dice con tanta seguridad, es porque está bien.",
+                    "B) No uso la IA para números: las IA no saben hacer cuentas.",
+                    "C) Verifico que lo haya calculado con código (o se lo pido: 'calculalo con Python y mostrame el código') y controlo el resultado con un total conocido."
+                ],
+                correct: 2,
+                feedback: {
+                    0: "❌ <b>Cuidado.</b> El tono seguro no indica nada: el modelo suena igual cuando acierta y cuando se equivoca.",
+                    1: "❌ <b>Demasiado extremo.</b> Los modelos sí hacen cuentas, como cálculo mental, y con herramientas de código pueden ser exactos. El problema es no saber cuál de las dos cosas pasó.",
+                    2: "✅ <b>Bien.</b> Si el número importa, que lo calcule una herramienta, y vos chequeás algún total de control. La IA redacta; el código calcula."
+                }
+            },
+            {
+                question: "Necesitás resumir rápido una planilla con nombres, mails y montos de facturación de clientes. Tenés a mano tu cuenta personal gratuita de un asistente de IA. ¿Qué hacés?",
+                options: [
+                    "A) La subo: es solo para resumir y después borro el chat.",
+                    "B) Uso la cuenta aprobada por la empresa y reviso la política interna; si no hay una aprobada, anonimizo los datos (saco nombres, mails y montos) antes de subirla.",
+                    "C) No pasa nada: las empresas de IA nunca guardan lo que les mandás."
+                ],
+                correct: 1,
+                feedback: {
+                    0: "❌ <b>Riesgoso.</b> Al subirla, los datos ya salieron de tu computadora. Borrar el chat no garantiza qué pasó con ellos, y las condiciones de una cuenta personal gratuita pueden ser muy distintas de las de una empresarial.",
+                    1: "✅ <b>Correcto.</b> Lo que adjuntás viaja a los servidores del proveedor. Qué se guarda y para qué depende del plan y la configuración. La cuenta de la empresa y la anonimización son tus mejores protecciones.",
+                    2: "❌ <b>No es así.</b> Depende del proveedor, del plan y de la configuración. Algunas condiciones permiten guardar y usar los datos; otras no. Hay que saberlo, no suponerlo."
+                }
+            },
+            {
+                question: "Le pedís a la IA referencias para un informe y te da tres citas con autor, título, año y link. Se ven perfectas. ¿Qué hacés?",
+                options: [
+                    "A) Las copio: tienen link, así que son reales.",
+                    "B) Abro cada fuente y verifico que exista y que diga lo que la IA dice que dice.",
+                    "C) Le pregunto a la IA si las citas son reales; si dice que sí, las uso."
+                ],
+                correct: 1,
+                feedback: {
+                    0: "❌ <b>Peligro.</b> Los links y las citas también se pueden inventar, con formato perfecto. Hay más de 2.200 decisiones judiciales en el mundo que registran escritos con contenido alucinado por IA.",
+                    1: "✅ <b>Así se hace.</b> Una cita que no abriste es una cita que no verificaste. Si la app buscó en la web y te muestra las fuentes, el control es más fácil, pero sigue siendo tuyo.",
+                    2: "❌ <b>No sirve.</b> El mismo mecanismo que inventó la cita puede 'confirmarla' con la misma seguridad. La verificación tiene que ser externa."
+                }
+            },
+            {
+                question: "Ayer, en otro chat, le explicaste a la IA todo el contexto de un proyecto. Hoy abrís un chat nuevo y no sabe nada del tema. ¿Qué pasó?",
+                options: [
+                    "A) Es normal: el modelo no aprende de las conversaciones. Cada chat empieza de cero, salvo que la app guarde notas (memoria) o uses un Proyecto con instrucciones y archivos.",
+                    "B) Se borró su memoria por un error de la app.",
+                    "C) El modelo aprendió lo de ayer, pero hoy lo usa otro usuario y por eso no lo muestra."
+                ],
+                correct: 0,
+                feedback: {
+                    0: "✅ <b>Exacto.</b> El modelo está 'congelado' mientras lo usás. Para que sepa algo, alguien tiene que ponérselo en el paquete: vos, la memoria de la app o un Proyecto. Si un contexto lo vas a reusar, guardalo en un Proyecto.",
+                    1: "❌ <b>No es un error.</b> Es el funcionamiento normal: cada chat es un paquete nuevo. El de ayer no se incluye en el de hoy.",
+                    2: "❌ <b>No funciona así.</b> El modelo no aprende de tus conversaciones mientras lo usás, ni guarda lo que le dijiste para mostrárselo o no a otros."
+                }
+            },
+            {
+                question: "Le pedís a un asistente con acceso a tu correo que resuma una página web. Entre el resumen, te propone 'reenviar tus últimos mails a una dirección para completar el análisis'. ¿Qué está pasando?",
+                options: [
+                    "A) Es una función nueva de la app para mejorar los resúmenes.",
+                    "B) Probablemente la página tenía instrucciones ocultas (prompt injection). No lo autorizo, cierro la tarea y lo reporto.",
+                    "C) La IA se equivocó de tarea; le digo que sí para ver qué hace."
+                ],
+                correct: 1,
+                feedback: {
+                    0: "❌ <b>Señal de alarma.</b> Ninguna tarea de resumen necesita mandar tus mails a terceros. Ese pedido no salió de vos.",
+                    1: "✅ <b>Bien visto.</b> El contenido que la IA lee puede traer instrucciones escondidas. Por eso conviene darle solo los permisos que necesita y no aprobar acciones que no pediste.",
+                    2: "❌ <b>Nunca.</b> Aprobar 'para ver qué pasa' es justo lo que busca un ataque. Ante una acción rara, se frena."
+                }
+            },
+            {
+                question: "Le pedís a la IA: 'Haceme una presentación sobre el proyecto'. Te devuelve algo prolijo pero genérico, que no sirve para tu reunión. ¿Qué es lo más efectivo?",
+                options: [
+                    "A) Repetir el mismo pedido hasta que salga mejor.",
+                    "B) Agregar 'sos un experto con 30 años de experiencia' al principio.",
+                    "C) Darle contexto y formato: para quién es, qué decisión se busca, qué datos usar (adjuntos) y cuántas diapositivas, con qué estructura."
+                ],
+                correct: 2,
+                feedback: {
+                    0: "❌ <b>Poco efectivo.</b> Con el mismo prompt, el modelo vuelve a rellenar los mismos huecos con lo más típico. Puede variar un poco, pero no sabe lo que falta.",
+                    1: "❌ <b>No alcanza.</b> No hay frases mágicas que funcionen de forma estable. Un rol puede orientar el estilo, pero no le da la información que le falta sobre tu proyecto ni tu reunión.",
+                    2: "✅ <b>Exacto.</b> Tu prompt condiciona cada probabilidad de la respuesta. Lo que no escribís, el modelo lo completa con lo genérico. Contexto, datos y formato son lo que más mueve el resultado."
+                }
+            },
+            {
+                question: "Todos los lunes le explicás a la IA, paso a paso, cómo armar el informe semanal de tu equipo: qué datos usar, qué estructura y qué tono. ¿Qué te conviene?",
+                options: [
+                    "A) Seguir explicándolo cada vez: la IA va a terminar aprendiéndolo sola.",
+                    "B) Escribir ese procedimiento una vez como skill (o en las instrucciones de un Proyecto), con una buena descripción de cuándo usarlo, y reusarlo.",
+                    "C) Pedirle que lo recuerde: 'acordate de esto para siempre'."
+                ],
+                correct: 1,
+                feedback: {
+                    0: "❌ <b>No va a pasar.</b> El modelo no aprende de tus conversaciones. Cada lunes empieza de cero (Capítulo 4).",
+                    1: "✅ <b>Bien.</b> Una skill es un buen prompt guardado con sus materiales. La app se la pasa al modelo solo cuando la tarea lo pide. La escribís una vez, bien, y la reusás.",
+                    2: "❌ <b>A medias.</b> Si la app tiene memoria, puede guardar una nota, pero una nota corta no reemplaza un procedimiento completo con estructura, criterios y plantillas. Para eso existen las skills y los Proyectos."
+                }
+            }
+        ];
+
+        let currentQuizIndex = 0;
+
+        function quizBubble(html, side, extraClasses) {
+            const wrap = side === 'right' ? 'flex justify-end fade-in mt-4' : 'flex justify-start fade-in mt-4';
+            document.getElementById('quiz-chat-area').insertAdjacentHTML('beforeend',
+                `<div class="${wrap}"><div class="${extraClasses}">${html}</div></div>`);
+        }
+
+        function scrollQuiz() {
+            const chat = document.getElementById('quiz-chat-area');
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function loadQuizScenario() {
+            const optionsArea = document.getElementById('quiz-options-area');
+
+            if (currentQuizIndex >= quizScenarios.length) {
+                quizBubble(`<strong class="text-emerald-400 block mb-3 font-bold uppercase tracking-wider text-xs">Tu guía dice:</strong>
+                    <p class="text-base md:text-lg leading-relaxed">¡Terminaste! Ya sabés lo más importante: el modelo solo lee y escribe texto, la app es la que le agrega fecha, archivos y herramientas, y vos sos quien verifica. Usala mucho, con criterio.</p>`,
+                    'left', 'bg-slate-800 text-white p-5 md:p-6 rounded-2xl rounded-tl-none max-w-[95%] shadow-lg border-2 border-emerald-500');
+                optionsArea.innerHTML = '';
+                const restart = document.createElement('button');
+                restart.type = 'button';
+                restart.className = 'text-center p-3 border-2 border-emerald-500 bg-white rounded-lg hover:bg-emerald-50 transition-all font-bold text-emerald-700 text-sm uppercase tracking-wider';
+                restart.textContent = '↺ Volver a empezar';
+                restart.addEventListener('click', () => {
+                    currentQuizIndex = 0;
+                    document.getElementById('quiz-chat-area').innerHTML = '';
+                    loadQuizScenario();
+                });
+                optionsArea.appendChild(restart);
+                scrollQuiz();
+                return;
+            }
+
+            const scenario = quizScenarios[currentQuizIndex];
+            quizBubble(`<strong class="text-emerald-700 block mb-2 font-bold uppercase tracking-wider text-xs">Situación ${currentQuizIndex + 1} de ${quizScenarios.length}:</strong>
+                <p class="text-base md:text-[1.05rem] font-medium leading-relaxed">${scenario.question}</p>`,
+                'left', 'bg-white text-slate-800 p-5 md:p-6 rounded-2xl rounded-tl-none max-w-[90%] shadow-sm border border-slate-200');
+            renderQuizOptions(scenario);
+            scrollQuiz();
+        }
+
+        function renderQuizOptions(scenario) {
+            const optionsArea = document.getElementById('quiz-options-area');
+            optionsArea.innerHTML = '';
+            scenario.options.forEach((optText, index) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'text-left p-3 md:p-4 border border-slate-300 bg-slate-50 rounded-lg hover:bg-emerald-50 hover:border-emerald-600 hover:text-emerald-900 transition-all font-medium text-slate-700 fade-in text-sm shadow-sm';
+                btn.textContent = optText;
+                btn.addEventListener('click', () => processQuizAnswer(index));
+                optionsArea.appendChild(btn);
+            });
+        }
+
+        function processQuizAnswer(selectedIndex) {
+            const scenario = quizScenarios[currentQuizIndex];
+            const optionsArea = document.getElementById('quiz-options-area');
+
+            quizBubble(scenario.options[selectedIndex].replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])),
+                'right', 'bg-slate-200 text-slate-800 font-medium p-4 rounded-2xl rounded-tr-none max-w-[85%] shadow-sm text-sm border border-slate-300');
+            optionsArea.innerHTML = '<div class="p-5 text-center text-slate-500 font-medium text-sm animate-pulse tracking-wide">Pensando…</div>';
+            scrollQuiz();
+
+            setTimeout(() => {
+                const isCorrect = selectedIndex === scenario.correct;
+                quizBubble(`<span class="text-sm md:text-base leading-relaxed block">${scenario.feedback[selectedIndex]}</span>`,
+                    'left', `${isCorrect ? 'bg-emerald-50 border-emerald-300' : 'bg-red-50 border-red-300'} text-slate-800 p-5 md:p-6 rounded-2xl rounded-tl-none max-w-[90%] shadow-sm border mb-4`);
+
+                if (isCorrect) {
+                    currentQuizIndex++;
+                    optionsArea.innerHTML = '';
+                    setTimeout(loadQuizScenario, 1500);
+                } else {
+                    const retryBtn = document.createElement('button');
+                    retryBtn.type = 'button';
+                    retryBtn.className = 'text-center p-3 border-2 border-slate-300 bg-white rounded-lg hover:bg-slate-100 transition-all font-bold text-slate-600 fade-in text-sm shadow-sm uppercase tracking-wider';
+                    retryBtn.textContent = '↺ Probar otra opción';
+                    retryBtn.addEventListener('click', () => renderQuizOptions(scenario));
+                    optionsArea.innerHTML = '';
+                    optionsArea.appendChild(retryBtn);
+                }
+                scrollQuiz();
+            }, 1200);
+        }
+
         window.onload = () => {
             buildTimeline();
             document.querySelector('#timeline-list button').click();
@@ -3906,6 +4113,7 @@
             buildContextBuilder();
             buildPromptBuilder();
             buildPromptLab();
+            loadQuizScenario();
             nav('cap1');
             renderTokens();
         };
