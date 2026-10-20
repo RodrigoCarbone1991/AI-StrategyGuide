@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía Estratégica: Desmitificando la IA</title>
+    <title>Entendiendo la Inteligencia Artificial — Guía para todos</title>
 
-    <!-- Viaje narrativo de 5 capítulos para capacitar a perfiles no técnicos (agnóstico de marcas y modelos):
-         1. El Despertar: Desmitificación + colapso del coste.
-         2. Viaje en el Tiempo: Evolución histórica con patrón hype-invierno-revolución.
-         3. La Caja Negra: Taxonomía, paradigmas de aprendizaje y laboratorios interactivos.
-         4. De Hablar a Actuar: Arquitectura empresarial (RAG y Agentes).
-         5. El Lado Oscuro: Riesgos, sesgos, gobernanza y checklist. -->
+    <!-- Guía de 8 capítulos para público general, sin conocimientos técnicos previos.
+         Archivo único autocontenido: todo el JS va inline (abre con doble clic, sin servidor).
+         1. La IA hoy (cap1) · 2. Historia y evolución (cap2) · 3. El cerebro (cap3)
+         4. ¿Qué pasa cuando apretás Enter? (capEnter) · 5. Hablarle bien: el prompt (capPrompt)
+         6. Usarla bien: RAG, skills y agentes (cap4) · 7. Riesgos y uso responsable (cap5)
+         8. Recursos y autoevaluación (cap6) -->
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -123,45 +123,49 @@
                 Entendiendo la Inteligencia Artificial
             </h1>
             <p class="text-xs text-emerald-400 mt-2 font-mono uppercase tracking-widest hidden md:block">Guía
-                Estratégica</p>
+                práctica</p>
         </div>
         <ul class="flex md:flex-col py-2 md:py-4 gap-1 md:gap-2 whitespace-nowrap md:whitespace-normal" id="nav-menu">
             <li><button onclick="nav('cap1')" id="btn-cap1"
                     class="nav-active w-full text-left px-6 py-4 text-sm transition-all hover:bg-slate-800">1. La IA
-                    Hoy</button></li>
+                    hoy</button></li>
             <li><button onclick="nav('cap2')" id="btn-cap2"
                     class="w-full text-left px-6 py-4 border-l-4 border-transparent text-sm transition-all hover:bg-slate-800">2.
-                    Historia y Evolución</button></li>
+                    Historia y evolución</button></li>
             <li><button onclick="nav('cap3')" id="btn-cap3"
                     class="w-full text-left px-6 py-4 border-l-4 border-transparent text-sm transition-all hover:bg-slate-800">3.
-                    Cómo Funciona la IA</button></li>
-            <li><button onclick="nav('cap4')" id="btn-cap4"
+                    El cerebro: cómo funciona un modelo</button></li>
+            <li><button onclick="nav('capEnter')" id="btn-capEnter"
                     class="w-full text-left px-6 py-4 border-l-4 border-transparent text-sm transition-all hover:bg-slate-800">4.
-                    Implementación Práctica</button></li>
-            <li><button onclick="nav('cap5')" id="btn-cap5"
+                    ¿Qué pasa cuando apretás Enter?</button></li>
+            <li><button onclick="nav('capPrompt')" id="btn-capPrompt"
                     class="w-full text-left px-6 py-4 border-l-4 border-transparent text-sm transition-all hover:bg-slate-800">5.
-                    Riesgos y Gobernanza</button></li>
-            <li><button onclick="nav('cap6')" id="btn-cap6"
+                    Hablarle bien: el prompt</button></li>
+            <li><button onclick="nav('cap4')" id="btn-cap4"
                     class="w-full text-left px-6 py-4 border-l-4 border-transparent text-sm transition-all hover:bg-slate-800">6.
-                    Recursos</button></li>
+                    Usarla bien: RAG, skills y agentes</button></li>
+            <li><button onclick="nav('cap5')" id="btn-cap5"
+                    class="w-full text-left px-6 py-4 border-l-4 border-transparent text-sm transition-all hover:bg-slate-800">7.
+                    Riesgos y uso responsable</button></li>
+            <li><button onclick="nav('cap6')" id="btn-cap6"
+                    class="w-full text-left px-6 py-4 border-l-4 border-transparent text-sm transition-all hover:bg-slate-800">8.
+                    Recursos y autoevaluación</button></li>
         </ul>
     </nav>
 
     <!-- Contenido Principal -->
     <main class="flex-1 overflow-y-auto relative bg-slate-50 scroll-smooth pb-20 md:pb-0">
 
-        <!-- CAPÍTULO 1: El Despertar -->
+        <!-- CAPÍTULO 1: La IA hoy -->
         <section id="cap1" class="p-6 md:p-12 max-w-5xl mx-auto block fade-in">
             <header class="mb-10">
                 <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 1</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">La Inteligencia Artificial en
-                    Contexto</h2>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">La IA hoy</h2>
 
                 <div class="guru-quote p-6 rounded-r-lg mb-8 text-lg text-slate-800 font-medium">
-                    "El primer paso para liderar en esta área es entender qué es realmente la Inteligencia Artificial:
-                    no una tecnología mágica, no una amenaza existencial, no un sustituto del juicio humano. Lo que hay
-                    detrás es estadística aplicada, redes neuronales y una escala computacional sin precedentes. Quien
-                    entiende el mecanismo toma mejores decisiones."
+                    "La IA no es magia, ni una mente, ni un oráculo. Es una herramienta poderosa construida con
+                    estadística, muchísimos datos y mucha potencia de cálculo. Entender cómo funciona por dentro es lo
+                    que te permite usarla bien: saber cuándo confiar, cuándo verificar y cuándo no usarla."
                 </div>
             </header>
 
@@ -170,165 +174,191 @@
                 </h3>
                 <p class="text-slate-600 mb-6 text-lg">
                     Constantemente llamamos "IA" a cosas que no lo son. Un sistema informático cruza la línea hacia la
-                    Inteligencia Artificial solo cuando posee dos capacidades innegociables:
+                    Inteligencia Artificial cuando tiene dos capacidades:
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                     <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 shadow-sm">
                         <div class="text-3xl mb-3">⚙️</div>
                         <h4 class="font-bold text-slate-900 text-lg mb-2">1. Autonomía</h4>
-                        <p class="text-slate-600 text-sm">Ejecuta tareas en entornos complejos sin que un humano le haya
-                            programado una lista de reglas rígidas del tipo "Si pasa X, haz Y".</p>
+                        <p class="text-slate-600 text-sm">Hace tareas en entornos complejos sin que una persona le haya
+                            programado una lista de reglas rígidas del tipo "si pasa X, hacé Y".</p>
                     </div>
                     <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 shadow-sm">
                         <div class="text-3xl mb-3">📈</div>
                         <h4 class="font-bold text-slate-900 text-lg mb-2">2. Adaptabilidad</h4>
-                        <p class="text-slate-600 text-sm">Mejora su rendimiento al estar expuesto a más datos
-                            ("experiencia"). Ajusta su matemática interna para no repetir errores.</p>
+                        <p class="text-slate-600 text-sm">Mejora su rendimiento a medida que ve más datos
+                            ("experiencia"). Ajusta su matemática interna para cometer menos errores.</p>
                     </div>
                 </div>
+                <p class="text-xs text-slate-400 mb-8">Definición basada en el curso <a
+                        href="https://course.elementsofai.com/" target="_blank" rel="noopener noreferrer"
+                        class="underline hover:text-emerald-600">Elements of AI</a> (Universidad de Helsinki).</p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 border-t border-slate-200 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-slate-200 pt-8">
                     <div class="p-6 border border-red-200 bg-red-50 rounded-xl">
                         <h4 class="font-bold text-red-900 mb-3 flex items-center gap-2 text-lg">❌ Lo que NO es IA</h4>
-                        <p class="text-sm text-red-800 mb-4">Sistemas estáticos. Si cambian las condiciones del entorno,
-                            el programa se rompe o es incapaz de reaccionar.</p>
+                        <p class="text-sm text-red-800 mb-4">Sistemas estáticos. Si cambian las condiciones,
+                            el programa se rompe o no sabe reaccionar.</p>
                         <ul class="text-sm text-red-800 space-y-3 list-disc pl-5 font-medium">
-                            <li><b>Una hoja de cálculo (Excel):</b> Calcula fórmulas ultracomplejas en milisegundos,
-                                pero solo obedece la función matemática exacta que usted escribió. No aprende.</li>
-                            <li><b>Un buscador de documentos (Ctrl+F):</b> Localiza exactamente la cadena de texto
-                                que usted escribió. Si comete un error tipográfico, no encuentra nada. No interpreta.
-                            </li>
-                            <li><b>Un termostato programado:</b> Enciende la calefacción si la temperatura baja de
-                                20 °C. Nunca aprende que usted prefiere 18 °C los fines de semana.</li>
-                            <li><b>Almacenamiento en la nube (Dropbox/Drive):</b> Guarda y recupera archivos con
-                                precisión perfecta, pero no tiene ninguna capacidad de aprender ni adaptarse.</li>
-
+                            <li><b>Una planilla de cálculo (Excel):</b> calcula fórmulas complejísimas en milisegundos,
+                                pero solo hace exactamente la fórmula que escribiste. No aprende.</li>
+                            <li><b>Un buscador de texto (Ctrl+F):</b> encuentra exactamente lo que escribiste. Si
+                                tenés un error de tipeo, no encuentra nada. No interpreta.</li>
+                            <li><b>Un termostato programado:</b> prende la calefacción si la temperatura baja de
+                                20 °C. Nunca aprende que preferís 18 °C los fines de semana.</li>
+                            <li><b>Almacenamiento en la nube (Dropbox/Drive):</b> guarda y recupera archivos con
+                                precisión perfecta, pero no aprende ni se adapta.</li>
                         </ul>
                     </div>
                     <div class="p-6 border border-emerald-200 bg-emerald-50 rounded-xl">
                         <h4 class="font-bold text-emerald-900 mb-3 flex items-center gap-2 text-lg">✅ Lo que SÍ es IA
                         </h4>
                         <p class="text-sm text-emerald-800 mb-4">Sistemas dinámicos. Encuentran patrones por su cuenta y
-                            cambian su comportamiento al recibir nueva información.</p>
+                            cambian su comportamiento cuando reciben información nueva.</p>
                         <ul class="text-sm text-emerald-800 space-y-3 list-disc pl-5 font-medium">
-                            <li><b>Filtro de correo SPAM:</b> Aprende continuamente qué es "basura" observando los
-                                correos que usted marca como tal. Nadie le programó una lista infinita de palabras
-                                prohibidas.</li>
-                            <li><b>Recomendación de rutas (Google Maps):</b> Evalúa en tiempo real tráfico,
-                                accidentes y cierres para sugerirle la ruta más rápida. Mejora sus predicciones con
-                                cada viaje registrado.</li>
-                            <li><b>Recomendación musical (Spotify):</b> Mapea sus gustos frente a millones de
-                                usuarios y descubre patrones que ningún humano le programó explícitamente.</li>
-                            <li><b>Detección de fraude bancario:</b> Analiza miles de transacciones por segundo y
-                                aprende sus patrones normales de gasto. Si compra en un país extraño, lo bloquea
-                                preventivamente.</li>
+                            <li><b>Filtro de correo spam:</b> aprende qué es "basura" observando los correos que
+                                marcás como tal. Nadie le programó una lista infinita de palabras prohibidas.</li>
+                            <li><b>Recomendación de rutas (Google Maps):</b> evalúa tráfico, accidentes y cortes en
+                                tiempo real para sugerirte la ruta más rápida, y mejora sus predicciones con los viajes
+                                registrados.</li>
+                            <li><b>Recomendación musical (Spotify):</b> compara tus gustos con los de millones de
+                                personas y descubre patrones que nadie le programó.</li>
+                            <li><b>Detección de fraude bancario:</b> aprende tus patrones normales de gasto. Si de
+                                repente aparece una compra muy distinta, la frena preventivamente.</li>
                         </ul>
                     </div>
+                </div>
+
+                <!-- ¿Aprende de mí? -->
+                <div class="mt-8 p-6 bg-slate-800 rounded-xl text-white">
+                    <h4 class="font-bold text-emerald-400 text-lg mb-2">¿Y ChatGPT o Claude aprenden de mí mientras los
+                        uso?</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">No, no en el sentido que parece. El modelo aprende
+                        durante su <b class="text-white">entrenamiento</b>, que ocurre antes de que lo uses. Mientras
+                        conversás, el modelo está "congelado": no cambia por lo que le decís. Cuando una app "se
+                        acuerda" de vos, es porque guardó notas y se las vuelve a pasar como texto al principio de cada
+                        conversación. Lo vemos en detalle en el <button onclick="nav('capEnter')"
+                            class="underline text-emerald-300 hover:text-emerald-200">Capítulo 4</button>.</p>
                 </div>
             </div>
 
             <div class="glass-panel p-8">
-                <h3 class="text-2xl font-bold mb-2 text-slate-800">El Colapso del Coste: Por qué ahora</h3>
+                <h3 class="text-2xl font-bold mb-2 text-slate-800">El colapso del costo: por qué ahora</h3>
                 <p class="text-slate-600 mb-6 text-base">
-                    La teoría matemática de la IA se conocía desde los años 50. Pero tres catalizadores convergieron en
-                    la última década y lo cambiaron todo: una revolución en <b>hardware</b>, un nuevo paradigma de
-                    <b>arquitectura</b> y acceso a una escala de <b>datos</b> sin precedentes. El resultado: lo que
-                    antes costaba millones, hoy cuesta miles. Y lo que costaba miles, hoy cuesta centavos.
+                    La teoría de la IA existe desde los años 50. Lo que cambió en la última década es que tres cosas se
+                    juntaron: <b>hardware</b> capaz de hacer cálculos masivos en paralelo, una nueva
+                    <b>arquitectura</b> (el Transformer) y una cantidad de <b>texto digital</b> sin precedentes. El
+                    resultado: usar IA avanzada pasó a costar una fracción de lo que costaba hace pocos años.
                 </p>
 
                 <!-- KPI Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-center">
-                        <div class="text-3xl font-extrabold text-emerald-700 mb-1">99.9%</div>
-                        <div class="text-sm font-semibold text-emerald-900">Reducción de coste</div>
-                        <div class="text-xs text-emerald-700 mt-1">entrenar un modelo equivalente, 2016 → 2026</div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-center flex flex-col">
+                        <div class="text-3xl font-extrabold text-emerald-700 mb-1">×280</div>
+                        <div class="text-sm font-semibold text-emerald-900">Más barato usar un modelo de nivel GPT-3.5
+                        </div>
+                        <div class="text-xs text-emerald-700 mt-1 flex-1">De USD 20 a USD 0,07 por millón de tokens
+                            (nov. 2022 → oct. 2024)</div>
+                        <div class="text-[11px] text-slate-400 mt-3">Fuente: <a
+                                href="https://hai.stanford.edu/ai-index/2025-ai-index-report" target="_blank"
+                                rel="noopener noreferrer" class="underline hover:text-emerald-600">Stanford AI Index
+                                2025</a></div>
                     </div>
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-center">
-                        <div class="text-3xl font-extrabold text-emerald-700 mb-1">×400</div>
-                        <div class="text-sm font-semibold text-emerald-900">Más barato por token</div>
-                        <div class="text-xs text-emerald-700 mt-1">primeros modelos de lenguaje (2020) vs. modelos
-                            actuales de bajo coste (2024)</div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-center flex flex-col">
+                        <div class="text-3xl font-extrabold text-emerald-700 mb-1">~2 meses</div>
+                        <div class="text-sm font-semibold text-emerald-900">Lo que tardó ChatGPT en llegar a 100 millones
+                            de usuarios mensuales</div>
+                        <div class="text-xs text-emerald-700 mt-1 flex-1">Estimación, enero de 2023</div>
+                        <div class="text-[11px] text-slate-400 mt-3">Fuente: estimación de UBS citada por <a
+                                href="https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="underline hover:text-emerald-600">Reuters</a>, feb. 2023</div>
                     </div>
-                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-center">
-                        <div class="text-3xl font-extrabold text-emerald-700 mb-1">60 días</div>
-                        <div class="text-sm font-semibold text-emerald-900">Para alcanzar 100M usuarios</div>
-                        <div class="text-xs text-emerald-700 mt-1">el primer asistente de IA conversacional público
-                            (2022) — adopción más rápida de la historia</div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-center flex flex-col">
+                        <div class="text-3xl font-extrabold text-emerald-700 mb-1">+900 millones</div>
+                        <div class="text-sm font-semibold text-emerald-900">Personas que usan ChatGPT cada semana</div>
+                        <div class="text-xs text-emerald-700 mt-1 flex-1">Cifra informada por la empresa</div>
+                        <div class="text-[11px] text-slate-400 mt-3">Fuente: OpenAI, marzo de 2026</div>
                     </div>
                 </div>
 
                 <!-- 3 Catalizadores -->
-                <h4 class="text-lg font-bold text-slate-800 mb-4">Los 3 Catalizadores del Cambio</h4>
+                <h4 class="text-lg font-bold text-slate-800 mb-4">Los 3 catalizadores del cambio</h4>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🔧</div>
-                        <h5 class="font-bold text-slate-900 mb-2">1. La Revolución del Hardware</h5>
-                        <p class="text-sm text-slate-600">Las unidades de procesamiento gráfico (<span class="tt" data-tt="gpu">GPU</span>), diseñadas
-                            originalmente para videojuegos, resultaron perfectas para la IA. El coste por operación
-                            matemática cayó <b>10× cada 5 años</b>. Sin este salto, los modelos actuales serían
-                            imposibles de entrenar.</p>
+                        <h5 class="font-bold text-slate-900 mb-2">1. El hardware</h5>
+                        <p class="text-sm text-slate-600">Las <span class="tt" data-tt="gpu">GPU</span>, diseñadas
+                            para videojuegos, resultaron ideales para la IA porque hacen miles de cálculos simples a la
+                            vez.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🧠</div>
                         <h5 class="font-bold text-slate-900 mb-2">2. Los Transformers (2017)</h5>
-                        <p class="text-sm text-slate-600">Un equipo de investigadores publica <i>"Attention is All You
-                                Need"</i>: el paper que redefine la arquitectura de la IA. Los Transformers permiten
-                            procesar texto en paralelo y escalar a <b>billones de <span class="tt" data-tt="parametros">parámetros</span></b>. Es el motor de todo
-                            modelo de lenguaje actual.</p>
+                        <p class="text-sm text-slate-600">Investigadores de Google publican <i>"Attention Is All You
+                                Need"</i>. Su aporte clave: <b>procesar todas las palabras de un texto en paralelo</b> en
+                            lugar de una por una. Eso permitió entrenar modelos mucho más grandes y escalar a cientos de
+                            miles de millones de <span class="tt" data-tt="parametros">parámetros</span> (o más). Es el
+                            motor de todos los modelos de lenguaje actuales.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">📊</div>
-                        <h5 class="font-bold text-slate-900 mb-2">3. Internet como Corpus</h5>
-                        <p class="text-sm text-slate-600">La humanidad lleva décadas digitalizando conocimiento: libros,
-                            artículos, código, conversaciones. Internet se convirtió en el corpus de entrenamiento más
-                            grande de la historia, <b>disponible de forma gratuita</b>.</p>
+                        <h5 class="font-bold text-slate-900 mb-2">3. Internet como corpus</h5>
+                        <p class="text-sm text-slate-600">Décadas de libros, artículos, código y conversaciones
+                            digitalizados se convirtieron en el material de entrenamiento más grande de la historia.
+                            Accesible, pero no gratis ni libre de conflictos: el uso de obras protegidas para entrenar
+                            modelos está en tribunales. En julio de 2026 se aprobó el mayor acuerdo por derechos de autor
+                            de la historia (USD 1.500 millones, unos USD 3.000 por libro) entre autores y Anthropic por el
+                            uso de libros pirateados.</p>
+                        <p class="text-[11px] text-slate-400 mt-2">Fuente: Jurist, julio de 2026</p>
                     </div>
                 </div>
 
                 <!-- Gráfico -->
-                <h4 class="text-lg font-bold text-slate-800 mb-1">La Curva de Democratización</h4>
-                <p class="text-sm text-slate-500 mb-4">Coste real de usar IA de primer nivel (USD por millón de tokens,
-                    escala logarítmica). La línea gris muestra lo que esperaría la <b>Ley de Moore</b> solo con mejoras
-                    de hardware. La IA cae <b>mucho más rápido</b> porque también mejoran los algoritmos.</p>
+                <h4 class="text-lg font-bold text-slate-800 mb-1">Precio de usar un modelo de nivel GPT-3.5</h4>
+                <p class="text-sm text-slate-500 mb-4">USD por millón de tokens, escala logarítmica. Mide el precio de
+                    alcanzar un nivel fijo de capacidad, no el precio de un producto específico.</p>
                 <div class="chart-container">
-                    <canvas id="costChart"></canvas>
+                    <canvas id="costChart" role="img"
+                        aria-label="Gráfico de barras: USD 20 por millón de tokens en noviembre de 2022 y USD 0,07 en octubre de 2024"></canvas>
                 </div>
+                <p class="text-[11px] text-slate-400 mt-3 text-center">Fuente: <a
+                        href="https://hai.stanford.edu/ai-index/2025-ai-index-report" target="_blank"
+                        rel="noopener noreferrer" class="underline hover:text-emerald-600">Stanford AI Index 2025</a>
+                    (datos de Epoch AI y Artificial Analysis).</p>
 
-                <!-- Lección estratégica -->
+                <!-- Lección -->
                 <div class="mt-8 p-6 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl">
                     <p class="text-slate-800 font-semibold text-base">
-                        La carrera ya no es de quien puede <em>permitirse</em> la IA. Es de quien tiene los
-                        <b>mejores datos</b> y la <b>visión estratégica</b> para aplicarla. El hardware se democratizó;
-                        la ventaja competitiva, no.
+                        Que la IA sea barata y esté al alcance de todos no la hace infalible. Lo que marca la diferencia
+                        es <b>para qué</b> la usás, <b>con qué información</b> y <b>quién revisa</b> el resultado.
                     </p>
                 </div>
             </div>
 
-            <!-- ¿Qué significa esto para tu área? -->
+            <!-- ¿Qué significa esto para vos? -->
             <div class="glass-panel p-8 mt-8 border-t-4 border-t-slate-700">
-                <h3 class="text-xl font-bold text-slate-800 mb-5">¿Qué significa esto para tu área de trabajo?</h3>
+                <h3 class="text-xl font-bold text-slate-800 mb-5">¿Qué significa esto para vos?</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
-                        <div class="text-2xl mb-2">📋</div>
-                        <h4 class="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wide">Operaciones</h4>
-                        <p class="text-sm text-slate-600">Los procesos repetitivos basados en reglas fijas son
-                            candidatos directos para IA. Si hoy alguien sigue un manual paso a paso, mañana puede ser un
-                            agente supervisado.</p>
+                        <div class="text-2xl mb-2">✍️</div>
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wide">En tu día a día</h4>
+                        <p class="text-sm text-slate-600">Las tareas de texto (redactar, resumir, ordenar ideas,
+                            traducir) ya se pueden delegar en borrador. Vos seguís siendo quien revisa y firma.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">📊</div>
-                        <h4 class="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wide">Datos e información
-                        </h4>
-                        <p class="text-sm text-slate-600">Sus datos internos son su mayor ventaja diferencial. Un modelo
-                            entrenado o conectado a sus datos propios hace cosas que ninguna herramienta genérica puede
-                            replicar.</p>
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wide">En tu trabajo con
+                            datos</h4>
+                        <p class="text-sm text-slate-600">Analizar un Excel o un PDF es posible, pero el modelo no
+                            "mira" el archivo como vos: la app lo convierte en texto o corre código. Entender eso
+                            (Capítulo 4) te dice cuándo confiar en el resultado.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🧭</div>
-                        <h4 class="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wide">Liderazgo</h4>
-                        <p class="text-sm text-slate-600">La pregunta ya no es <i>"¿usamos IA?"</i> sino <i>"¿en qué
-                                proceso específico, con qué datos y bajo qué controles?"</i> Esa concreción es lo que
-                            separa a quien implementa de quien experimenta.</p>
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm uppercase tracking-wide">En tu criterio</h4>
+                        <p class="text-sm text-slate-600">La pregunta útil no es <i>"¿uso IA?"</i> sino <i>"¿para qué
+                                tarea concreta, con qué datos y quién revisa el resultado?"</i></p>
                     </div>
                 </div>
             </div>
@@ -336,9 +366,10 @@
             <!-- Puente → Cap 2 -->
             <div class="mt-8 p-6 bg-slate-50 border-l-4 border-slate-400 rounded-r-xl">
                 <p class="text-slate-700 text-sm leading-relaxed">
-                    <strong>¿Pero cómo llegamos hasta aquí?</strong> La historia de la IA no es una línea recta de
-                    triunfos — es una montaña rusa de promesas rotas, inviernos prolongados y revoluciones silenciosas
-                    que nadie anticipó. En el siguiente capítulo, hacemos ese viaje.
+                    <strong>¿Pero cómo llegamos hasta acá?</strong> La historia de la IA no es una línea recta de
+                    éxitos: es una sucesión de promesas, decepciones y avances que pocos anticiparon. En el
+                    <button onclick="nav('cap2')" class="underline text-emerald-700 hover:text-emerald-600">siguiente
+                        capítulo</button> hacemos ese recorrido.
                 </p>
             </div>
         </section>
@@ -2122,111 +2153,63 @@
             activeBtn.classList.remove('text-slate-400', 'border-transparent');
             activeBtn.classList.add('nav-active', 'bg-slate-800', 'border-emerald-400', 'text-emerald-400');
 
+            // Los enlaces internos ("ver Capítulo N") cambian de sección: volver al inicio de la página
+            document.querySelector('main').scrollTop = 0;
+
             if (sectionId === 'cap1' && !chartRendered) renderCostChart();
         }
 
         // === CAPÍTULO 1: GRÁFICO ===
+        // Solo dos puntos verificados (Stanford AI Index 2025, con datos de Epoch AI y Artificial Analysis).
+        // No agregar puntos intermedios ni proyecciones: no tienen fuente.
         let chartRendered = false;
         function renderCostChart() {
             const ctx = document.getElementById('costChart').getContext('2d');
+            const prices = [20, 0.07];
+            const fmt = (v) => 'USD ' + v.toLocaleString('es-AR', { minimumFractionDigits: v < 1 ? 2 : 0 });
 
-            // Real AI cost: USD per million tokens (approximate market prices)
-            // 2016: enterprise NLP APIs ~$1000/M | 2018: ~$200 | 2020: GPT-3 launch ~$60
-            // 2022: ChatGPT era ~$20 | 2024: GPT-4o/Claude ~$1 | 2026: ~$0.10 projected
-            const aiCost = [1000, 200, 60, 20, 1, 0.10];
-            // Moore's Law baseline: compute cost halves every ~2 years
-            const mooreCost = [1000, 500, 250, 125, 62.5, 31.25];
-
-            const labels = ['2016', '2018', '2020', '2022', '2024', '2026'];
-            const aiEvents = [
-                'Línea base — APIs de NLP empresarial',
-                'Deep Learning llega a producción en la nube',
-                'GPT-3: primer LLM a escala masiva (175B parámetros)',
-                'ChatGPT: IA conversacional pública — 100M usuarios en 60 días',
-                'GPT-4o, Claude 3, Gemini — modelos multimodales de primer nivel',
-                'Proyección actual — modelos open-source competitivos disponibles'
-            ];
-
-            const milestonePlugin = {
-                id: 'milestoneLabels',
+            const valueLabels = {
+                id: 'valueLabels',
                 afterDatasetsDraw(chart) {
-                    const { ctx: c, scales: { x, y } } = chart;
-                    const ds = chart.data.datasets[0].data;
-                    const points = [
-                        { i: 2, label: 'GPT-3', offsetY: -14 },
-                        { i: 3, label: 'ChatGPT', offsetY: -14 },
-                        { i: 4, label: 'Multimodal', offsetY: -14 },
-                    ];
+                    const { ctx: c } = chart;
+                    const meta = chart.getDatasetMeta(0);
                     c.save();
-                    points.forEach(({ i, label, offsetY }) => {
-                        const xPos = x.getPixelForValue(i);
-                        const yPos = y.getPixelForValue(ds[i]);
-                        c.fillStyle = '#047857';
-                        c.font = 'bold 11px sans-serif';
-                        c.textAlign = 'center';
-                        c.fillText(label, xPos, yPos + offsetY);
-                    });
+                    c.fillStyle = '#065f46';
+                    c.font = 'bold 13px sans-serif';
+                    c.textAlign = 'center';
+                    meta.data.forEach((bar, i) => c.fillText(fmt(prices[i]), bar.x, bar.y - 8));
                     c.restore();
                 }
             };
 
             new Chart(ctx, {
-                type: 'line',
-                plugins: [milestonePlugin],
+                type: 'bar',
+                plugins: [valueLabels],
                 data: {
-                    labels,
-                    datasets: [
-                        {
-                            label: 'Coste real de IA de primer nivel',
-                            data: aiCost,
-                            borderColor: '#10b981',
-                            backgroundColor: 'rgba(16, 185, 129, 0.08)',
-                            borderWidth: 3, pointBackgroundColor: '#047857', pointRadius: 7,
-                            fill: true, tension: 0.4
-                        },
-                        {
-                            label: 'Ley de Moore (solo hardware)',
-                            data: mooreCost,
-                            borderColor: '#94a3b8',
-                            backgroundColor: 'transparent',
-                            borderWidth: 2, borderDash: [6, 4],
-                            pointBackgroundColor: '#94a3b8', pointRadius: 4,
-                            fill: false, tension: 0.4
-                        }
-                    ]
+                    labels: ['Nov. 2022', 'Oct. 2024'],
+                    datasets: [{
+                        label: 'USD por millón de tokens',
+                        data: prices,
+                        backgroundColor: ['#94a3b8', '#10b981'],
+                        borderRadius: 6,
+                        maxBarThickness: 120
+                    }]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
+                    layout: { padding: { top: 24 } },
                     plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top',
-                            labels: { font: { size: 12 }, color: '#475569', usePointStyle: true, pointStyleWidth: 16 }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                title: (items) => `Año ${items[0].label}`,
-                                label: (item) => {
-                                    if (item.datasetIndex === 0) {
-                                        const v = item.parsed.y;
-                                        const fmt = v >= 1 ? `$${v.toLocaleString('es-ES')}/M tokens` : `$${v.toFixed(2)}/M tokens`;
-                                        return ` IA real: ${fmt}`;
-                                    }
-                                    const v = item.parsed.y;
-                                    return ` Moore: $${v.toFixed(v < 10 ? 1 : 0)}/M tokens (solo hardware)`;
-                                },
-                                afterLabel: (item) => item.datasetIndex === 0 ? `   ↳ ${aiEvents[item.dataIndex]}` : null
-                            }
-                        }
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: (item) => ' ' + fmt(item.parsed.y) + ' por millón de tokens' } }
                     },
                     scales: {
                         y: {
-                            type: 'logarithmic',
+                            type: 'logarithmic', min: 0.01, max: 100,
                             grid: { color: '#e2e8f0' },
                             title: { display: true, text: 'USD por millón de tokens (escala log)', color: '#64748b', font: { size: 12 } },
                             ticks: {
                                 callback: (v) => {
-                                    const map = { 1000: '$1,000', 100: '$100', 10: '$10', 1: '$1', 0.1: '$0.10' };
+                                    const map = { 100: 'USD 100', 10: 'USD 10', 1: 'USD 1', 0.1: 'USD 0,10', 0.01: 'USD 0,01' };
                                     return map[v] !== undefined ? map[v] : null;
                                 }
                             }
