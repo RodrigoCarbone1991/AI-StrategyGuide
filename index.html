@@ -800,7 +800,7 @@
                         </div>
 
                         <!-- Stats -->
-                        <div class="flex gap-4 text-sm">
+                        <div class="flex flex-wrap gap-4 text-sm">
                             <div class="bg-white border border-slate-200 rounded-lg px-4 py-2 text-center">
                                 <div id="token-count" class="text-xl font-extrabold text-emerald-700">0</div>
                                 <div class="text-xs text-slate-500">Tokens</div>
@@ -809,7 +809,7 @@
                                 <div id="char-count" class="text-xl font-extrabold text-slate-700">0</div>
                                 <div class="text-xs text-slate-500">Caracteres</div>
                             </div>
-                            <div class="bg-white border border-slate-200 rounded-lg px-4 py-2 flex-1">
+                            <div class="bg-white border border-slate-200 rounded-lg px-4 py-2 flex-1 min-w-0 basis-full sm:basis-0">
                                 <div class="text-xs text-slate-500 mb-1">IDs de tokens (números que ve la IA):</div>
                                 <div id="token-ids" class="text-xs font-mono text-slate-600 truncate"></div>
                             </div>
@@ -3388,7 +3388,11 @@
             // Los enlaces internos ("ver Capítulo N") cambian de sección: volver al inicio de la página
             document.querySelector('main').scrollTop = 0;
 
-            if (sectionId === 'cap1' && !chartRendered) renderCostChart();
+            if (sectionId === 'cap1') {
+                if (!chartRendered) renderCostChart();
+                // Si la ventana cambió de tamaño mientras el capítulo estaba oculto, reajustar el gráfico
+                else { const chart = Chart.getChart('costChart'); if (chart) chart.resize(); }
+            }
         }
 
         // === CAPÍTULO 1: GRÁFICO ===
