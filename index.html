@@ -1019,7 +1019,7 @@
                         </div>
                         <div class="bg-slate-700 rounded-lg p-3">
                             <div class="text-emerald-400 font-black text-lg mb-1">4</div>
-                            <div class="text-white font-semibold mb-1">Lo añade al texto</div>
+                            <div class="text-white font-semibold mb-1">Lo agrega al texto</div>
                             <div class="text-slate-400">El token generado pasa a ser parte del input para el siguiente
                                 paso</div>
                         </div>
@@ -4121,7 +4121,7 @@
         const llmSteps = [
             {
                 emoji: '📝', label: 'Texto de Entrada', colorTitle: 'text-blue-400',
-                title: 'El Prompt: todo empieza aquí',
+                title: 'El prompt: todo empieza acá',
                 desc: 'El texto que el usuario escribe es el punto de partida. El modelo recibe toda esta entrada de una sola vez — puede ser una pregunta, una instrucción o cualquier secuencia de caracteres.',
                 detail: 'A diferencia de cómo los humanos leemos (de izquierda a derecha), el Transformer procesa la secuencia completa en paralelo. Cada posición puede "ver" a todas las demás desde el primer momento, lo que le permite captar relaciones de largo alcance de inmediato.',
                 key: 'El modelo no "lee" linealmente. Procesa toda la secuencia de entrada de forma simultánea.'
@@ -4130,13 +4130,13 @@
                 emoji: '🔤', label: 'Tokenización', colorTitle: 'text-cyan-400',
                 title: 'Tokenización: texto → números',
                 desc: 'El texto se divide en tokens — unidades que pueden ser palabras completas, partes de palabras o signos de puntuación. "inteligencia" puede dividirse en ["intelig", "encia"]. Cada token recibe un ID numérico único.',
-                detail: 'Un modelo como GPT-4 tiene un vocabulario de ~100,000 tokens. "Hola mundo" podría tokenizarse como [15339, 14502]. El modelo nunca ve letras: solo trabaja con estos IDs. Esta es la razón por la que los modelos fallan al contar letras: "strawberry" puede ser un solo token, sin información interna sobre sus caracteres.',
+                detail: 'Un modelo como GPT-4 tiene un vocabulario de ~100.000 tokens. "Hola mundo" podría tokenizarse como [15339, 14502]. El modelo nunca ve letras: solo trabaja con estos IDs. Esta es la razón por la que los modelos fallan al contar letras: "strawberry" puede ser un solo token, sin información interna sobre sus caracteres.',
                 key: 'Los modelos no procesan letras ni palabras — trabajan exclusivamente con IDs numéricos de tokens.'
             },
             {
                 emoji: '🗺️', label: 'Embeddings', colorTitle: 'text-emerald-400',
                 title: 'Embeddings: el significado en geometría',
-                desc: 'Cada token ID se convierte en un vector de alta dimensión (768–12,288 números) que captura su significado. Tokens con usos similares quedan cerca en ese espacio matemático. Se añade codificación posicional para que el modelo sepa el orden.',
+                desc: 'Cada token ID se convierte en un vector de alta dimensión (de cientos a más de 12.000 números) que captura su significado. Tokens con usos similares quedan cerca en ese espacio matemático. Se agrega codificación posicional para que el modelo sepa el orden.',
                 detail: '"Rey" − "Hombre" + "Mujer" ≈ "Reina". Esta aritmética funciona porque el entrenamiento organizó el espacio vectorial según los contextos de uso. La codificación posicional resuelve un problema clave: el Transformer no tiene orden implícito como las redes recurrentes — hay que inyectarlo explícitamente.',
                 key: 'El significado semántico, las relaciones entre conceptos y el orden de la secuencia están codificados en geometría vectorial.'
             },
