@@ -1130,6 +1130,418 @@
             </div>
         </section>
 
+        <!-- CAPÍTULO 4 (NUEVO): ¿Qué pasa cuando apretás Enter? -->
+        <section id="capEnter" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
+            <header class="mb-10">
+                <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 4</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">¿Qué pasa cuando apretás
+                    Enter?</h2>
+
+                <div class="guru-quote p-6 rounded-r-lg mb-8 text-lg text-slate-800 font-medium">
+                    "Cuando escribís en ChatGPT o Claude, no le hablás a 'la IA'. Le hablás a una aplicación que arma un
+                    paquete de texto, se lo pasa a un modelo, ejecuta lo que el modelo le pide y te muestra el resultado.
+                    Entender esa diferencia explica por qué a veces sabe la fecha y a veces no, por qué puede leer tu
+                    Excel y por qué 'se olvida' de lo que le dijiste ayer."
+                </div>
+            </header>
+
+            <!-- Dos piezas: el cerebro y la habitación -->
+            <div class="glass-panel p-6 md:p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-5">Dos piezas: el cerebro y la habitación</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                        <div class="text-3xl mb-2">🧠</div>
+                        <h4 class="font-bold text-purple-900 mb-2">El modelo: un cerebro que solo lee y escribe texto
+                        </h4>
+                        <p class="text-sm text-slate-700">Leyó una biblioteca gigantesca durante su entrenamiento y
+                            tiene un conocimiento muy amplio, pero con memoria borrosa: a veces mezcla o inventa con
+                            total seguridad. Además, vive encerrado en una <b>habitación sin ventanas</b>: no ve el
+                            mundo, no tiene reloj, no tiene calendario, no recuerda conversaciones anteriores y no puede
+                            tocar nada.</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                        <div class="text-3xl mb-2">🏠</div>
+                        <h4 class="font-bold text-emerald-900 mb-2">La aplicación: la habitación y todo lo que hay
+                            alrededor</h4>
+                        <p class="text-sm text-slate-700">ChatGPT, Claude, Gemini o Copilot. Todo lo que el cerebro
+                            recibe le llega como <b>papelitos de texto que pasan por debajo de la puerta</b>: tus
+                            mensajes, la fecha de hoy, los archivos que adjuntaste, los resultados de una búsqueda. Y
+                            cuando el cerebro necesita algo de afuera, no puede salir a buscarlo: <b>escribe un
+                                pedido</b> en un papelito ("buscá el clima en Mar del Plata"), alguien de afuera lo hace y
+                            le devuelve el resultado, también por debajo de la puerta.</p>
+                    </div>
+                </div>
+
+                <!-- Diagrama: la app contiene al modelo -->
+                <div class="border-4 border-dashed border-emerald-400 rounded-2xl p-4 md:p-6 bg-slate-50"
+                    role="img"
+                    aria-label="Diagrama: la aplicación recibe instrucciones de la app, fecha, tu proyecto, archivos, memoria, tu mensaje y resultados de herramientas, y se los pasa como texto al modelo; el modelo devuelve texto: una respuesta o un pedido de herramienta">
+                    <div class="text-xs font-black tracking-widest text-emerald-700 uppercase mb-4 text-center">La
+                        aplicación</div>
+                    <div class="flex flex-col md:flex-row items-stretch gap-4">
+                        <div class="md:w-5/12 flex flex-col gap-2 text-xs">
+                            <div class="font-bold text-slate-500 uppercase tracking-wide text-center md:text-left">Entra
+                                (como texto)</div>
+                            <div class="bg-white border border-slate-200 rounded-lg px-3 py-2">📜 Instrucciones de la app
+                            </div>
+                            <div class="bg-white border border-slate-200 rounded-lg px-3 py-2">📅 La fecha de hoy</div>
+                            <div class="bg-white border border-slate-200 rounded-lg px-3 py-2">📁 Tu Proyecto
+                                (instrucciones y archivos)</div>
+                            <div class="bg-white border border-slate-200 rounded-lg px-3 py-2">📎 Archivos adjuntos</div>
+                            <div class="bg-white border border-slate-200 rounded-lg px-3 py-2">🗒️ Memoria (notas sobre
+                                vos)</div>
+                            <div class="bg-white border border-slate-200 rounded-lg px-3 py-2">💬 Historial y tu mensaje
+                            </div>
+                            <div class="bg-white border border-slate-200 rounded-lg px-3 py-2">🔧 Resultados de
+                                herramientas</div>
+                        </div>
+                        <div class="flex md:flex-col items-center justify-center text-emerald-500 text-2xl font-black"
+                            aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span>
+                        </div>
+                        <div class="md:w-3/12 flex items-center">
+                            <div class="w-full bg-purple-900 text-white rounded-2xl p-5 text-center shadow-lg">
+                                <div class="text-4xl mb-2">🧠</div>
+                                <div class="font-black tracking-widest text-sm uppercase">El modelo</div>
+                                <div class="text-[11px] text-purple-200 mt-1">solo lee y escribe texto</div>
+                            </div>
+                        </div>
+                        <div class="flex md:flex-col items-center justify-center text-emerald-500 text-2xl font-black"
+                            aria-hidden="true"><span class="md:hidden">↓</span><span class="hidden md:inline">→</span>
+                        </div>
+                        <div class="md:w-3/12 flex flex-col justify-center gap-2 text-xs">
+                            <div class="font-bold text-slate-500 uppercase tracking-wide text-center md:text-left">Sale
+                                (como texto)</div>
+                            <div class="bg-emerald-100 border border-emerald-300 rounded-lg px-3 py-2">✍️ Una respuesta
+                                para vos</div>
+                            <div class="text-center text-slate-400 font-bold">o</div>
+                            <div class="bg-amber-100 border border-amber-300 rounded-lg px-3 py-2">🔧 Un pedido de
+                                herramienta (que ejecuta la app)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-5 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-900">
+                    <b>Corrección de una idea común: "La IA no sabe hacer cuentas, por eso usa una calculadora."</b>
+                    No exactamente. El modelo <b>sí puede</b> hacer cuentas por sí solo, como vos hacés cálculo
+                    mental: las simples las hace bien casi siempre; las largas, a veces las erra. La herramienta (una
+                    calculadora, código) no le da la capacidad: le da <b>exactitud</b>.
+                </div>
+            </div>
+
+            <!-- El viaje de un mensaje (stepper) -->
+            <div class="glass-panel p-6 md:p-8 mb-8 border-t-4 border-t-emerald-500">
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">El viaje de un mensaje, paso a paso</h3>
+                <div class="bg-slate-800 text-slate-100 rounded-xl p-4 mb-6 text-sm">
+                    <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest block mb-1">Tu
+                        mensaje</span>
+                    "¿Cuántos días faltan para el 25 de marzo de 2030? Y armame una tabla con el total de ventas de este
+                    Excel." <span class="text-slate-400">📎 ventas.xlsx</span>
+                </div>
+                <div id="enter-flow">
+                    <div class="flex items-center justify-between mb-2 text-xs text-slate-500 font-semibold">
+                        <span id="enter-flow-counter">Paso 1 de 9</span>
+                    </div>
+                    <div class="w-full h-2 bg-slate-200 rounded-full mb-5 overflow-hidden" aria-hidden="true">
+                        <div id="enter-flow-bar" class="h-full bg-emerald-500 transition-all duration-300"
+                            style="width: 11%"></div>
+                    </div>
+                    <div id="enter-flow-card" aria-live="polite" class="min-h-[220px]"></div>
+                    <div class="flex justify-between gap-3 mt-5">
+                        <button type="button" id="enter-flow-prev"
+                            class="px-5 py-2 bg-slate-200 hover:bg-slate-300 disabled:opacity-40 disabled:cursor-not-allowed text-slate-800 rounded-lg text-sm font-semibold transition-colors">←
+                            Anterior</button>
+                        <button type="button" id="enter-flow-next"
+                            class="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 disabled:cursor-not-allowed text-white rounded-lg text-sm font-semibold transition-colors">Siguiente
+                            →</button>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-500 mt-5">Dato real: Anthropic publica las instrucciones de sistema que usa
+                    en sus apps. Ahí se puede ver, por ejemplo, la línea donde se le indica la fecha al modelo. (Fuente:
+                    <a href="https://docs.anthropic.com/en/release-notes/system-prompts" target="_blank"
+                        rel="noopener noreferrer" class="underline hover:text-emerald-600">Anthropic, notas de versión
+                        de los system prompts</a>, desde agosto de 2024.)</p>
+            </div>
+
+            <!-- ¿Qué hay en el paquete? -->
+            <div class="glass-panel p-6 md:p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">¿Qué hay en el paquete? Armalo vos</h3>
+                <p class="text-sm text-slate-500 mb-5">Activá o desactivá cada pieza y mirá cómo se arma la pila de
+                    contexto que recibe el modelo. El orden es ilustrativo; cada app arma el suyo.</p>
+                <div id="context-builder" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <fieldset>
+                        <legend class="sr-only">Piezas del paquete</legend>
+                        <div id="context-builder-options" class="space-y-2"></div>
+                    </fieldset>
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-2">Pila de contexto
+                            (lo que recibe el modelo)</div>
+                        <div id="context-builder-stack"
+                            class="flex flex-col gap-1 min-h-[200px] p-3 bg-slate-900 rounded-xl"></div>
+                        <div id="context-builder-explain" aria-live="polite"
+                            class="mt-3 text-sm text-slate-600 bg-slate-50 border border-slate-200 rounded-lg p-3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Qué hace solo / qué le dicen / qué necesita herramienta -->
+            <div class="glass-panel p-6 md:p-8 mb-8 border-t-4 border-t-slate-700">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Qué hace solo, qué le "dicen" y qué necesita una
+                    herramienta</h3>
+                <p class="text-sm text-slate-500 mb-6">La tabla central de este capítulo.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                        <div class="font-bold text-purple-900 mb-3">🧠 Lo hace el modelo solo</div>
+                        <ul class="space-y-2 text-slate-700 list-disc pl-5">
+                            <li>Redactar, resumir, traducir, cambiar el tono</li>
+                            <li>Explicar conceptos, dar ideas, ordenar información</li>
+                            <li>Razonar paso a paso</li>
+                            <li>Cuentas simples (cálculo mental: puede errar en las complejas)</li>
+                            <li>Ver imágenes y muchos PDFs (en los modelos actuales)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+                        <div class="font-bold text-emerald-900 mb-3">📜 Se lo dice la app (texto inyectado)</div>
+                        <ul class="space-y-2 text-slate-700 list-disc pl-5">
+                            <li>La fecha y hora de hoy</li>
+                            <li>Tus instrucciones personalizadas</li>
+                            <li>Las instrucciones y archivos de tu Proyecto</li>
+                            <li>Lo que "recuerda" de vos (memoria)</li>
+                            <li>El historial de este chat</li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+                        <div class="font-bold text-amber-900 mb-3">🔧 Necesita una herramienta</div>
+                        <ul class="space-y-2 text-slate-700 list-disc pl-5">
+                            <li>El clima, noticias, precios, cualquier dato "de hoy" (búsqueda web o servicio externo)
+                            </li>
+                            <li>Cálculos que tienen que ser <b>exactos</b> (código)</li>
+                            <li>Leer y modificar un Excel, crear un archivo, generar un gráfico (código)</li>
+                            <li>Contar letras o palabras con precisión (código)</li>
+                            <li>Enviar un mail, crear un evento, consultar tu CRM (conectores)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 p-5 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900">
+                    <b class="block mb-2">¿Y esto qué me cambia?</b>
+                    <ul class="space-y-1 list-disc pl-5">
+                        <li>Si la respuesta depende de <b>algo de hoy</b>, fijate que la app haya buscado (suele mostrar
+                            las fuentes). Si no buscó, puede estar inventando o usando información vieja.</li>
+                        <li>Si necesitás un <b>número exacto</b>, pedile que lo calcule con código ("calculalo con
+                            Python y mostrame el código").</li>
+                        <li>Si una respuesta <b>no tiene fuente</b>, tratala como un borrador de alguien que leyó mucho
+                            pero no puede chequear.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Probalo vos: las cuentas -->
+            <div class="glass-panel p-6 md:p-8 mb-8 bg-slate-900 text-white">
+                <h3 class="text-2xl font-bold text-emerald-400 mb-1">Probalo vos: el caso de las cuentas</h3>
+                <p class="text-sm text-slate-400 mb-5">Tres pasos para hacer en la charla o en casa.</p>
+                <ol class="space-y-3 text-sm">
+                    <li class="bg-slate-800 rounded-lg p-4"><b class="text-emerald-300">1.</b> Pedile: <i>"Respondé
+                            solo con el número, sin hacer cálculos aparte: ¿cuánto es 6.847 × 9.213?"</i> — Puede acertar
+                        o no. (Resultado correcto: <b class="text-white">63.081.411</b>.)</li>
+                    <li class="bg-slate-800 rounded-lg p-4"><b class="text-emerald-300">2.</b> Pedile: <i>"Calculá
+                            6.847 × 9.213 mostrando el paso a paso."</i> — Escribir el razonamiento suele mejorar el
+                        resultado.</li>
+                    <li class="bg-slate-800 rounded-lg p-4"><b class="text-emerald-300">3.</b> Pedile: <i>"Calculá
+                            6.847 × 9.213 usando código."</i> — Si la app tiene ejecución de código activada, el resultado
+                        es exacto.</li>
+                </ol>
+                <p class="text-sm text-slate-300 mt-5">El paso 1 es cálculo mental. El paso 2 es cálculo mental con
+                    papel y lápiz. El paso 3 es una calculadora. Las tres son legítimas; solo la tercera garantiza
+                    exactitud. Ojo: los modelos de razonamiento y algunas apps hacen el paso 2 o 3 automáticamente, así
+                    que el resultado del paso 1 puede variar según la herramienta.</p>
+            </div>
+
+            <!-- Modelos de razonamiento -->
+            <div class="glass-panel p-6 md:p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">Modelos de razonamiento: cuando "piensa" antes de
+                    responder</h3>
+                <p class="text-slate-700 text-sm leading-relaxed">Desde 2024 existen modelos que, antes de responder,
+                    generan un razonamiento interno: prueban caminos, revisan y corrigen. Algunas apps muestran ese
+                    razonamiento resumido o un indicador de "pensando…". <b>Por qué funciona:</b> cada token es un poco de
+                    cómputo, y escribir el razonamiento le da al modelo más pasos para llegar a la respuesta. <b>Por qué
+                        importa:</b> para problemas complejos (análisis, cálculos, planificación), conviene usar el modo
+                    de razonamiento; para un mail simple, es más lento sin aportar mucho.</p>
+            </div>
+
+            <!-- Memoria -->
+            <div class="glass-panel p-6 md:p-8 mb-8 border-t-4 border-t-purple-500">
+                <h3 class="text-2xl font-bold text-slate-900 mb-5">Memoria: lo que el modelo recuerda (y lo que no)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">💬</div>
+                        <h4 class="font-bold text-slate-800 mb-2">1. Dentro de un chat</h4>
+                        <p class="text-slate-600">Recuerda porque la app le reenvía el historial completo en cada
+                            mensaje. Límite: la ventana de contexto. En chats muy largos, lo viejo se recorta o se
+                            resume.</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">🆕</div>
+                        <h4 class="font-bold text-slate-800 mb-2">2. Entre chats</h4>
+                        <p class="text-slate-600">Por defecto, <b>nada</b>. Cada chat nuevo empieza de cero.</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                        <div class="text-2xl mb-2">🗒️</div>
+                        <h4 class="font-bold text-slate-800 mb-2">3. La "memoria" de las apps</h4>
+                        <p class="text-slate-600">Algunas apps guardan notas sobre vos (tu nombre, tu trabajo, tus
+                            preferencias) y las meten al principio de cada chat nuevo. <b>El modelo no aprendió
+                                nada</b>: la app le pasa un papelito más. Esas notas se pueden ver, editar o borrar desde
+                            la configuración de la app.</p>
+                    </div>
+                </div>
+                <p class="mt-6 text-center text-lg md:text-xl font-extrabold text-purple-900">"Contexto largo no es
+                    memoria. Memoria no es aprendizaje."</p>
+            </div>
+
+            <!-- Herramientas, conectores y MCP -->
+            <div class="glass-panel p-6 md:p-8 mb-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-3">Herramientas, conectores y MCP</h3>
+                <p class="text-sm text-slate-700 mb-3">Las herramientas son lo que convierte un modelo que solo escribe
+                    en un asistente que hace cosas: buscar en la web, ejecutar código, leer tu Drive, crear un evento en
+                    tu calendario. Todas funcionan con el mismo ciclo de los pasos 6 y 7: el modelo escribe un pedido,
+                    la app lo ejecuta, el resultado vuelve como texto.</p>
+                <p class="text-sm text-slate-700 mb-4">En noviembre de 2024, Anthropic publicó el <b>Model Context
+                        Protocol (<span class="tt" data-tt="mcp">MCP</span>)</b>, un estándar abierto para conectar
+                    modelos con herramientas y fuentes de datos externas. Se suele comparar con un "puerto USB" para la
+                    IA: una forma común de enchufar servicios. Hoy lo usan distintas apps y empresas. <span
+                        class="text-[11px] text-slate-400">(Fuente: <a
+                            href="https://www.anthropic.com/news/model-context-protocol" target="_blank"
+                            rel="noopener noreferrer" class="underline hover:text-emerald-600">Anthropic</a>, nov.
+                        2024.)</span></p>
+                <div class="p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-900">
+                    <b>Lo importante para vos:</b> cada herramienta o conector que activás amplía lo que la IA puede
+                    <b>hacer en tu nombre</b> (y lo que puede salir mal). Activá solo los que necesitás, y prestá
+                    atención cuando la app te pide permiso para una acción.
+                </div>
+            </div>
+
+            <!-- Tu app, traducida -->
+            <div class="glass-panel p-6 md:p-8 mb-8 border-t-4 border-t-emerald-500">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Tu app, traducida</h3>
+                <p class="text-sm text-slate-500 mb-5">Lo que ves en pantalla, y qué es en realidad.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse min-w-[560px]">
+                        <thead>
+                            <tr class="bg-slate-800 text-white">
+                                <th class="text-left p-3 rounded-tl-lg">Lo que ves en la app</th>
+                                <th class="text-left p-3">Qué es en realidad</th>
+                                <th class="text-left p-3 rounded-tr-lg">Tipo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Instrucciones personalizadas / preferencias
+                                </td>
+                                <td class="p-3 text-slate-600">Texto que se agrega al principio de cada chat</td>
+                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full">Texto inyectado</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Proyectos</td>
+                                <td class="p-3 text-slate-600">Un espacio donde la app agrega siempre tus instrucciones y
+                                    archivos al paquete. Si los archivos son muchos, la app puede buscar solo los
+                                    fragmentos relevantes (eso es RAG, Capítulo 6)</td>
+                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full">Texto inyectado (+ búsqueda)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Memoria</td>
+                                <td class="p-3 text-slate-600">Notas sobre vos que la app guarda y reinyecta</td>
+                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full">Texto inyectado</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Skills / GPTs personalizados</td>
+                                <td class="p-3 text-slate-600">Instrucciones (y a veces archivos o código) preparadas
+                                    para una tarea, que la app carga cuando hacen falta (Skills en detalle: Capítulo 6)
+                                </td>
+                                <td class="p-3"><span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded-full">Texto inyectado (+ herramientas)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Búsqueda web</td>
+                                <td class="p-3 text-slate-600">El modelo pide buscar, la app busca y le pasa los
+                                    resultados</td>
+                                <td class="p-3"><span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full">Herramienta</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Análisis de archivos / ejecución de código
+                                </td>
+                                <td class="p-3 text-slate-600">El modelo escribe código, la app lo ejecuta y le devuelve
+                                    el resultado</td>
+                                <td class="p-3"><span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full">Herramienta</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Conectores (Drive, mail, calendario, CRM)
+                                </td>
+                                <td class="p-3 text-slate-600">Herramientas que acceden a tus servicios con tus permisos
+                                </td>
+                                <td class="p-3"><span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full">Herramienta</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold text-slate-800">Documentos, presentaciones o gráficos
+                                    generados</td>
+                                <td class="p-3 text-slate-600">El modelo escribe el contenido o el código; la app lo
+                                    convierte en el archivo o la vista que ves</td>
+                                <td class="p-3"><span class="bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full">Herramienta / renderizado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-6 text-center text-lg font-extrabold text-slate-900">"Todo, absolutamente todo, termina
+                    siendo texto que entra o sale del modelo."</p>
+            </div>
+
+            <!-- Modelo por API -->
+            <details class="glass-panel mb-8 overflow-hidden">
+                <summary
+                    class="px-6 py-4 cursor-pointer font-bold text-slate-800 hover:bg-slate-50 select-none">🔌 Para
+                    curiosos: ¿y si uso un modelo "pelado" (por <span class="tt" data-tt="api">API</span>)?</summary>
+                <div class="px-6 pb-6 text-sm text-slate-700 space-y-3">
+                    <p>Las empresas también ofrecen sus modelos por API, para que otros programas los usen. Ahí el
+                        modelo viene <b>sin la habitación</b>: recibe texto y devuelve texto. No sabe la fecha, no busca
+                        en la web, no lee archivos de Excel, no recuerda el mensaje anterior. Todo eso lo tiene que
+                        programar quien construye la aplicación: armar el paquete, definir las herramientas,
+                        ejecutarlas, reenviar el historial. Es como comprar el motor en lugar del auto.</p>
+                    <p>Matiz: cada vez más proveedores ofrecen algunas capacidades listas para activar en la API (por
+                        ejemplo, búsqueda web o ejecución de código), y muchos modelos aceptan imágenes y PDFs
+                        directamente. Pero el principio se mantiene: por defecto, el modelo es texto que entra y texto
+                        que sale.</p>
+                </div>
+            </details>
+
+            <!-- Cinco reglas -->
+            <div class="glass-panel p-6 md:p-8 bg-slate-800 text-white" id="reglas-enter">
+                <h3 class="text-2xl font-bold text-emerald-400 mb-5">Cinco reglas que salen de este capítulo</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">1</span><div><b>Si importa que sea de hoy, que
+                                busque.</b> Fijate que haya fuentes.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">2</span><div><b>Si importa que sea exacto, que lo
+                                calcule con código.</b></div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">3</span><div><b>Si es un tema nuevo, abrí un chat
+                                nuevo.</b> Los chats largos acumulan ruido y pierden detalles.</div></div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3"><span
+                            class="text-emerald-400 font-black text-xl">4</span><div><b>Lo que adjuntás sale de tu
+                                computadora.</b> Revisá la política de tu empresa antes de subir datos sensibles.</div>
+                    </div>
+                    <div class="bg-slate-700 rounded-xl p-4 flex gap-3 md:col-span-2"><span
+                            class="text-emerald-400 font-black text-xl">5</span><div><b>Seguro no es lo mismo que
+                                correcto.</b> El tono de la respuesta no te dice nada sobre si es verdad.</div></div>
+                </div>
+            </div>
+
+            <!-- Puente → Cap 5 (capPrompt) -->
+            <div class="mt-8 p-6 bg-slate-50 border-l-4 border-slate-400 rounded-r-xl">
+                <p class="text-slate-700 text-sm leading-relaxed">
+                    <strong>De todo el paquete, hay una parte que escribís vos: el prompt.</strong> En el
+                    <button onclick="nav('capPrompt')" class="underline text-emerald-700 hover:text-emerald-600">siguiente
+                        capítulo</button> vemos qué le pasa adentro del modelo y cómo escribirlo bien.
+                </p>
+            </div>
+        </section>
+
         <!-- CAPÍTULO 4: De Hablar a Actuar -->
         <section id="cap4" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
             <header class="mb-10">
@@ -2536,10 +2948,105 @@
                 </div>`);
         }
 
+        // === CAPÍTULO 4: EL VIAJE DE UN MENSAJE (stepper) ===
+        const enterFlowData = [
+            { step: 1, title: 'Escribís y apretás Enter', body: 'Tu mensaje y el Excel adjunto salen de tu computadora hacia los servidores de la empresa que da el servicio.', note: 'Lo que adjuntás sale de tu computadora. Esto importa para datos sensibles (Capítulo 7).' },
+            { step: 2, title: 'La app arma el paquete', body: 'Antes de llegar al modelo, la app junta todo en un solo texto largo: sus propias instrucciones (que incluyen <b>la fecha de hoy</b> y reglas de comportamiento), las instrucciones de tu Proyecto si estás en uno, notas de "memoria" sobre vos si la tenés activada, la descripción de las herramientas disponibles, <b>toda la conversación anterior de este chat</b> y, al final, tu mensaje.', note: 'El modelo sabe qué día es porque <b>la app se lo escribe</b>, no porque lo sepa.' },
+            { step: 3, title: 'Los archivos se vuelven texto', body: 'El modelo no "abre" el Excel. Según la app, el archivo se convierte en texto, o el modelo recibe una indicación de que existe y puede pedir leerlo con código. Las imágenes y muchos PDFs sí los puede "ver" directamente, porque los modelos actuales aceptan imágenes como entrada.', note: '"Leer un Excel" casi siempre significa: código que lo lee y le pasa los números al modelo.' },
+            { step: 4, title: 'Tokens', body: 'Todo el paquete se parte en tokens (Capítulo 3). Si el paquete es demasiado grande para la ventana de contexto, la app recorta o resume lo más viejo.', note: 'Por eso, en chats muy largos, se pierden detalles del principio.' },
+            { step: 5, title: 'El modelo genera', body: 'El modelo produce la respuesta token por token. Puede responder directamente o decidir que necesita una herramienta.', note: 'La parte de "días hasta 2030" la podría calcular solo… con riesgo de errar por los años bisiestos.' },
+            { step: 6, title: 'Pide una herramienta', body: 'En lugar de responder, el modelo escribe un <b>pedido estructurado</b>: "ejecutar este código de Python con estos datos". <b>El modelo no ejecuta nada</b>: solo escribe el pedido.', note: 'Quien decide usar la herramienta es el modelo; quien la ejecuta es la app.' },
+            { step: 7, title: 'La app ejecuta y devuelve', body: 'La app corre el código (calcula los días exactos, suma la columna del Excel), toma el resultado y lo agrega al paquete como un papelito más. Vuelve a llamar al modelo.', note: 'Este ciclo (pedido → ejecución → resultado) se puede repetir varias veces en una sola respuesta. Eso es, en esencia, un agente.' },
+            { step: 8, title: 'Respuesta final', body: 'Con los resultados en mano, el modelo redacta la respuesta en lenguaje natural. Se muestra mientras se genera (por eso ves aparecer el texto de a poco).', note: 'La narrativa es del modelo; los números exactos vienen del código.' },
+            { step: 9, title: 'Y después… nada', body: 'El modelo no guarda nada. Cuando mandes el próximo mensaje, la app <b>vuelve a enviar todo el paquete desde el principio</b>, con tu nuevo mensaje al final.', note: 'La "memoria" de la conversación es la app reenviando el historial. El modelo empieza de cero cada vez.' }
+        ];
+
+        function buildEnterFlow() {
+            const card = document.getElementById('enter-flow-card');
+            const counter = document.getElementById('enter-flow-counter');
+            const bar = document.getElementById('enter-flow-bar');
+            const prev = document.getElementById('enter-flow-prev');
+            const next = document.getElementById('enter-flow-next');
+            let current = 0;
+
+            function render() {
+                const s = enterFlowData[current];
+                counter.textContent = `Paso ${s.step} de ${enterFlowData.length}`;
+                bar.style.width = Math.round((s.step / enterFlowData.length) * 100) + '%';
+                card.innerHTML = `
+                    <div class="fade-in">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="bg-emerald-600 text-white rounded-full w-9 h-9 flex items-center justify-center font-black shrink-0">${s.step}</span>
+                            <h4 class="text-xl font-bold text-slate-900">${s.title}</h4>
+                        </div>
+                        <p class="text-slate-700 leading-relaxed mb-4">${s.body}</p>
+                        <div class="bg-amber-50 border-l-4 border-amber-400 rounded-r-lg p-4 text-sm text-amber-900"><b>Fijate que…</b> ${s.note}</div>
+                    </div>`;
+                prev.disabled = current === 0;
+                next.disabled = current === enterFlowData.length - 1;
+            }
+
+            prev.addEventListener('click', () => { if (current > 0) { current--; render(); } });
+            next.addEventListener('click', () => { if (current < enterFlowData.length - 1) { current++; render(); } });
+            render();
+        }
+
+        // === CAPÍTULO 4: ARMÁ EL PAQUETE ===
+        // Sin cantidades de tokens: serían inventadas. El alto de cada bloque es solo visual.
+        const contextPieces = [
+            { id: 'app', label: 'Instrucciones de la app', color: 'bg-slate-500', on: true, explain: 'Reglas de comportamiento que escribe la empresa: cómo responder, qué evitar, qué herramientas hay.' },
+            { id: 'fecha', label: 'Fecha de hoy', color: 'bg-sky-500', on: true, explain: 'Sin este papelito, el modelo no sabe qué día es: solo puede adivinar según su entrenamiento.' },
+            { id: 'proyecto', label: 'Instrucciones del Proyecto', color: 'bg-emerald-600', on: false, explain: 'Lo que escribiste para un Proyecto: se agrega en cada chat de ese Proyecto.' },
+            { id: 'archivos', label: 'Archivos del Proyecto', color: 'bg-emerald-400', on: false, explain: 'Tus documentos, completos o solo los fragmentos relevantes (RAG, Capítulo 6).' },
+            { id: 'memoria', label: 'Memoria', color: 'bg-purple-500', on: false, explain: 'Notas sobre vos que la app guardó. El modelo no aprendió nada: la app se las vuelve a pasar.' },
+            { id: 'herramientas', label: 'Herramientas disponibles', color: 'bg-amber-500', on: true, explain: 'La descripción de qué puede pedir (buscar, ejecutar código, conectores). El modelo decide si las usa.' },
+            { id: 'historial', label: 'Historial del chat', color: 'bg-slate-400', on: true, explain: 'Toda la conversación anterior, reenviada en cada mensaje. Así "recuerda" dentro de un chat.' },
+            { id: 'mensaje', label: 'Tu mensaje', color: 'bg-rose-500', on: true, explain: 'Lo que escribiste recién. Es solo una parte del paquete (Capítulo 5).' }
+        ];
+
+        function buildContextBuilder() {
+            const options = document.getElementById('context-builder-options');
+            const stack = document.getElementById('context-builder-stack');
+            const explain = document.getElementById('context-builder-explain');
+
+            contextPieces.forEach((piece) => {
+                const label = document.createElement('label');
+                label.className = 'flex items-start gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-100 text-sm';
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.checked = piece.on;
+                input.className = 'mt-1 accent-emerald-600';
+                input.addEventListener('change', () => {
+                    piece.on = input.checked;
+                    explain.innerHTML = `<b>${piece.label}:</b> ${piece.explain}`;
+                    renderStack();
+                });
+                const swatch = document.createElement('span');
+                swatch.className = `inline-block w-3 h-3 rounded-sm mt-1 shrink-0 ${piece.color}`;
+                swatch.setAttribute('aria-hidden', 'true');
+                const text = document.createElement('span');
+                text.innerHTML = `<b class="text-slate-800">${piece.label}</b><br><span class="text-xs text-slate-500">${piece.explain}</span>`;
+                label.append(input, swatch, text);
+                options.appendChild(label);
+            });
+
+            function renderStack() {
+                const active = contextPieces.filter(p => p.on);
+                stack.innerHTML = active.length
+                    ? active.map(p => `<div class="${p.color} text-white text-xs font-semibold rounded px-3 py-2 fade-in">${p.label}</div>`).join('')
+                    : '<div class="text-slate-400 text-xs text-center m-auto">El paquete está vacío: el modelo no recibe nada.</div>';
+            }
+
+            explain.innerHTML = 'Activá o desactivá una pieza para ver qué aporta.';
+            renderStack();
+        }
+
         window.onload = () => {
             buildTimeline();
             document.querySelector('#timeline-list button').click();
             buildMLTabs();
+            buildEnterFlow();
+            buildContextBuilder();
             nav('cap1');
             renderTokens();
         };
@@ -2670,7 +3177,8 @@
             alexnet: 'Red neuronal profunda (2012) que redujo el error en reconocimiento visual a la mitad en ImageNet, demostrando el poder del deep learning con GPUs. Marcó el inicio de la era moderna de la IA.',
             alphago: 'Sistema de DeepMind que venció al campeón mundial de Go en 2016. Aprendió jugando contra sí mismo (Aprendizaje por Refuerzo) e inventó movimientos que ningún maestro humano había considerado.',
             llm: 'Modelo de Lenguaje Grande (Large Language Model): Transformer entrenado con billones de tokens, capaz de generar, resumir, traducir y razonar sobre texto en lenguaje natural.',
-            iagenerativa: 'Rama de la IA que genera contenido nuevo (texto, imágenes, audio, código) a partir de patrones aprendidos durante el entrenamiento.'
+            iagenerativa: 'Rama de la IA que genera contenido nuevo (texto, imágenes, audio, código) a partir de patrones aprendidos durante el entrenamiento.',
+            mcp: 'Model Context Protocol: estándar abierto publicado por Anthropic en noviembre de 2024 para conectar modelos de IA con herramientas y fuentes de datos externas.'
         };
 
         (function() {
