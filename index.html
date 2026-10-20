@@ -454,17 +454,17 @@
             </div>
         </section>
 
-        <!-- CAPÍTULO 3: La Caja Negra -->
+        <!-- CAPÍTULO 3: El cerebro -->
         <section id="cap3" class="p-6 md:p-12 max-w-5xl mx-auto hidden fade-in">
             <header class="mb-10">
                 <span class="text-emerald-600 font-bold tracking-widest uppercase text-xs">Capítulo 3</span>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">Cómo Funciona la Inteligencia
-                    Artificial</h2>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-6">El cerebro: cómo funciona un
+                    modelo de lenguaje</h2>
 
                 <div class="guru-quote p-6 rounded-r-lg mb-8 text-lg text-slate-800 font-medium">
                     "Comprender cómo funciona un modelo de IA no requiere ser ingeniero. Requiere entender los
-                    principios suficientes para formular buenas preguntas, evaluar las respuestas con criterio y tomar
-                    decisiones de implementación fundamentadas en lugar de basadas en expectativas incorrectas."
+                    principios suficientes para formular buenas preguntas, evaluar las respuestas con criterio y saber
+                    cuándo verificar."
                 </div>
             </header>
 
@@ -472,7 +472,7 @@
             <div class="glass-panel p-6 md:p-8 mb-12 bg-slate-900 text-white shadow-lg">
                 <h3 class="text-2xl font-bold mb-6 text-emerald-400">Las Muñecas Rusas de la Tecnología</h3>
                 <p class="text-slate-300 mb-8 leading-relaxed text-sm md:text-base">La Inteligencia Artificial no flota
-                    en el vacío. Para entenderla, debemos abrir las muñecas rusas (matrioshkas) desde la ciencia base
+                    en el vacío. Para entenderla, conviene abrir las muñecas rusas (matrioshkas) desde la ciencia base
                     que hace todo esto posible, hasta llegar a la vanguardia actual.</p>
 
                 <div class="flex flex-col text-slate-900">
@@ -481,7 +481,7 @@
                         class="pl-3 pr-2 py-3 md:pl-5 md:pr-4 md:py-4 bg-slate-300 rounded-lg border-l-4 border-slate-500 shadow-sm relative">
                         <strong class="text-base md:text-lg block mb-1">1. Ciencias de la Computación y
                             Matemáticas</strong>
-                        <p class="text-xs md:text-sm text-slate-700">El universo general. Aquí residen la programación,
+                        <p class="text-xs md:text-sm text-slate-700">El universo general. Acá están la programación,
                             las bases de datos y la arquitectura de hardware. Es el "lienzo" sobre el que se pinta todo
                             lo demás.</p>
 
@@ -521,8 +521,8 @@
                                         <div
                                             class="mt-3 p-3 md:p-4 bg-purple-100 rounded border-l-4 border-purple-500 text-purple-900 text-xs md:text-sm">
                                             ↳ <strong class="font-bold">6. IA Generativa:</strong> La vanguardia. Rama
-                                            enfocada en <b>generar contenido totalmente nuevo</b> calculando la
-                                            probabilidad extrema de la siguiente pieza de información.
+                                            enfocada en <b>generar contenido nuevo</b> pieza por pieza, eligiendo en cada
+                                            paso una continuación probable.
                                         </div>
                                     </div>
                                 </div>
@@ -541,45 +541,48 @@
                     aparte: es la expresión más visible y accesible de esta misma base. Entender cómo aprenden las
                     máquinas es entender por qué la IA generativa funciona como funciona.</p>
 
-                <!-- 4 paradigmas: grid compacto -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
-                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
-                        <div class="font-bold text-slate-800 mb-1 text-sm">🎓 Aprendizaje Supervisado</div>
-                        <p class="text-xs text-slate-600">El modelo aprende de ejemplos etiquetados por humanos (imagen
-                            + "esto es un tumor"). Base de la detección de fraude, diagnóstico médico asistido y filtros
-                            de spam. Requiere grandes volúmenes de datos etiquetados — el recurso más caro.</p>
-                    </div>
-                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
-                        <div class="font-bold text-slate-800 mb-1 text-sm">🔍 Aprendizaje No Supervisado</div>
-                        <p class="text-xs text-slate-600">El modelo encuentra patrones sin etiquetas previas: agrupa
-                            clientes similares, detecta anomalías en ciberseguridad o comprime datos. Útil cuando hay
-                            mucha información pero no se sabe todavía qué preguntas hacer.</p>
-                    </div>
-                    <div class="bg-emerald-50 border border-emerald-300 rounded-xl p-4">
-                        <div class="font-bold text-emerald-800 mb-1 text-sm">📖 Aprendizaje Auto-Supervisado — <span
-                                class="text-emerald-600">el motor de los <span class="tt" data-tt="llm">LLMs</span></span></div>
-                        <p class="text-xs text-slate-600">El modelo se entrena prediciendo partes ocultas de su propio
-                            input ("La capital de Francia es ___"). No necesita etiquetas humanas: el texto completo
-                            actúa como su propia corrección. Convirtió internet en un dataset de entrenamiento gratuito
-                            e ilimitado. <strong>Es el paradigma que hace posible GPT, Claude y Gemini.</strong></p>
-                    </div>
-                    <div class="bg-emerald-50 border border-emerald-300 rounded-xl p-4">
-                        <div class="font-bold text-emerald-800 mb-1 text-sm">🎮 Aprendizaje por Refuerzo — <span
-                                class="text-emerald-600"><span class="tt" data-tt="rlhf">RLHF</span>: cómo se hace útil</span></div>
-                        <p class="text-xs text-slate-600">El modelo mejora recibiendo señales de recompensa. En IA
-                            generativa se usa como <strong>RLHF</strong> (Reinforcement Learning from Human Feedback):
-                            evaluadores humanos califican respuestas y el modelo aprende a imitar las mejor valoradas.
-                            Es el paso que transforma un predictor de texto en un asistente que "quiere ayudar".</p>
-                    </div>
+                <!-- 4 paradigmas: pestañas (datos en mlData) -->
+                <div class="glass-panel overflow-hidden mb-8">
+                    <div id="ml-tabs" role="tablist" aria-label="Paradigmas de aprendizaje"
+                        class="flex overflow-x-auto border-b border-slate-200 bg-white"></div>
+                    <div id="ml-content" role="tabpanel" class="p-6 md:p-8 text-slate-700 bg-white"></div>
                 </div>
 
-                <div class="p-4 bg-slate-800 rounded-xl text-sm text-slate-300">
-                    <span class="text-emerald-400 font-bold">En resumen:</span> La IA generativa usa auto-supervisado
-                    para aprender del mundo entero durante el <span class="tt" data-tt="preentrenamiento">pre-entrenamiento</span>, y refuerzo con feedback humano (RLHF)
-                    para volverse útil y segura. El supervisado y el no supervisado siguen siendo relevantes en miles de
-                    aplicaciones empresariales, pero no son los que potencian los modelos de lenguaje que usamos hoy.
+                <!-- Las 3 etapas del entrenamiento de un asistente -->
+                <div class="p-6 bg-slate-800 rounded-xl text-sm text-slate-300">
+                    <h4 class="text-emerald-400 font-bold text-base mb-4">Cómo se entrena un asistente como ChatGPT o
+                        Claude: 3 etapas</h4>
+                    <ol class="space-y-4">
+                        <li class="flex gap-3">
+                            <span class="bg-emerald-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                            <div><b class="text-white">Pre-entrenamiento (auto-supervisado).</b> El modelo lee una
+                                cantidad enorme de texto y aprende a predecir la palabra que sigue. Resultado: un modelo
+                                que sabe mucho y escribe bien, pero que <b class="text-white">no conversa</b>: si le
+                                escribís una pregunta, puede seguir escribiendo más preguntas.</div>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="bg-emerald-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                            <div><b class="text-white">Ajuste por instrucciones (supervisado).</b> Se lo entrena con
+                                miles de ejemplos de conversaciones "pregunta → buena respuesta" escritas o revisadas por
+                                personas. Aprende el formato de asistente.</div>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="bg-emerald-600 text-white rounded-full w-7 h-7 flex items-center justify-center text-xs font-bold shrink-0">3</span>
+                            <div><b class="text-white">Aprendizaje por refuerzo.</b> Se lo premia por las respuestas
+                                que se prefieren. Puede ser con feedback humano (<span class="tt" data-tt="rlhf">RLHF</span>),
+                                con criterios escritos que evalúa otra IA, o —en los modelos de razonamiento— con
+                                recompensas automáticas en problemas que se pueden verificar (matemática, código). Esta
+                                etapa le da el estilo útil, prudente y, en los modelos más nuevos, la capacidad de
+                                "pensar" antes de responder.</div>
+                        </li>
+                    </ol>
+                    <div class="mt-5 p-4 bg-emerald-900/40 border border-emerald-700 rounded-lg">
+                        <span class="text-emerald-300 font-bold">¿Y esto qué me cambia?</span> El modelo que usás es el
+                        resultado de las tres etapas. Por eso "quiere" ayudarte y responde siempre con seguridad: fue
+                        entrenado para dar respuestas que parezcan buenas. Eso no garantiza que sean correctas.
+                    </div>
                     <a href="https://www.ibm.com/es-es/think/machine-learning" target="_blank" rel="noopener noreferrer"
-                        class="mt-3 inline-flex items-center gap-2 text-xs text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
+                        class="mt-4 inline-flex items-center gap-2 text-xs text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
                         📖 Profundizar: Machine Learning en IBM ↗
                     </a>
                 </div>
@@ -594,8 +597,8 @@
 
                 <div
                     class="guru-quote p-5 rounded-r-lg mb-7 text-slate-700 italic text-sm bg-emerald-50 border-l-emerald-500">
-                    "Durante décadas, la IA funcionó así: tienes un problema específico, reúnes datos sobre ese problema
-                    y entrenas un modelo para ese problema. Un detector de spam era distinto a un analizador de
+                    "Durante décadas, la IA funcionó así: tenías un problema específico, reunías datos sobre ese
+                    problema y entrenabas un modelo para ese problema. Un detector de spam era distinto a un analizador de
                     sentimientos, que era distinto a un traductor. Cada tarea requería su propio modelo, su propio
                     dataset, su propio equipo."
                 </div>
@@ -657,42 +660,47 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
                     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
                         <div class="font-bold text-blue-800 mb-2">🏛️ La Analogía del Polímata</div>
-                        <p class="text-sm text-slate-700">Imagina que antes contratabas 10 especialistas distintos —uno
-                            por idioma, uno por contabilidad, uno por atención al cliente. Un Modelo Fundacional es como
-                            contratar a alguien con formación enciclopédica que, con una semana de contexto sobre tu
-                            empresa (<span class="tt" data-tt="finetuning">fine-tuning</span>), puede hacer todas esas tareas. Ningún especialista podría anticipar
-                            las tareas que aún no existen. El polímata sí.</p>
+                        <p class="text-sm text-slate-700">Un modelo fundacional es como alguien con una formación
+                            enciclopédica. Para que trabaje en tu empresa no hace falta volver a formarlo: alcanza con
+                            <b>darle tus documentos e instrucciones cuando le pedís algo</b> (eso es contexto, lo vemos
+                            en el Capítulo 4). Volver a entrenarlo (<span class="tt" data-tt="finetuning">fine-tuning</span>)
+                            es otra cosa, más cara, y casi nunca hace falta.</p>
                     </div>
                     <div class="bg-slate-800 text-white rounded-xl p-5">
                         <div class="font-bold text-emerald-400 mb-3">📊 La escala que lo hace posible</div>
                         <div class="space-y-2 text-sm">
-                            <div class="flex justify-between border-b border-slate-700 pb-1">
-                                <span class="text-slate-400">Parámetros (modelo pequeño, 2018)</span>
-                                <span class="font-mono text-white">~110 millones</span>
+                            <div class="flex justify-between gap-3 border-b border-slate-700 pb-1">
+                                <span class="text-slate-400">BERT-base (Google, 2018)</span>
+                                <span class="font-mono text-white text-right">~110 millones de parámetros</span>
                             </div>
-                            <div class="flex justify-between border-b border-slate-700 pb-1">
-                                <span class="text-slate-400">Parámetros (modelo grande, 2020)</span>
-                                <span class="font-mono text-emerald-300">175,000 millones</span>
+                            <div class="flex justify-between gap-3 border-b border-slate-700 pb-1">
+                                <span class="text-slate-400">GPT-3 (OpenAI, 2020)</span>
+                                <span class="font-mono text-emerald-300 text-right">175.000 millones</span>
                             </div>
-                            <div class="flex justify-between border-b border-slate-700 pb-1">
-                                <span class="text-slate-400">Parámetros (modelos actuales, est.)</span>
-                                <span class="font-mono text-emerald-300">>1 billón</span>
+                            <div class="flex justify-between gap-3 border-b border-slate-700 pb-1">
+                                <span class="text-slate-400">Modelos de punta actuales</span>
+                                <span class="font-mono text-emerald-300 text-right">sin dato confirmado</span>
                             </div>
-                            <div class="flex justify-between">
-                                <span class="text-slate-400">Tokens de entrenamiento</span>
-                                <span class="font-mono text-amber-300">~15 billones</span>
+                            <div class="flex justify-between gap-3">
+                                <span class="text-slate-400">Llama 3 (Meta, 2024)</span>
+                                <span class="font-mono text-amber-300 text-right">+15 billones de tokens de
+                                    entrenamiento</span>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-400 mt-3">A esa escala, el modelo no memoriza: <em>abstrae</em>.
-                            Comprende estructura, no ejemplos.</p>
+                        <p class="text-[11px] text-slate-500 mt-2">Los laboratorios no publican el tamaño de sus modelos
+                            más grandes. Fuentes: Google, OpenAI y Meta (publicaciones de cada modelo).</p>
+                        <p class="text-xs text-slate-400 mt-3">A esa escala, el modelo no solo repite: aprende patrones
+                            generales que le permiten responder cosas que nunca vio exactamente así. Pero también
+                            memoriza fragmentos, y a veces los mezcla mal.</p>
                     </div>
                 </div>
 
                 <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-900">
-                    <strong>⚡ El concepto clave: Pre-entrenamiento + Fine-tuning.</strong> El pre-entrenamiento (meses,
-                    millones de dólares, miles de GPUs) construye la base universal. El fine-tuning (horas, coste
-                    mínimo) lo especializa para un dominio concreto —tu empresa, tu industria, tu idioma. Cualquier
-                    organización puede hoy aprovechar ese conocimiento base sin pagar el coste de construirlo.
+                    <strong>⚡ El concepto clave: pre-entrenamiento, fine-tuning y contexto.</strong> El
+                    pre-entrenamiento construye la base universal y es lo más caro de todo el proceso. El fine-tuning
+                    ajusta un modelo ya entrenado con ejemplos propios: es mucho más barato que entrenar desde cero,
+                    pero requiere datos preparados, conocimiento técnico y evaluación. Para la mayoría de los usos,
+                    darle contexto (documentos, instrucciones) es suficiente y más simple.
                 </div>
             </div>
 
@@ -750,17 +758,19 @@
                             </div>
                         </div>
                         <div class="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-900">
-                            <b>💡 Dato clave:</b> Un token equivale a ~¾ de una palabra en inglés. En español, las
-                            palabras son más largas y suelen necesitar más tokens. Los modelos actuales procesan hasta
-                            <b>128,000 tokens</b> por conversación. Por eso el "contexto" de un modelo se mide en
-                            tokens, no en palabras.
+                            <b>💡 Dato clave:</b> Un token equivale a unos ¾ de palabra en inglés. En español se
+                            necesitan, en general, más tokens para decir lo mismo (Petrov et al., 2023), lo que hace que
+                            el mismo texto "ocupe" más. El espacio de trabajo del modelo (la
+                            <span class="tt" data-tt="ventana">ventana de contexto</span>) se mide en tokens: en 2026
+                            los modelos de punta aceptan del orden de <b>1 millón de tokens</b>, aunque eso no significa
+                            que aprovechen todo ese texto igual de bien (ver Capítulo 4).
                         </div>
                     </div>
 
                     <!-- Demo interactiva propia -->
                     <div class="bg-slate-50 rounded-xl border border-slate-200 p-6 mb-6">
-                        <h5 class="font-bold text-slate-800 mb-1">🔬 Pruébalo tú mismo</h5>
-                        <p class="text-xs text-slate-500 mb-4">Escribe cualquier texto y observa cómo se divide en
+                        <h5 class="font-bold text-slate-800 mb-1">🔬 Probalo vos</h5>
+                        <p class="text-xs text-slate-500 mb-4">Escribí cualquier texto y observá cómo se divide en
                             tokens (bloques de color). Cada color = un token diferente = un número único para la IA.</p>
 
                         <!-- Ejemplos rápidos -->
@@ -782,7 +792,7 @@
                         <textarea id="token-input" oninput="renderTokens()"
                             class="w-full border border-slate-300 rounded-lg p-3 text-sm font-mono bg-white focus:outline-none focus:ring-2 focus:ring-emerald-400 resize-none mb-4"
                             rows="3"
-                            placeholder="Escribe aquí...">La inteligencia artificial aprende de datos.</textarea>
+                            aria-label="Texto para tokenizar" placeholder="Escribí acá...">La inteligencia artificial aprende de datos.</textarea>
 
                         <!-- Salida coloreada -->
                         <div id="token-output"
@@ -812,23 +822,30 @@
                     <!-- Insight sobre las limitaciones -->
                     <div class="p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-900 mb-6">
                         <b>❓ ¿Por qué los modelos de lenguaje a veces fallan contando letras?</b><br>
-                        Prueba "Electroencefalografista": la IA la ve como 5–6 bloques numéricos, <i>no como letras
-                            individuales</i>. Por eso le resulta difícil decirte cuántas "a" tiene: nunca vio las
-                        letras, solo vio fragmentos.
+                        Probá "Electroencefalografista": un tokenizador real la parte en varios fragmentos, <i>no en
+                            letras individuales</i>. Por eso al modelo le resulta difícil decirte cuántas "a" tiene:
+                        nunca vio las letras, solo vio fragmentos. Hoy muchas apps resuelven esto haciendo que el modelo
+                        cuente con código (ver Capítulo 4).
                     </div>
 
                     <!-- Iframe avanzado (colapsable) -->
                     <details class="border border-slate-200 rounded-xl overflow-hidden">
                         <summary
                             class="bg-slate-100 px-5 py-3 cursor-pointer text-sm font-semibold text-slate-700 hover:bg-slate-200 transition-colors select-none">
-                            🔬 La herramienta real: así tokeniza GPT-4 (BPE)
+                            🔬 Un tokenizador real (BPE), como los que usan los modelos de OpenAI
                         </summary>
                         <div class="bg-slate-100 p-2">
-                            <p class="text-xs text-slate-500 px-3 pb-2">El demo de arriba simplifica la tokenización para facilitar la intuición. Esta herramienta usa el algoritmo real (BPE — Byte Pair Encoding) de GPT-4: los resultados pueden diferir, especialmente en palabras compuestas, números y caracteres especiales. En el campo <strong>User → Content</strong> escribí una frase y observá cómo la divide en tokens.</p>
+                            <p class="text-xs text-slate-500 px-3 pb-2">El demo de arriba simplifica la tokenización para facilitar la intuición. Esta herramienta usa un tokenizador real (BPE — Byte Pair Encoding), como los que usan los modelos de OpenAI: los resultados pueden diferir, especialmente en palabras compuestas, números y caracteres especiales. En el campo <strong>User → Content</strong> escribí una frase y observá cómo la divide en tokens.</p>
                             <iframe src="https://tiktokenizer.vercel.app/" class="w-full h-[500px] rounded-lg bg-white"
                                 title="Herramienta Interactiva de Tokenización" frameborder="0"></iframe>
                         </div>
                     </details>
+
+                    <div class="mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900">
+                        <b>¿Y esto qué me cambia?</b> Todo lo que le pasás al modelo (tu mensaje, los archivos, el
+                        historial del chat) se mide en tokens y ocupa lugar. Y si necesitás contar letras o palabras con
+                        precisión, pedile que lo haga con código.
+                    </div>
                 </div>
 
                 <!-- Laboratorio 2: Flujo 3D del LLM (Enlace Externo) -->
@@ -861,8 +878,8 @@
                                 <strong>vector</strong>: una lista de miles de números flotantes que representa su
                                 "posición" en un espacio matemático de alta dimensión. En ese espacio, las palabras con
                                 significados relacionados quedan físicamente cerca. El ejemplo clásico: <code
-                                    class="bg-purple-100 px-1 rounded text-xs">Rey − Hombre + Mujer ≈ Reina</code>. La
-                                máquina no entiende el lenguaje; opera sobre geometría.
+                                    class="bg-purple-100 px-1 rounded text-xs">Rey − Hombre + Mujer ≈ Reina</code>. Para
+                                la máquina, el significado es geometría: palabras parecidas quedan cerca.
                             </p>
                             <p class="text-xs text-purple-700 font-semibold">📐 En el visualizador: cada token se estira
                                 verticalmente en una columna de números — eso es el vector embedding.</p>
@@ -884,15 +901,14 @@
                         </div>
                         <!-- Paso 3 -->
                         <div class="bg-purple-50 p-5 rounded-xl border border-purple-200">
-                            <div class="text-purple-700 font-black text-xl mb-2">3. Red Feedforward — La Memoria del
-                                Modelo</div>
+                            <div class="text-purple-700 font-black text-xl mb-2">3. Red Feedforward — ¿La memoria
+                                del modelo?</div>
                             <p class="text-sm text-slate-700 mb-3">Después de la atención, cada token pasa
                                 individualmente por una red neuronal densa de dos capas (la red <em>feedforward</em>).
-                                Esta etapa, frecuentemente ignorada, es donde los investigadores creen que el modelo
-                                almacena el <strong>conocimiento factual</strong>: hechos, relaciones causales, datos
-                                del mundo. Un modelo moderno tiene entre 32 y 96 de estos bloques apilados: las primeras
-                                capas capturan sintaxis básica, las intermedias semántica profunda, las últimas patrones
-                                de razonamiento.</p>
+                                Una de las hipótesis de los investigadores es que acá se guarda buena parte del
+                                <strong>conocimiento factual</strong>: hechos, relaciones, datos del mundo. Un modelo
+                                grande apila decenas de estos bloques (GPT-3 tenía 96): en general, las primeras capas
+                                capturan rasgos más simples y las siguientes, relaciones más abstractas.</p>
                             <p class="text-xs text-purple-700 font-semibold">🧱 Es el componente más "pesado" del
                                 modelo: representa la mayor parte de los parámetros totales.</p>
                         </div>
@@ -901,12 +917,13 @@
                             <div class="text-purple-700 font-black text-xl mb-2">4. <span class="tt" data-tt="softmax">Softmax</span> — Predicción Token a Token
                             </div>
                             <p class="text-sm text-slate-700 mb-3">La capa final proyecta el vector resultante sobre
-                                todo el vocabulario (50,000–100,000 palabras) y asigna a cada una una probabilidad. El
+                                todo su vocabulario de tokens (en los modelos actuales, de decenas de miles a más de
+                                200.000 tokens) y asigna a cada uno una probabilidad. El
                                 modelo no siempre elige la de mayor probabilidad: un parámetro llamado
                                 <strong><span class="tt" data-tt="temperatura">temperatura</span></strong> controla la "creatividad". Temperatura baja → respuestas
                                 conservadoras y predecibles. Temperatura alta → mayor variedad, más riesgo de error.
-                                Luego el proceso se repite desde cero: el token generado se añade a la entrada y se
-                                recalcula todo — así, de un token por vez, emerge el texto.
+                                Luego el token elegido se agrega al texto y el proceso se repite: así, de un token por
+                                vez, emerge la respuesta.
                             </p>
                             <p class="text-xs text-purple-700 font-semibold">🎲 En el visualizador: la columna final
                                 muestra esas probabilidades. El modelo "lanza un dado ponderado" en cada paso.</p>
@@ -916,7 +933,7 @@
                     <div
                         class="bg-slate-900 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-inner border border-slate-700">
                         <div class="text-white text-center md:text-left">
-                            <strong class="block text-lg mb-1 text-purple-400">Explora más a fondo</strong>
+                            <strong class="block text-lg mb-1 text-purple-400">Explorá más a fondo</strong>
                             <p class="text-sm text-slate-400">Recursos para quienes quieren ir más lejos.
                             </p>
                         </div>
@@ -932,6 +949,12 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-sm text-emerald-900">
+                        <b>¿Y esto qué me cambia?</b> Cada palabra de tu mensaje influye en cómo el modelo interpreta
+                        las demás (eso es la atención). Por eso el contexto que das cambia tanto la respuesta: lo vemos
+                        a fondo en el Capítulo 5.
+                    </div>
                 </div>
             </div>
 
@@ -939,8 +962,8 @@
             <div class="glass-panel p-6 md:p-8 mt-8 border-t-4 border-t-slate-700 bg-white">
                 <h3 class="text-2xl font-bold text-slate-900 mb-1">Del Transformer al LLM: Cómo se genera el texto</h3>
                 <p class="text-slate-500 text-sm mb-6">Entender la arquitectura Transformer es el primer paso. El
-                    segundo es entender qué ocurre cuando ese mecanismo se aplica a billones de parámetros y trillones
-                    de palabras — y cómo produce texto coherente.</p>
+                    segundo es entender qué ocurre cuando ese mecanismo se aplica a miles de millones de parámetros y
+                    billones de tokens, y cómo produce texto coherente.</p>
 
                 <!-- Qué es un LLM -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -948,25 +971,26 @@
                         <div class="text-2xl mb-2">📏</div>
                         <h4 class="font-bold text-slate-800 mb-2 text-sm">La diferencia es la escala</h4>
                         <p class="text-sm text-slate-600">Un Transformer pequeño puede tener millones de parámetros. Un
-                            LLM moderno tiene entre 7.000 y 1.800.000 millones. Esa diferencia de escala no es solo
-                            cuantitativa: a cierto umbral aparecen capacidades que los modelos pequeños no tienen —
-                            razonamiento, traducción, código — sin que nadie las programara explícitamente.</p>
+                            <span class="tt" data-tt="llm">LLM</span> moderno va desde unos pocos miles de millones hasta
+                            cientos de miles de millones de parámetros (o más; los más grandes no publican su tamaño).
+                            Con la escala aparecen capacidades que los modelos chicos no tienen: traducir, programar,
+                            resolver problemas en varios pasos.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">📚</div>
                         <h4 class="font-bold text-slate-800 mb-2 text-sm">Entrenado en texto de internet</h4>
                         <p class="text-sm text-slate-600">Durante el pre-entrenamiento, el modelo lee billones de
                             tokens: libros, artículos, código, conversaciones. La tarea es simple: predecir la palabra
-                            siguiente. Esa presión repetida sobre trillones de ejemplos fuerza al modelo a internalizar
-                            gramática, hechos, lógica y relaciones entre conceptos — todo sin etiquetas humanas.</p>
+                            siguiente. Repetir esa tarea una cantidad enorme de veces lo obliga a internalizar
+                            gramática, hechos, lógica y relaciones entre conceptos, sin etiquetas humanas.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">🎯</div>
-                        <h4 class="font-bold text-slate-800 mb-2 text-sm">Ajustado para ser útil (RLHF)</h4>
-                        <p class="text-sm text-slate-600">Un modelo pre-entrenado solo predice texto — no "ayuda". Para
-                            convertirlo en asistente, se aplica RLHF: evaluadores humanos califican respuestas y el
-                            modelo aprende a imitar las mejor valoradas. Este paso es el que transforma un predictor de
-                            texto en ChatGPT, Claude o Gemini.</p>
+                        <h4 class="font-bold text-slate-800 mb-2 text-sm">Ajustado para ser útil</h4>
+                        <p class="text-sm text-slate-600">Un modelo pre-entrenado solo continúa texto: no "ayuda". Para
+                            convertirlo en asistente se lo entrena con conversaciones de ejemplo escritas por personas
+                            (ajuste por instrucciones) y después se lo premia por las respuestas preferidas
+                            (aprendizaje por refuerzo). Así nacen apps como ChatGPT, Claude o Gemini.</p>
                     </div>
                 </div>
 
@@ -1005,31 +1029,35 @@
                             <div class="text-slate-400">Hasta generar el token de "fin de respuesta"</div>
                         </div>
                     </div>
-                    <p class="text-slate-400 text-xs italic">Una respuesta de 300 palabras implica ~400 repeticiones de
-                        este bucle. En cada una, el modelo recalcula todo el contexto acumulado desde cero.</p>
+                    <p class="text-slate-400 text-xs italic">Una respuesta de 300 palabras implica unas 400
+                        repeticiones de este bucle (estimación: depende del idioma y del tokenizador). En cada paso, el
+                        modelo vuelve a tener en cuenta todo el texto anterior para decidir el próximo token.</p>
                 </div>
 
                 <!-- Ventana de contexto + implicación práctica -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
                         <h4 class="font-bold text-blue-900 mb-2 text-sm">📋 La ventana de contexto</h4>
-                        <p class="text-sm text-slate-700 mb-2">El modelo solo "ve" el texto que cabe dentro de su
-                            ventana de contexto — medida en tokens. GPT-4 maneja ~128.000 tokens (~300 páginas); modelos
-                            avanzados llegan a 1 millón. Todo lo que queda fuera de esa ventana no existe para el
-                            modelo.</p>
-                        <p class="text-xs text-blue-800 font-medium">Implicación práctica: en conversaciones largas, el
-                            modelo "olvida" lo que ocurrió al inicio. No es fallo de memoria — es límite de
-                            arquitectura.</p>
+                        <p class="text-sm text-slate-700 mb-2">El modelo solo "ve" el texto que entra en su
+                            <span class="tt" data-tt="ventana">ventana de contexto</span>. En 2026, los modelos de punta
+                            aceptan del orden de 1 millón de tokens, pero aceptar no es aprovechar: está documentado que
+                            a los modelos les cuesta usar información que queda "perdida en el medio" de textos muy
+                            largos (Liu et al., 2023) y que su precisión baja mucho antes del límite nominal.</p>
+                        <p class="text-xs text-blue-800 font-medium">Implicación práctica: en conversaciones muy
+                            largas, la app recorta o resume lo viejo para que entre. Por eso el modelo puede "olvidar"
+                            detalles del principio. No es mala memoria: es que ese texto ya no está en lo que recibe.
+                            Para temas nuevos, conviene abrir un chat nuevo.</p>
                     </div>
                     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
                         <h4 class="font-bold text-amber-900 mb-2 text-sm">⚠️ Lo que el LLM realmente hace</h4>
-                        <p class="text-sm text-slate-700 mb-2">El modelo no "piensa", no "entiende" ni "consulta" una
-                            base de datos de verdades. En cada paso ejecuta multiplicaciones matriciales sobre vectores
-                            de alta dimensión para determinar cuál es el token estadísticamente más probable dado el
-                            contexto.</p>
-                        <p class="text-xs text-amber-800 font-medium">Eso explica por qué suena seguro cuando se
-                            equivoca: el mecanismo de generación es el mismo independientemente de si la respuesta es
-                            correcta o incorrecta.</p>
+                        <p class="text-sm text-slate-700 mb-2">El mecanismo es simple de describir: en cada paso, el
+                            modelo calcula probabilidades para el próximo token y elige uno (no siempre el más probable:
+                            eso depende de la <span class="tt" data-tt="temperatura">temperatura</span>). Lo
+                            sorprendente es lo que emerge de ese mecanismo cuando se entrena a gran escala: puede
+                            resumir, traducir, programar, razonar paso a paso y hacer cuentas.</p>
+                        <p class="text-xs text-amber-800 font-medium">La trampa es otra: <b>el mecanismo es el mismo
+                                cuando acierta y cuando se equivoca</b>. No hay una alarma interna que se encienda
+                            cuando inventa. Por eso suena igual de seguro en los dos casos.</p>
                     </div>
                 </div>
                 <a href="https://www.ibm.com/es-es/think/topics/large-language-models" target="_blank"
@@ -1049,16 +1077,16 @@
             <!-- CAPACIDADES EMERGENTES (condensado) -->
             <div class="bg-slate-900 text-white rounded-xl p-6 mt-8">
                 <div class="font-bold text-purple-400 text-base mb-2">💧 Un fenómeno clave: capacidades emergentes</div>
-                <p class="text-slate-300 text-sm mb-3">Nadie programó a estos modelos para razonar paso a paso, traducir idiomas o escribir código. Esas capacidades <strong class="text-purple-300">aparecieron solas al cruzar cierto umbral de escala</strong> — como el agua que pasa de líquida a vapor en un grado exacto, sin que ninguna molécula "decida" cambiar.</p>
+                <p class="text-slate-300 text-sm mb-3">Algunas capacidades (traducir, programar, resolver problemas en varios pasos) no se programaron una por una: <strong class="text-purple-300">aparecieron al entrenar modelos más grandes con más datos</strong>. Si aparecen "de golpe" o gradualmente está en debate: un trabajo de 2023 (Schaeffer et al.) mostró que parte de ese efecto depende de cómo se mide.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
                     <div class="bg-slate-800 rounded-lg p-3 text-xs text-slate-300">
-                        <span class="font-bold text-purple-300">Few-shot learning:</span> muéstrale 2-3 ejemplos de un formato nuevo y generalizará el patrón sin reentrenamiento.
+                        <span class="font-bold text-purple-300">Few-shot:</span> mostrale 2 o 3 ejemplos del formato que querés y lo imita, sin reentrenarlo (lo vemos en detalle en el Capítulo 5).
                     </div>
                     <div class="bg-slate-800 rounded-lg p-3 text-xs text-slate-300">
-                        <span class="font-bold text-purple-300">Chain-of-thought:</span> pedir que piense "paso a paso" dispara la precisión en matemáticas y lógica — nadie programó eso explícitamente.
+                        <span class="font-bold text-purple-300">Paso a paso:</span> pedirle que muestre el razonamiento suele mejorar la precisión en matemática y lógica. Cada token que escribe es más "tiempo para pensar". Desde 2024, los <b>modelos de razonamiento</b> se entrenan específicamente para hacer esto por su cuenta antes de responder.
                     </div>
                 </div>
-                <p class="text-slate-500 text-xs mt-3 italic">¿Comprensión real o reconocimiento de patrones a escala masiva? El debate no está resuelto. Lo que sí es claro: el comportamiento es funcional y las aplicaciones son inmediatas.</p>
+                <p class="text-slate-500 text-xs mt-3 italic">¿Comprensión real o reconocimiento de patrones a gran escala? El debate no está resuelto. Lo que sí es claro: el comportamiento es útil, y también falible.</p>
             </div>
 
             <!-- ¿Por qué la IA inventa cosas? -->
@@ -1071,26 +1099,35 @@
                         <div class="text-2xl mb-2">🎲</div>
                         <h4 class="font-bold text-slate-800 mb-2 text-sm">No busca: predice</h4>
                         <p class="text-sm text-slate-600">Un modelo de lenguaje no consulta una base de datos de
-                            "verdades". Calcula cuál es la siguiente palabra <i>más probable</i> dado el contexto. A
-                            veces esa probabilidad apunta a algo incorrecto.</p>
+                            "verdades". Calcula cuál es la siguiente palabra <i>más probable</i> dado el contexto. Y
+                            cuando no tiene el dato, la respuesta más "probable" suele ser una respuesta con forma
+                            correcta y contenido inventado.</p>
                     </div>
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">📅</div>
                         <h4 class="font-bold text-slate-800 mb-2 text-sm">Tiene fecha de corte</h4>
                         <p class="text-sm text-slate-600">El modelo se entrenó con datos hasta cierto punto en el
                             tiempo. No sabe lo que pasó después. Si se le pregunta por hechos recientes, improvisa con
-                            lo que tiene.</p>
+                            lo que tiene. Ni siquiera sabe qué día es hoy, salvo que la app se lo diga (Capítulo 4).</p>
                     </div>
                     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
                         <div class="text-2xl mb-2">💡</div>
-                        <h4 class="font-bold text-amber-900 mb-2 text-sm">La solución: <span class="tt" data-tt="rag">RAG</span></h4>
-                        <p class="text-sm text-amber-800">En lugar de que el modelo "recuerde", le entregamos el texto
-                            exacto de nuestros documentos y le pedimos que responda <i>solo con eso</i>. Esto es lo que
-                            veremos en el siguiente capítulo.</p>
+                        <h4 class="font-bold text-amber-900 mb-2 text-sm">La solución: darle la información</h4>
+                        <p class="text-sm text-amber-800">En vez de pedirle que la recuerde, dársela: documentos,
+                            búsqueda web (<span class="tt" data-tt="rag">RAG</span>). Lo vemos en los capítulos 4 y 6.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Puente → Cap 4 (capEnter) -->
+            <div class="mt-8 p-6 bg-slate-50 border-l-4 border-slate-400 rounded-r-xl">
+                <p class="text-slate-700 text-sm leading-relaxed">
+                    <strong>Ya conocés el cerebro. Pero cuando usás ChatGPT o Claude no le hablás solo al
+                        cerebro.</strong> En el <button onclick="nav('capEnter')"
+                        class="underline text-emerald-700 hover:text-emerald-600">siguiente capítulo</button> vemos qué
+                    pasa, paso a paso, cuando apretás Enter.
+                </p>
+            </div>
         </section>
 
         <!-- CAPÍTULO 4: De Hablar a Actuar -->
@@ -2422,9 +2459,87 @@
             renderTokens();
         }
 
+        // === PESTAÑAS ACCESIBLES (reutilizable) ===
+        // items: [{ id, label }]; render(item) devuelve el HTML del panel (datos estáticos de esta página).
+        function buildTabs(tabsEl, panelEl, items, render) {
+            const buttons = items.map((item, index) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.id = tabsEl.id + '-' + item.id;
+                btn.setAttribute('role', 'tab');
+                btn.setAttribute('aria-controls', panelEl.id);
+                btn.className = 'px-4 md:px-6 py-3 text-sm transition-colors whitespace-nowrap border-b-2 font-semibold';
+                btn.textContent = item.label;
+                btn.addEventListener('click', () => select(index));
+                btn.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        const next = (index + (e.key === 'ArrowRight' ? 1 : -1) + items.length) % items.length;
+                        select(next);
+                        buttons[next].focus();
+                    }
+                });
+                tabsEl.appendChild(btn);
+                return btn;
+            });
+
+            function select(index) {
+                buttons.forEach((b, i) => {
+                    const active = i === index;
+                    b.setAttribute('aria-selected', active ? 'true' : 'false');
+                    b.tabIndex = active ? 0 : -1;
+                    b.classList.toggle('tab-active', active);
+                    b.classList.toggle('border-transparent', !active);
+                    b.classList.toggle('text-slate-500', !active);
+                });
+                panelEl.setAttribute('aria-labelledby', buttons[index].id);
+                panelEl.innerHTML = render(items[index]);
+            }
+
+            select(0);
+        }
+
+        // === CAPÍTULO 3: PARADIGMAS DE APRENDIZAJE ===
+        const mlData = [
+            {
+                id: 'sup', label: 'Supervisado',
+                content: '<b>La metáfora del maestro:</b> tenés un millón de radiografías que un médico etiquetó como "sana" o "tumor". La máquina predice; si se equivoca, ajusta sus parámetros para acercarse a la etiqueta correcta. Requiere muchos datos etiquetados por personas, que es lo más caro.',
+                uses: 'Detección de fraude, filtros de spam, diagnóstico asistido.',
+                llm: 'Es la etapa 2 del entrenamiento de un asistente: ejemplos de "pregunta → buena respuesta" escritos o revisados por personas.'
+            },
+            {
+                id: 'unsup', label: 'No supervisado',
+                content: '<b>La metáfora del detective:</b> le damos millones de transacciones <b>sin ninguna etiqueta</b>. Tiene que encontrar la estructura oculta por su cuenta, agrupando (clustering) lo que se parece.',
+                uses: 'Segmentar clientes, detectar anomalías, comprimir datos.',
+                llm: 'No es una de las etapas centrales del entrenamiento de un asistente, pero se usa mucho en análisis de datos.'
+            },
+            {
+                id: 'self', label: 'Auto-supervisado',
+                content: '<b>La metáfora de completar la frase:</b> el sistema toma un texto, oculta una palabra ("El perro persigue al ___") y trata de predecirla. Como tiene el texto original, se corrige solo, sin etiquetas humanas. Eso permitió aprender de cantidades enormes de texto.',
+                uses: 'Pre-entrenamiento de los modelos de lenguaje.',
+                llm: 'Es la etapa 1 (pre-entrenamiento): de acá sale casi todo lo que el modelo "sabe".'
+            },
+            {
+                id: 'rein', label: 'Por refuerzo',
+                content: '<b>La metáfora del videojuego:</b> la máquina actúa en un entorno; si toma una buena decisión recibe una recompensa, y si falla, una penalización. Aprende a maximizar la recompensa por ensayo y error.',
+                uses: 'Robótica, juegos (AlphaGo), sistemas de recomendación.',
+                llm: 'Es la etapa 3: RLHF es una de las formas de ajustar a los asistentes. En los modelos de razonamiento, también se premian respuestas verificables (matemática, código).'
+            }
+        ];
+
+        function buildMLTabs() {
+            buildTabs(document.getElementById('ml-tabs'), document.getElementById('ml-content'), mlData, (item) => `
+                <p class="leading-relaxed text-base mb-4">${item.content}</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-3"><b class="text-slate-800">Usos típicos:</b> ${item.uses}</div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3"><b class="text-emerald-800">En los asistentes de IA:</b> ${item.llm}</div>
+                </div>`);
+        }
+
         window.onload = () => {
             buildTimeline();
             document.querySelector('#timeline-list button').click();
+            buildMLTabs();
             nav('cap1');
             renderTokens();
         };
@@ -2455,15 +2570,15 @@
                 emoji: '👁️', label: 'Self-Attention', colorTitle: 'text-purple-400',
                 title: 'Self-Attention: el mecanismo de contexto',
                 desc: 'Cada token "mira" a todos los demás y decide cuánto peso darle a cada uno. Al procesar "banco" en "fui al banco a pescar", el mecanismo pondera "pescar" más que "fui", desambiguando el significado.',
-                detail: 'Funciona con tres matrices: Query (Q), Key (K) y Value (V). Atención = softmax(Q·Kᵀ/√d)·V. Un transformer moderno tiene 32–96 cabezas de atención en paralelo, cada una especializándose en patrones distintos: sintaxis, correferencia, relaciones semánticas. Escala cuadráticamente con el contexto — de ahí que las ventanas largas sean costosas.',
+                detail: 'Funciona con tres matrices: Query (Q), Key (K) y Value (V). Atención = softmax(Q·Kᵀ/√d)·V. Un transformer grande tiene decenas de cabezas de atención en paralelo, cada una especializándose en patrones distintos: sintaxis, correferencia, relaciones semánticas. Escala cuadráticamente con el contexto — de ahí que las ventanas largas sean costosas.',
                 key: 'Sin self-attention, "banco" siempre significaría lo mismo. Este mecanismo es lo que permite entender el contexto.'
             },
             {
                 emoji: '🧠', label: 'Red Feedforward', colorTitle: 'text-indigo-400',
-                title: 'Red Feedforward: la memoria factual',
-                desc: 'Después de la atención, cada token pasa por una red neuronal feedforward. Aquí se almacena el conocimiento factual: hechos, relaciones causales, datos del mundo. Es el componente más voluminoso en parámetros.',
-                detail: 'El bloque (self-attention + FFN) se apila 32–96 veces. Las primeras capas capturan sintaxis básica, las intermedias semántica, las últimas razonamiento abstracto. GPT-3 tiene 96 bloques. Entre cada bloque hay normalización de capas y conexiones residuales que estabilizan el entrenamiento a escala.',
-                key: 'Representa la mayor parte de los parámetros totales y almacena el conocimiento del mundo que el modelo adquirió durante el pre-entrenamiento.'
+                title: 'Red Feedforward: ¿la memoria factual?',
+                desc: 'Después de la atención, cada token pasa por una red neuronal feedforward. Una de las hipótesis de los investigadores es que acá se guarda buena parte del conocimiento factual: hechos, relaciones, datos del mundo. Es el componente más voluminoso en parámetros.',
+                detail: 'El bloque (self-attention + FFN) se apila decenas de veces. Las primeras capas capturan sintaxis básica, las intermedias semántica, las últimas razonamiento abstracto. GPT-3 tiene 96 bloques. Entre cada bloque hay normalización de capas y conexiones residuales que estabilizan el entrenamiento a escala.',
+                key: 'Representa la mayor parte de los parámetros totales y, según una de las hipótesis principales, guarda buena parte del conocimiento que el modelo adquirió en el pre-entrenamiento.'
             },
             {
                 emoji: '🎲', label: 'Softmax', colorTitle: 'text-orange-400',
@@ -2475,8 +2590,8 @@
             {
                 emoji: '↩️', label: 'Token Generado', colorTitle: 'text-emerald-400',
                 title: 'Bucle autorregresivo: token a token',
-                desc: 'El token generado se concatena al input y todo el proceso se repite desde cero. Cada token generado se convierte en contexto para predecir el siguiente. Así, de un token por vez, emerge el texto completo.',
-                detail: 'Para generar "La IA es útil": genera "La" → recalcula con [..., "La"] → genera "IA" → y así. Esto explica por qué los LLMs son lentos en textos largos y por qué una alucinación temprana se amplifica: un dato incorrecto generado se convierte en contexto para los tokens siguientes.',
+                desc: 'El token generado se agrega al texto y el proceso se repite. Cada token generado se convierte en contexto para predecir el siguiente. Así, de un token por vez, emerge el texto completo.',
+                detail: 'Para generar "La IA es útil": genera "La" → vuelve a calcular teniendo en cuenta [..., "La"] (reutilizando cálculos previos) → genera "IA" → y así. Esto explica por qué los LLMs son lentos en textos largos y por qué una alucinación temprana se amplifica: un dato incorrecto generado se convierte en contexto para los tokens siguientes.',
                 key: 'No hay planificación previa del texto completo. Cada token se genera sin saber los que vendrán después.'
             }
         ];
@@ -2534,9 +2649,10 @@
         const ttDefs = {
             gpu: 'Chip diseñado para calcular miles de operaciones matemáticas en paralelo (Unidad de Procesamiento Gráfico). Su arquitectura masivamente paralela lo convirtió en el motor del entrenamiento de redes neuronales.',
             parametros: 'Valores numéricos ajustables dentro de una red neuronal — los "pesos" que el modelo aprende durante el entrenamiento. Más parámetros = mayor capacidad de representar patrones complejos.',
-            rlhf: 'Refuerzo con retroalimentación humana (Reinforcement Learning from Human Feedback): evaluadores califican respuestas del modelo y este aprende a imitar las mejor valoradas, volviéndose más útil y seguro.',
+            rlhf: 'Aprendizaje por refuerzo con feedback humano (Reinforcement Learning from Human Feedback): personas comparan respuestas del modelo y este aprende a producir las preferidas. Es una de las formas de ajustar a los asistentes.',
             finetuning: 'Proceso de adaptar un modelo ya entrenado a un dominio específico, continuando el entrenamiento con un conjunto de datos más pequeño y especializado. Mucho más barato que entrenar desde cero.',
-            preentrenamiento: 'Fase inicial en la que el modelo aprende patrones generales del lenguaje procesando billones de tokens. Es el proceso costoso (meses, millones de dólares) que construye la base universal de conocimiento.',
+            preentrenamiento: 'Fase inicial en la que el modelo aprende patrones generales del lenguaje procesando billones de tokens. Es la etapa más cara del proceso: construye la base de conocimiento del modelo.',
+            ventana: 'Cantidad máxima de texto (medida en tokens) que el modelo puede recibir de una vez: tus mensajes, el historial, los archivos y las instrucciones de la app. Lo que no entra, el modelo no lo ve.',
             embedding: 'Representación de un token como un vector de alta dimensión. Captura relaciones semánticas: palabras con significados similares quedan cerca en ese espacio matemático.',
             softmax: 'Función matemática que convierte un vector de números en una distribución de probabilidades que suma exactamente 1. Asigna a cada token del vocabulario su probabilidad de ser el siguiente.',
             temperatura: 'Parámetro que controla la aleatoriedad en la generación. Valor bajo → respuestas más predecibles y conservadoras. Valor alto → más variedad y creatividad, con mayor riesgo de incoherencia.',
@@ -2623,11 +2739,11 @@
         <div class="flex items-center justify-between px-6 py-4 border-b border-slate-700 bg-slate-900 flex-shrink-0">
             <div>
                 <h2 class="text-white font-bold text-lg">🧠 Arquitectura de un LLM</h2>
-                <p class="text-slate-400 text-xs">Haz clic en cada componente para explorar su función</p>
+                <p class="text-slate-400 text-xs">Hacé clic en cada componente para explorar su función</p>
             </div>
             <div class="flex items-center gap-4">
                 <span id="llm-step-counter" class="text-slate-400 text-sm font-mono"></span>
-                <button onclick="closeLLMDiagram()" class="text-slate-400 hover:text-white text-2xl transition-colors leading-none px-2">✕</button>
+                <button onclick="closeLLMDiagram()" aria-label="Cerrar" class="text-slate-400 hover:text-white text-2xl transition-colors leading-none px-2">✕</button>
             </div>
         </div>
 
@@ -2697,7 +2813,7 @@
 
             </div>
 
-            <p class="text-slate-600 text-xs italic text-center">↺ El token generado se añade al input y el proceso se repite hasta completar la respuesta</p>
+            <p class="text-slate-500 text-xs italic text-center">↺ El token generado se agrega al texto y el proceso se repite hasta completar la respuesta</p>
 
             <!-- Dots -->
             <div class="flex gap-3 items-center">
